@@ -3,7 +3,7 @@ const mysql = require('mysql2/promise');
 const db = mysql.createPool({
     host: 'localhost',
     user: 'root',
-    password: 'rakshit@1998',
+    password: 'rakshit',
     port: '3306',
     database: 'major-project-udacity',
     waitForConnections: true,
