@@ -1,9 +1,9 @@
 const express = require('express');
-const { signup } = require('../function')
+const { signupStudent } = require('../config/function')
 const router = express.Router();
 
 router.post('/studentSignup', async (req, res) => {
-    const result = await signup(req.body);
+    const result = await signupStudent(req.body);
     res.json(result);
 });
 

@@ -1,9 +1,9 @@
 const express = require("express");
-const { signup } = require("../loginSignupFunction");
+const { signupMentor } = require("../config/function");
 const router = express.Router();
 
 router.post("/mentorSignup", async (req, res) => {
-    const result = await signup(req.body);
+    const result = await signupMentor(req.body);
     res.json(result);
 });
 

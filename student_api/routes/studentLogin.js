@@ -1,9 +1,9 @@
 const express = require('express');
-const { login } = require('../function')
+const { loginStudent } = require('../config/function')
 const router = express.Router();
 
 router.post('/studentLogin', async (req, res) => {
-    const result = await login(req.body);
+    const result = await loginStudent(req.body);
         res.json(result)
 });
 

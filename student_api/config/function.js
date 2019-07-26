@@ -1,5 +1,5 @@
 const bcrypt = require('bcryptjs');
-const db = require('./config/sql_connection');
+const db = require('./sql_connection');
 
 async function err_check(firstName, email, phoneNumber, password, password2) {
     if (!firstName || !email || !password || !password2 || !phoneNumber) {
@@ -29,7 +29,7 @@ async function err_check(firstName, email, phoneNumber, password, password2) {
     return ('ok');
 }
 
-async function signup(req) {
+async function signupStudent(req) {
     const { firstName, lastName, email, phoneNumber, password, password2 } = req;
     const err = await err_check(firstName, email, phoneNumber, password, password2);
     let ans;
@@ -61,7 +61,7 @@ async function signup(req) {
     return (ans);
 }
 
-async function login(req) {
+async function loginStudent(req) {
     const { email, password } = req;
     if (!email || !password) {
         return ({
@@ -80,8 +80,6 @@ async function login(req) {
                 data: null
             });
         }
-        // console.log(rows[0].password);
-        // console.log(bcrypt.compareSync(password, rows[0].password))
         if (bcrypt.compareSync(password, rows[0].password)) {
             return ({
                 err: {
@@ -106,6 +104,6 @@ async function login(req) {
 }
 
 module.exports = {
-    login,
-    signup
+    loginStudent,
+    signupStudent
 }
