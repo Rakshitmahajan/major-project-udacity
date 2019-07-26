@@ -1,5 +1,5 @@
 const bcrypt = require('bcryptjs');
-const db = require('./sql_connection');
+const db = require('./sqlConnection');
 
 async function err_check(firstName, email, phoneNumber, password, password2) {
     if (!firstName || !email || !password || !password2 || !phoneNumber) {
