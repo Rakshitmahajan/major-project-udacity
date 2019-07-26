@@ -9,10 +9,10 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.use(require('./routes/insertImage'));
-app.use(require('./routes/deleteImage'));
-app.use(require('./routes/updateImage'));
-app.use(require('./routes/readImage'));
+app.use(require('./routes/insert'));
+app.use(require('./routes/delete'));
+app.use(require('./routes/update'));
+app.use(require('./routes/read'));
 
 const port = 5000;
 

@@ -2,8 +2,8 @@ const express = require('express');
 const { readImage } = require('../config/function')
 const router = express.Router();
 
-router.post('/readImage', async (req, res) => {
-    const result = await readImage(req.body);
+router.get('/readImage', async (req, res) => {
+    const result = await readImage(req.body.title);
         res.json(result)
 });
 
