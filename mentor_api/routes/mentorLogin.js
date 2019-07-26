@@ -1,5 +1,5 @@
 const express = require("express");
-const { loginMentor } = require("../config/function");
+const { loginMentor } = require("../config/loginSignUpFunction");
 const router = express.Router();
 
 router.post("/mentorLogin", async (req, res) => {
