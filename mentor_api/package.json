@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "test": "mocha --timeout 20000 ./tests/ --watch --recursive"
   },
   "author": "",
   "license": "ISC",

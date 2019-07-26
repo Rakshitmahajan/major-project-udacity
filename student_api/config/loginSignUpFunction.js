@@ -1,8 +1,9 @@
 const bcrypt = require('bcryptjs');
 const db = require('./sqlConnection');
+const winston = require('./winston');
 
-async function err_check(firstName, email, phoneNumber, password, password2) {
-    if (!firstName || !email || !password || !password2 || !phoneNumber) {
+async function err_check(firstName, lastName, email, phoneNumber, password, password2) {
+    if (!firstName || !email || !password || !password2 || !phoneNumber || !lastName) {
         return ('field required');
     }
     try {
@@ -11,13 +12,13 @@ async function err_check(firstName, email, phoneNumber, password, password2) {
             return ('user already exist');
         }
     } catch (err) {
-        console.log(err);
+        winston.error(err.stack);
     }
     if (password !== password2) {
         return ('password do not match');
     }
     if (password.length < 5) {
-        return ('password must be longer')
+        return ('password must be of minimum length 5')
     }
     if (phoneNumber.length !== 10) {
         return ('phone number not valid');
@@ -31,20 +32,20 @@ async function err_check(firstName, email, phoneNumber, password, password2) {
 
 async function signupStudent(req) {
     const { firstName, lastName, email, phoneNumber, password, password2 } = req;
-    const err = await err_check(firstName, email, phoneNumber, password, password2);
+    const err = await err_check(firstName, lastName, email, phoneNumber, password, password2);
     let ans;
     if (err != 'ok') {
         ans = {
             err: {
                 message: err
             },
-            data: null
-        }
+            data: null,
+        };
     } else {
 
         const hash = await bcrypt.hashSync(password, 10);
         try {
-            const result = await db.query(`INSERT INTO student (firstName, lastName, email, phoneNumber, password) VALUES ('${firstName}', '${lastName}','${email}','${phoneNumber}','${hash}')`);
+            await db.query(`INSERT INTO student (firstName, lastName, email, phoneNumber, password) VALUES ('${firstName}', '${lastName}','${email}','${phoneNumber}','${hash}')`);
             ans = {
                 err: null,
                 data: {
@@ -53,11 +54,11 @@ async function signupStudent(req) {
                     email,
                     phoneNumber
                 }
-            }
+            };
         } catch (err) {
-            console.log(err);
+            winston.error(err.stack);
         }
-    };
+    }
     return (ans);
 }
 

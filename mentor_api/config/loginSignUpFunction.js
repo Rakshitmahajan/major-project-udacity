@@ -1,8 +1,10 @@
 const bcrypt = require('bcryptjs');
 const db = require('./sqlConnection');
 
-async function err_check(firstName, email, phoneNumber, password, password2) {
-    if (!firstName || !email || !password || !password2 || !phoneNumber) {
+const winston = require('./winston');
+
+async function err_check(firstName, lastName, email, phoneNumber, password, password2) {
+    if (!firstName || !email || !password || !password2 || !phoneNumber || !lastName) {
         return ('field required');
     }
     try {
@@ -11,13 +13,13 @@ async function err_check(firstName, email, phoneNumber, password, password2) {
             return ('user already exist');
         }
     } catch (err) {
-        console.log(err);
+        winston.error(err.stack);
     }
     if (password !== password2) {
         return ('password do not match');
     }
     if (password.length < 5) {
-        return ('password must be longer')
+        return ('password must be of minimum length 5')
     }
     if (phoneNumber.length !== 10) {
         return ('phone number not valid');
@@ -31,7 +33,7 @@ async function err_check(firstName, email, phoneNumber, password, password2) {
 
 async function signupMentor(req) {
     const { firstName, lastName, email, phoneNumber, password, password2 } = req;
-    const err = await err_check(firstName, email, phoneNumber, password, password2);
+    const err = await err_check(firstName, lastName, email, phoneNumber, password, password2);
     let ans;
     if (err != 'ok') {
         ans = {
@@ -55,7 +57,7 @@ async function signupMentor(req) {
                 }
             }
         } catch (err) {
-            console.log(err);
+            winston.error(err.stack);
         }
     };
     return (ans);
