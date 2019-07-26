@@ -7,7 +7,7 @@ const app = require('../index');
 describe('POST /studentSignup', () => {
     it('responds with json', (done) => {
         superTest(app)
-            .post('/studentLogin')
+            .post('/studentSignup')
             .send({
                 firstName: 'jhakjab',
                 lastName: 'jkabkja',

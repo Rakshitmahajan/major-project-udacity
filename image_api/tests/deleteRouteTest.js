@@ -4,13 +4,12 @@ const { expect } = require('chai');
 
 const app = require('../index');
 
-describe('POST /mentorLogin', () => {
+describe('DELETE /deleteImage', () => {
     it('responds with json', (done) => {
         superTest(app)
-            .post('/mentorLogin')
+            .post('/deleteImage')
             .send({
-                email: 'rakshit@gmail.com',
-                password: 'pass',
+                title: 'test_image',
             })
             .set('Accept', 'application/json')
             .expect('Content-Type', /json/)

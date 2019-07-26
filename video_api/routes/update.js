@@ -1,10 +1,10 @@
 const express = require('express');
-const { updateVideo } = require('../config/function')
+const { updateVideo } = require('../config/crudFunction');
 const router = express.Router();
 
 router.put('/updateVideo', async (req, res) => {
     const result = await updateVideo(req.body);
-        res.json(result)
+    res.json(result);
 });
 
 module.exports = router;

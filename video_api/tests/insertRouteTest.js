@@ -4,13 +4,13 @@ const { expect } = require('chai');
 
 const app = require('../index');
 
-describe('POST /mentorLogin', () => {
+describe('INSERT /insertVideo', () => {
     it('responds with json', (done) => {
         superTest(app)
-            .post('/mentorLogin')
+            .post('/insertVideo')
             .send({
-                email: 'rakshit@gmail.com',
-                password: 'pass',
+                title: 'test_video',
+                link:'https://www.youtube.com/watch?v=4tWJ_SpuqWQ',
             })
             .set('Accept', 'application/json')
             .expect('Content-Type', /json/)

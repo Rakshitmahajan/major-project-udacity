@@ -1,6 +1,6 @@
-const db = require('./sql_connection');
+const db = require('./sqlConnection');
 
-async function insertVideo(req) {
+async function insertImage(req) {
     const { title, link } = req;
     if (!title || !link) {
         return ({
@@ -10,7 +10,7 @@ async function insertVideo(req) {
             data: null,
         })
     }
-    const [rows] = await db.query(`select * FROM video WHERE title = '${title}'`)
+    const [rows] = await db.query(`select * FROM image WHERE title = '${title}'`)
     if (rows[0] !== undefined) {
         return ({
             err: {
@@ -20,12 +20,12 @@ async function insertVideo(req) {
         })
     }
     try {
-        await db.query(`INSERT INTO video (title, link) VALUES ('${title}', '${link}')`);
+        await db.query(`INSERT INTO image (title, link) VALUES ('${title}', '${link}')`);
         return ({
             err: null,
             data: {
-                title,
-                link,
+                'title': title,
+                'link': link,
             }
         })
     } catch (err) {
@@ -33,8 +33,8 @@ async function insertVideo(req) {
     }
 }
 
-async function readVideo(videoTitle) {
-    if (!videoTitle) {
+async function readImage(imageTitle) {
+    if (!imageTitle) {
         return ({
             err: {
                 message: 'fields required',
@@ -43,11 +43,11 @@ async function readVideo(videoTitle) {
         })
     }
     try {
-        const [rows] = await db.query(`select * FROM video WHERE title = '${videoTitle}'`);
+        const [rows] = await db.query(`select * FROM image WHERE title = '${imageTitle}'`);
         if (rows[0] == undefined) {
             return ({
                 err: {
-                    message: 'video not found',
+                    message: 'image not found',
                 },
                 data: null,
             })
@@ -65,8 +65,8 @@ async function readVideo(videoTitle) {
     }
 }
 
-async function deleteVideo(videoTitle) {
-    if (!videoTitle) {
+async function deleteImage(imageTitle) {
+    if (!imageTitle) {
         return ({
             err: {
                 message: 'fields required',
@@ -75,12 +75,12 @@ async function deleteVideo(videoTitle) {
         })
     }
     try {
-        await db.query(`DELETE FROM video WHERE title = '${videoTitle}'`);
+        await db.query(`DELETE FROM image WHERE title = '${imageTitle}'`);
         return ({
             err: null,
             data: {
-                title: videoTitle,
-                message: 'video deleted'
+                title: imageTitle,
+                message: 'image deleted'
             }
         })
     } catch (err) {
@@ -88,7 +88,7 @@ async function deleteVideo(videoTitle) {
     }
 }
 
-async function updateVideo(req) {
+async function updateImage(req) {
     const { title, link } = req;
     if (!title || !link) {
         return ({
@@ -99,12 +99,12 @@ async function updateVideo(req) {
         })
     }
     try {
-        await db.query(`UPDATE video SET link = '${link}'  WHERE title = '${title}'`);
+        await db.query(`UPDATE image SET link = '${link}'  WHERE title = '${title}'`);
         return ({
             err: null,
             data: {
-                title,
-                link
+                'title': title,
+                'link': link,
             }
         })
     } catch (err) {
@@ -113,8 +113,8 @@ async function updateVideo(req) {
 }
 
 module.exports = {
-    insertVideo,
-    readVideo,
-    deleteVideo,
-    updateVideo
+    insertImage,
+    readImage,
+    deleteImage,
+    updateImage
 }

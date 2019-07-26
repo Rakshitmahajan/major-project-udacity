@@ -1,6 +1,7 @@
-const db = require('./sql_connection');
+const db = require('./sqlConnection');
+const winston = require('./winston');
 
-async function insertImage(req) {
+async function insertVideo(req) {
     const { title, link } = req;
     if (!title || !link) {
         return ({
@@ -8,87 +9,87 @@ async function insertImage(req) {
                 message: 'fields required',
             },
             data: null,
-        })
+        });
     }
-    const [rows] = await db.query(`select * FROM image WHERE title = '${title}'`)
+    const [rows] = await db.query(`select * FROM video WHERE title = '${title}'`);
     if (rows[0] !== undefined) {
         return ({
             err: {
                 message: 'already exist',
             },
             data: null,
-        })
+        });
     }
     try {
-        await db.query(`INSERT INTO image (title, link) VALUES ('${title}', '${link}')`);
+        await db.query(`INSERT INTO video (title, link) VALUES ('${title}', '${link}')`);
         return ({
             err: null,
             data: {
-                title,
-                link,
+                'title': title,
+                'link': link,
             }
-        })
+        });
     } catch (err) {
-        console.log(err);
+        winston.error(err.stack);
     }
 }
 
-async function readImage(imageTitle) {
-    if (!imageTitle) {
+async function readVideo(videoTitle) {
+    if (!videoTitle) {
         return ({
             err: {
                 message: 'fields required',
             },
             data: null,
-        })
+        });
     }
     try {
-        const [rows] = await db.query(`select * FROM image WHERE title = '${imageTitle}'`);
+        const [rows] = await db.query(`select * FROM video WHERE title = '${videoTitle}'`);
         if (rows[0] == undefined) {
             return ({
                 err: {
-                    message: 'image not found',
+                    message: 'video not found',
                 },
                 data: null,
-            })
+            });
         } else {
             return ({
                 err: null,
                 data: {
                     title: rows[0].title,
-                    link: rows[0].link
+                    link: rows[0].link,
                 }
-            })
+            });
         }
     } catch (err) {
-        console.log(err);
+        winston.error(err.stack);
     }
 }
 
-async function deleteImage(imageTitle) {
-    if (!imageTitle) {
+async function deleteVideo(videoTitle) {
+    if (!videoTitle) {
         return ({
             err: {
                 message: 'fields required',
             },
             data: null,
-        })
+        });
     }
     try {
-        await db.query(`DELETE FROM image WHERE title = '${imageTitle}'`);
+        await db.query(`DELETE FROM video WHERE title = '${videoTitle}'`);
         return ({
             err: null,
             data: {
-                title: imageTitle,
-                message: 'image deleted'
-            }
-        })
+                title: videoTitle,
+                message: 'video deleted',
+            },
+        });
     } catch (err) {
-        console.log(err);
+        winston.error(err.stack);
     }
 }
 
-async function updateImage(req) {
+async function updateVideo(req) {
     const { title, link } = req;
     if (!title || !link) {
         return ({
@@ -96,25 +97,25 @@ async function updateImage(req) {
                 message: 'fields required',
             },
             data: null,
-        })
+        });
     }
     try {
-        await db.query(`UPDATE image SET link = '${link}'  WHERE title = '${title}'`);
+        await db.query(`UPDATE video SET link = '${link}'  WHERE title = '${title}'`);
         return ({
             err: null,
             data: {
-                title,
-                link
+                'title': title,
+                'link': link,
             }
-        })
+        });
     } catch (err) {
-        console.log(err);
+        winston.error(err.stack);
     }
 }
 
 module.exports = {
-    insertImage,
-    readImage,
-    deleteImage,
-    updateImage
-}
+    insertVideo,
+    readVideo,
+    deleteVideo,
+    updateVideo
+};
