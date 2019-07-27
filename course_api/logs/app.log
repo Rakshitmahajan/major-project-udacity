@@ -1,0 +1,34 @@
+{"level":"info","message":"Running on"}
+{"message":"::ffff:127.0.0.1 - - [27/Jul/2019:07:39:05 +0000] \"POST /course/ HTTP/1.1\" 200 184 \"-\" \"PostmanRuntime/7.6.0\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [27/Jul/2019:07:39:11 +0000] \"POST /course/ HTTP/1.1\" 200 126 \"-\" \"PostmanRuntime/7.6.0\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [27/Jul/2019:07:39:21 +0000] \"GET /course/CH1 HTTP/1.1\" 200 126 \"-\" \"PostmanRuntime/7.6.0\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [27/Jul/2019:07:39:28 +0000] \"GET /course/CH HTTP/1.1\" 200 14 \"-\" \"PostmanRuntime/7.6.0\"\n","level":"info"}
+{"level":"info","message":"Running on"}
+{"message":"::ffff:127.0.0.1 - - [27/Jul/2019:07:40:18 +0000] \"GET /course/CH HTTP/1.1\" 200 14 \"-\" \"PostmanRuntime/7.6.0\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [27/Jul/2019:07:40:24 +0000] \"GET /course/CH1 HTTP/1.1\" 200 126 \"-\" \"PostmanRuntime/7.6.0\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [27/Jul/2019:07:40:28 +0000] \"GET /course/CH HTTP/1.1\" 200 14 \"-\" \"PostmanRuntime/7.6.0\"\n","level":"info"}
+{"level":"info","message":"Running on"}
+{"message":"::ffff:127.0.0.1 - - [27/Jul/2019:07:40:53 +0000] \"GET /course/CH HTTP/1.1\" 200 14 \"-\" \"PostmanRuntime/7.6.0\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [27/Jul/2019:07:40:59 +0000] \"GET /course/CH1 HTTP/1.1\" 200 126 \"-\" \"PostmanRuntime/7.6.0\"\n","level":"info"}
+{"level":"info","message":"Running on"}
+{"message":"::ffff:127.0.0.1 - - [27/Jul/2019:07:41:22 +0000] \"GET /course/CH1 HTTP/1.1\" 200 126 \"-\" \"PostmanRuntime/7.6.0\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [27/Jul/2019:07:41:25 +0000] \"GET /course/CH2 HTTP/1.1\" 200 126 \"-\" \"PostmanRuntime/7.6.0\"\n","level":"info"}
+{"level":"info","message":"Running on"}
+{"message":"::ffff:127.0.0.1 - - [27/Jul/2019:07:41:44 +0000] \"GET /course/CH2 HTTP/1.1\" 200 126 \"-\" \"PostmanRuntime/7.6.0\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [27/Jul/2019:07:41:50 +0000] \"GET /course/CH HTTP/1.1\" 200 14 \"-\" \"PostmanRuntime/7.6.0\"\n","level":"info"}
+{"level":"info","message":"Running on"}
+{"message":"::ffff:127.0.0.1 - - [27/Jul/2019:07:41:58 +0000] \"GET /course/CH HTTP/1.1\" 200 14 \"-\" \"PostmanRuntime/7.6.0\"\n","level":"info"}
+{"level":"info","message":"Running on"}
+{"message":"::ffff:127.0.0.1 - - [27/Jul/2019:07:42:17 +0000] \"GET /course/CH HTTP/1.1\" 200 14 \"-\" \"PostmanRuntime/7.6.0\"\n","level":"info"}
+{"level":"info","message":"Running on"}
+{"message":"::ffff:127.0.0.1 - - [27/Jul/2019:07:42:24 +0000] \"GET /course/CH HTTP/1.1\" 200 14 \"-\" \"PostmanRuntime/7.6.0\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [27/Jul/2019:07:42:29 +0000] \"GET /course/CH1 HTTP/1.1\" 200 126 \"-\" \"PostmanRuntime/7.6.0\"\n","level":"info"}
+{"level":"info","message":"Running on"}
+{"message":"::ffff:127.0.0.1 - - [27/Jul/2019:07:42:45 +0000] \"GET /course/CH1 HTTP/1.1\" 200 126 \"-\" \"PostmanRuntime/7.6.0\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [27/Jul/2019:07:42:50 +0000] \"GET /course/CH11 HTTP/1.1\" 200 14 \"-\" \"PostmanRuntime/7.6.0\"\n","level":"info"}
+{"level":"info","message":"Running on"}
+{"message":"::ffff:127.0.0.1 - - [27/Jul/2019:07:43:04 +0000] \"GET /course/CH11 HTTP/1.1\" 200 14 \"-\" \"PostmanRuntime/7.6.0\"\n","level":"info"}
+{"level":"info","message":"Running on"}
+{"level":"info","message":"Running on"}
+{"message":"::ffff:127.0.0.1 - - [27/Jul/2019:07:43:45 +0000] \"GET /course/CH11 HTTP/1.1\" 200 41 \"-\" \"PostmanRuntime/7.6.0\"\n","level":"info"}
+{"level":"info","message":"Running on"}

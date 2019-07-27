@@ -14,7 +14,9 @@ const readRowCourse = async (courseId) => {
   const obj = { error: null, data: null };
   try {
     const result = await pool.query(`SELECT * from Course WHERE courseId=?`, [courseId]);
-    obj.data = result[0][0];
+    if (result[0][0] === undefined) {
+      throw 'Yet to be added..';
+    } else obj.data = result[0][0];
   } catch (err) {
     // winston.log(err);
     obj.error = err;
