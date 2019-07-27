@@ -92,10 +92,10 @@ describe('SignUp Functon Testing', () => {
         expect(result).to.deep.equal({
             err: null,
             data: {
-                firstName,
-                lastName,
-                email,
-                phoneNumber,
+                firstName: 'jhakjab',
+                lastName: 'jkabkja',
+                email: 'mjbkj@gmail.com',
+                phoneNumber: '8992996732',
             },
         });
     });

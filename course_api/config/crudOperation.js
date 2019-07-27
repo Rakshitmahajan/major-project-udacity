@@ -10,11 +10,23 @@ const pool = mysql.createPool({
   connectionLimit: 10,
   queueLimit: 0,
 });
+const readCourse = async () => {
+  const obj = { error: null, data: null };
+  try {
+    const result = await pool.query('SELECT * from Course');
+    obj.data = result[0];
+  } catch (err) {
+    obj.error = err;
+  }
+  return obj;
+}
 const readRowCourse = async (courseId) => {
   const obj = { error: null, data: null };
   try {
     const result = await pool.query(`SELECT * from Course WHERE courseId=?`, [courseId]);
-    obj.data = result[0][0];
+    if (result[0][0] === undefined) {
+      throw 'Yet to be added..';
+    } else obj.data = result[0][0];
   } catch (err) {
     // winston.log(err);
     obj.error = err;
@@ -24,7 +36,7 @@ const readRowCourse = async (courseId) => {
 const createRowCourse = async (data) => {
   const obj = { error: null, data: null };
   try {
-    await pool.query(`INSERT INTO course SET courseId=?,courseTitle=?,courseDescp=?,courseType=?,courseCategory=?`, [data.courseId, data.courseTitle, data.courseDescp, data.courseType, data.courseCategory])
+    await pool.query(`INSERT INTO Course SET courseId=?,courseTitle=?,courseDescp=?,courseType=?,courseCategory=?`, [data.courseId, data.courseTitle, data.courseDescp, data.courseType, data.courseCategory]);
     const result = await readRowCourse(data.courseId);
     obj.data = result.data;
   } catch (err) {
@@ -33,12 +45,17 @@ const createRowCourse = async (data) => {
   }
   return obj;
 }
-const updateRowCourse = async (data) => {
+const updateRowCourse = async (courseId, data) => {
   const obj = { error: null, data: null };
   try {
-    await pool.query(`UPDATE Course SET courseTitle=?,courseDescp=? WHERE courseId=?`, [data.courseTitle, data.courseDescp, data.courseId])
-    const result = await readRowCourse(data.courseId);
-    obj.data = result.data;
+    const rst = await pool.query(`UPDATE Course SET courseTitle=?,courseDescp=? WHERE courseId=?`, [data.courseTitle, data.courseDescp, courseId])
+    if (rst[0].affectedRows) {
+      const result = await readRowCourse(courseId);
+      obj.data = result.data;
+    } else {
+      throw 'does not exit';
+    }
+
   } catch (err) {
     // winston.log(err);
     obj.error = err;
@@ -48,15 +65,21 @@ const updateRowCourse = async (data) => {
 const deleteRowCourse = async (courseId) => {
   const obj = { error: null, data: null };
   try {
-    const result = await pool.query(`DELETE from Course WHERE courseId =?`, [courseId])
-    obj.data = result[0];
+    const result = await pool.query(`DELETE from Course WHERE courseId =?`, [courseId]);
+    if (result[0].affectedRows) {
+      obj.data = { message: `${courseId} deleted` };
+    } else {
+      throw 'Yet to be added..';
+    }
   } catch (err) {
     // winston.log(err);
+    console.log(err);
     obj.error = err;
   }
   return obj;
 }
 module.exports = {
+  readCourse,
   readRowCourse,
   createRowCourse,
   updateRowCourse,

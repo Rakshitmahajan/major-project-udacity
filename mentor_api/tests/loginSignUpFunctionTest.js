@@ -92,10 +92,10 @@ describe('SignUp Functon Testing', () => {
         expect(result).to.deep.equal({
             err: null,
             data: {
-                firstName,
-                lastName,
-                email,
-                phoneNumber,
+                firstName: 'jhakjab',
+                lastName: 'jkabkja',
+                email: 'mjbkj@gmail.com',
+                phoneNumber: '8992996732',
             },
         });
     });
@@ -177,7 +177,7 @@ describe('SignUp Functon Testing', () => {
         const result = await loginSignUp.signupMentor(req);
         expect(result).to.deep.equal({
             err: {
-                message:'password must be of minimum length 5',
+                message: 'password must be of minimum length 5',
             },
             data: null,
         });
