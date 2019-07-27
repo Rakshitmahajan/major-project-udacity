@@ -18,3 +18,21 @@ const options = {
         json: true,
     },
 };
+
+
+const logger = winston.createLogger({
+    transports: [
+        new winston.transports.File(options.file),
+        new winston.transports.Console(options.console),
+    ],
+    exitOnError: false, // do not exit on handled exceptions
+});
+
+
+logger.stream = {
+    write(message) {
+        logger.info(message);
+    },
+};
+
+module.exports = logger;
