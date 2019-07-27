@@ -19,6 +19,6 @@ app.use(express.json());
 app.use(morgan('combined', { stream: winston.stream }));
 
 app.use('/course', require('./routes/course'));
-app.listen(8000, () => winston.info('Running on', 8000));
+app.listen(process.env.COURSE_PORT, () => winston.info(`Running on ${process.env.COURSE_PORT}`));
 
 module.exports = app;

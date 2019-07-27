@@ -10,6 +10,16 @@ const pool = mysql.createPool({
   connectionLimit: 10,
   queueLimit: 0,
 });
+const readCourse = async () => {
+  const obj = { error: null, data: null };
+  try {
+    const result = await pool.query('SELECT * from Course');
+    obj.data = result[0];
+  } catch (err) {
+    obj.error = err;
+  }
+  return obj;
+}
 const readRowCourse = async (courseId) => {
   const obj = { error: null, data: null };
   try {
@@ -69,6 +79,7 @@ const deleteRowCourse = async (courseId) => {
   return obj;
 }
 module.exports = {
+  readCourse,
   readRowCourse,
   createRowCourse,
   updateRowCourse,
