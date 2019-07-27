@@ -1,18 +1,12 @@
-import React, { Component } from 'react';
-import CourseCard from './components/CourseCard';
-import NavbarHome from './components/Navbar';
-class App extends Component {
+import React from 'react';
+import HomePage from './components/HomePage';
+import CoursePage from './components/CoursePage';
+class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <NavbarHome />
-        <div className="App-header">
-          <p className='h2'>Welcome to React</p>
-          <CourseCard />
-        </div>
-        <p className="App-intro">
-          To get started, edit and save to reload.
-        </p>
+        <HomePage />
+        {/* <CoursePage /> */}
       </div>
     );
   }
