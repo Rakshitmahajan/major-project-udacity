@@ -14,6 +14,5 @@ app.use(express.json());
 
 app.use('/course', require('./routes/course'));
 
-// app.listen(process.env.COURSE_PORT, () => console.log('Running on', process.env.COURSE_PORT));
-app.listen(8000, () => console.log('Running on', 8000));
+app.listen(process.env.COURSE_PORT, () => console.log('Running on', process.env.COURSE_PORT));
 module.exports = app;
