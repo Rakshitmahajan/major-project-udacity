@@ -1,6 +1,39 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import './signup.css'
 class Signup extends Component {
+    constructor() {
+        super();
+        this.state = {
+            firstName:'',
+            lastName:'',
+            phoneNumber:'',
+            email:'',
+            password:'',
+            password2:''
+        };
+    }
+    onChange = (e) => {
+        this.setState({ [e.target.name]: e.target.value });
+    }
+    onSubmit = (e) => {
+        e.preventDefault();
+        fetch('http://localhost:5000/mentorSignup', {
+            method: 'POST',
+            body: JSON.stringify(this.state),
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        }).then(Response => Response.json())
+            .then((response) => {
+                console.log(response);
+                if (response.err === null) {
+                    alert('signup sucessful')
+                } else {
+                    alert(response.err.message);
+                }
+            });
+    }
     render() {
         return (
             <div>
@@ -9,34 +42,38 @@ class Signup extends Component {
                 </div>
                 <div className="width">
                     <div className="container">
-                        <aside class="col-sm-7">
+                        <aside className="col-sm-7">
                             <div className="card">
                                 <article className="card-body">
-                                    <a href="" className="float-right btn btn-outline-primary">Login</a>
+                                   <Link to='/login' className="float-right btn btn-outline-primary">Login</Link>
                                     <h4 className="card-title mb-4 mt-1">Sign up</h4>
-                                    <form>
+                                    <form onSubmit={this.onSubmit}>
                                         <div className="form-group">
                                             <label>First name</label>
-                                            <input name="" className="form-control" placeholder="First name" type="email" />
+                                            <input name="firstName" className="form-control" placeholder="First name" type="text" onChange={this.onChange}/>
                                         </div>
                                         <div className="form-group">
                                             <label>Last name</label>
-                                            <input name="" className="form-control" placeholder="Last name" type="email" />
+                                            <input name="lastName" className="form-control" placeholder="Last name" type="text" onChange={this.onChange}/>
                                         </div>
                                         <div className="form-group">
                                             <label>Your email</label>
-                                            <input name="" className="form-control" placeholder="Email" type="email" />
+                                            <input name="email" className="form-control" placeholder="Email" type="email" onChange={this.onChange}/>
+                                        </div>
+                                        <div className="form-group">
+                                            <label>Phone Number</label>
+                                            <input name="phoneNumber" className="form-control" placeholder="Email" type="text" onChange={this.onChange}/>
                                         </div>
                                         <div className="form-group">
                                             <label>Password</label>
-                                            <input className="form-control" placeholder="password" type="password" />
+                                            <input name="password" className="form-control" placeholder="password" type="password" onChange={this.onChange}/>
                                         </div>
                                         <div className="form-group">
                                             <label>Confirm password</label>
-                                            <input className="form-control" placeholder="Confirm password" type="password" />
+                                            <input name="password2" className="form-control" placeholder="Confirm password" type="password" onChange={this.onChange}/>
                                         </div>
                                         <div className="form-group">
-                                            <button type="submit" className="btn btn-primary btn-block"> Sign Up </button>
+                                        <input type="submit" value="Submit"  className="btn btn-primary btn-block" onChange={this.onChange}/>
                                         </div>
                                     </form>
                                 </article>

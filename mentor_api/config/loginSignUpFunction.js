@@ -33,21 +33,21 @@ async function err_check(firstName, lastName, email, phoneNumber, password, pass
 
 async function signupMentor(req) {
     const { firstName, lastName, email, phoneNumber, password, password2 } = req;
-    const err = await err_check(firstName, lastName, email, phoneNumber, password, password2);
-    let ans;
-    if (err != 'ok') {
-        ans = {
+    console.log(firstName, lastName, email, phoneNumber, password, password2 );
+    const error = await err_check(firstName, lastName, email, phoneNumber, password, password2);
+    if (error != 'ok') {
+        return({
             err: {
-                message: err
+                message: error
             },
             data: null
-        }
+        })
     } else {
 
         const hash = await bcrypt.hashSync(password, 10);
         try {
             const result = await db.query(`INSERT INTO mentor (firstName, lastName, email, phoneNumber, password) VALUES ('${firstName}', '${lastName}','${email}','${phoneNumber}','${hash}')`);
-            ans = {
+            return({
                 err: null,
                 data: {
                     firstName,
@@ -55,12 +55,11 @@ async function signupMentor(req) {
                     email,
                     phoneNumber
                 }
-            }
+            });
         } catch (err) {
             winston.error(err.stack);
         }
     };
-    return (ans);
 }
 
 async function loginMentor(req) {
@@ -84,9 +83,7 @@ async function loginMentor(req) {
         }
         if (bcrypt.compareSync(password, rows[0].password)) {
             return ({
-                err: {
-                    message: null
-                },
+                err: null,
                 data: {
                     firstname: rows[0].firstName,
                     lastName: rows[0].lastName,
