@@ -10,7 +10,7 @@ describe('Login function testing', () => {
             },
         };
 
-        const result = await loginSignUp.loginStudent(req);
+        const result = await loginSignUp.loginStudent(req.body);
         expect(result).to.deep.equal({
             err: {
                 message: null
@@ -32,7 +32,7 @@ describe('Login function testing', () => {
             },
         };
 
-        const result = await loginSignUp.loginStudent(req);
+        const result = await loginSignUp.loginStudent(req.body);
         expect(result).to.deep.equal({
             err: {
                 message: 'fields required'
@@ -49,7 +49,7 @@ describe('Login function testing', () => {
             },
         };
 
-        const result = await loginSignUp.loginStudent(req);
+        const result = await loginSignUp.loginStudent(req.body);
         expect(result).to.deep.equal({
             err: {
                 message: 'user not found'
@@ -65,7 +65,7 @@ describe('Login function testing', () => {
                 password: 'hjhk',
             },
         };
-        const result = await loginSignUp.loginStudent(req);
+        const result = await loginSignUp.loginStudent(req.body);
         expect(result).to.deep.equal({
             err: {
                 message: 'password not correct',
@@ -88,7 +88,7 @@ describe('SignUp Functon Testing', () => {
                 password2: 'passs',
             },
         };
-        const result = await loginSignUp.signupStudent(req);
+        const result = await loginSignUp.signupStudent(req.body);
         expect(result).to.deep.equal({
             err: null,
             data: {
@@ -111,7 +111,7 @@ describe('SignUp Functon Testing', () => {
                 password2: '',
             },
         };
-        const result = await loginSignUp.signupStudent(req);
+        const result = await loginSignUp.signupStudent(req.body);
         expect(result).to.deep.equal({
             err: {
                 message: 'field required'
@@ -132,7 +132,7 @@ describe('SignUp Functon Testing', () => {
             },
         };
 
-        const result = await loginSignUp.signupStudent(req);
+        const result = await loginSignUp.signupStudent(req.body);
         expect(result).to.deep.equal({
             err: {
                 message: 'user already exist',
@@ -153,7 +153,7 @@ describe('SignUp Functon Testing', () => {
             },
         };
 
-        const result = await loginSignUp.signupStudent(req);
+        const result = await loginSignUp.signupStudent(req.body);
         expect(result).to.deep.equal({
             err: {
                 message: 'password do not match',
@@ -174,7 +174,7 @@ describe('SignUp Functon Testing', () => {
             },
         };
 
-        const result = await loginSignUp.signupStudent(req);
+        const result = await loginSignUp.signupStudent(req.body);
         expect(result).to.deep.equal({
             err: {
                 message:'password must be of minimum length 5',
@@ -196,7 +196,7 @@ describe('SignUp Functon Testing', () => {
             },
         };
 
-        const result = await loginSignUp.signupStudent(req);
+        const result = await loginSignUp.signupStudent(req.body);
         expect(result).to.deep.equal({
             err: {
                 message: 'phone number not valid',
@@ -218,7 +218,7 @@ describe('SignUp Functon Testing', () => {
             },
         };
 
-        const result = await loginSignUp.signupStudent(req);
+        const result = await loginSignUp.signupStudent(req.body);
         expect(result).to.deep.equal({
             err: {
                 message: 'enter valid email',

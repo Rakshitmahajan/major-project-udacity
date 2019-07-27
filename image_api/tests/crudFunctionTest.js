@@ -11,7 +11,7 @@ describe('Image Operations', () => {
 
             },
         };
-        const result = await crudFunction.insertImage(req);
+        const result = await crudFunction.insertImage(req.body);
         expect(result).to.deep.equal({
             err: null,
             data: {
@@ -28,7 +28,7 @@ describe('Image Operations', () => {
                 link: '',
             },
         };
-        const result = await crudFunction.insertImage(req);
+        const result = await crudFunction.insertImage(req.body);
         expect(result).to.deep.equal({
             err: {
                 message: 'fields required',
@@ -44,7 +44,7 @@ describe('Image Operations', () => {
                 link: 'http://www.muesdesign.com/wp-content/uploads/2015/04/TRY_ORANGE.jpg',
             },
         };
-        const result = await crudFunction.insertImage(req);
+        const result = await crudFunction.insertImage(req.body);
         expect(result).to.deep.equal({
             err: {
                 message: 'already exist',
@@ -61,7 +61,7 @@ describe('Reading Image', () => {
                 title: 'test_image',
             },
         };
-        const result = await crudFunction.readImage(req);
+        const result = await crudFunction.readImage(req.body.title);
         expect(result).to.deep.equal({
             err: null,
             data: {
@@ -77,7 +77,7 @@ describe('Reading Image', () => {
                 title: 'try_image',
             },
         };
-        const result = await crudFunction.readImage(req);
+        const result = await crudFunction.readImage(req.body.title);
         expect(result).to.deep.equal({
             err: {
                 message: 'image not found',
@@ -92,7 +92,7 @@ describe('Reading Image', () => {
                 title: '',
             },
         };
-        const result = await crudFunction.readImage(req);
+        const result = await crudFunction.readImage(req.body.title);
         expect(result).to.deep.equal({
             err: {
                 message: 'fields required',
@@ -110,7 +110,7 @@ describe('Deleting a Image', () => {
                 title: 'test_image',
             },
         };
-        const result = await crudFunction.deleteImage(req);
+        const result = await crudFunction.deleteImage(req.body.title);
         expect(result).to.deep.equal({
             err: null,
             data: {
@@ -126,7 +126,7 @@ describe('Deleting a Image', () => {
                 title: '',
             },
         };
-        const result = await crudFunction.deleteImage(req);
+        const result = await crudFunction.deleteImage(req.body.title);
         expect(result).to.deep.equal({
             err: {
                 message: 'fields required',
@@ -146,7 +146,7 @@ describe('Updating a Image', () => {
                 link: 'https://cdn.psychologytoday.com/sites/default/files/styles/article-inline-half/public/blogs/68127/2012/06/97678-94350.jpg?itok=7zqwtnPQ'
             },
         };
-        const result = await crudFunction.updateImage(req);
+        const result = await crudFunction.updateImage(req.body);
         expect(result).to.deep.equal({
             err: null,
             data: {
@@ -164,7 +164,7 @@ describe('Updating a Image', () => {
                 link: '',
             },
         };
-        const result = await crudFunction.updateImage(req);
+        const result = await crudFunction.updateImage(req.body);
         expect(result).to.deep.equal({
             err: {
                 message: 'fields required',

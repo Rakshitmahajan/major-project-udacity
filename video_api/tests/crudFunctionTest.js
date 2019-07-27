@@ -11,7 +11,7 @@ describe('Video Operations', () => {
 
             },
         };
-        const result = await crudFunction.insertVideo(req);
+        const result = await crudFunction.insertVideo(req.body);
         expect(result).to.deep.equal({
             err: null,
             data: {
@@ -28,7 +28,7 @@ describe('Video Operations', () => {
                 link: '',
             },
         };
-        const result = await crudFunction.insertVideo(req);
+        const result = await crudFunction.insertVideo(req.body);
         expect(result).to.deep.equal({
             err: {
                 message: 'fields required',
@@ -44,7 +44,7 @@ describe('Video Operations', () => {
                 link: 'https://www.youtube.com/watch?v=4tWJ_SpuqWQ',
             },
         };
-        const result = await crudFunction.insertVideo(req);
+        const result = await crudFunction.insertVideo(req.body);
         expect(result).to.deep.equal({
             err: {
                 message: 'already exist',
@@ -61,7 +61,7 @@ describe('Reading a Video', () => {
                 title: 'test_video',
             },
         };
-        const result = await crudFunction.readVideo(req);
+        const result = await crudFunction.readVideo(req.body.title);
         expect(result).to.deep.equal({
             err: null,
             data: {
@@ -77,7 +77,7 @@ describe('Reading a Video', () => {
                 title: 'try_video',
             },
         };
-        const result = await crudFunction.readVideo(req);
+        const result = await crudFunction.readVideo(req.body.title);
         expect(result).to.deep.equal({
             err: {
                 message: 'video not found',
@@ -92,7 +92,7 @@ describe('Reading a Video', () => {
                 title: '',
             },
         };
-        const result = await crudFunction.readVideo(req);
+        const result = await crudFunction.readVideo(req.body.title);
         expect(result).to.deep.equal({
             err: {
                 message: 'fields required',
@@ -110,7 +110,7 @@ describe('Deleting a Video', () => {
                 title: 'test_video',
             },
         };
-        const result = await crudFunction.deleteVideo(req);
+        const result = await crudFunction.deleteVideo(req.body.title);
         expect(result).to.deep.equal({
             err: null,
             data: {
@@ -126,7 +126,7 @@ describe('Deleting a Video', () => {
                 title: '',
             },
         };
-        const result = await crudFunction.deleteVideo(req);
+        const result = await crudFunction.deleteVideo(req.body.title);
         expect(result).to.deep.equal({
             err: {
                 message: 'fields required',
@@ -146,7 +146,7 @@ describe('Updating a Video', () => {
                 link: 'https://www.youtube.com/watch?v=RCzrSaaWd_0'
             },
         };
-        const result = await crudFunction.updateVideo(req);
+        const result = await crudFunction.updateVideo(req.body);
         expect(result).to.deep.equal({
             err: null,
             data: {
@@ -164,7 +164,7 @@ describe('Updating a Video', () => {
                 link: '',
             },
         };
-        const result = await crudFunction.updateVideo(req);
+        const result = await crudFunction.updateVideo(req.body);
         expect(result).to.deep.equal({
             err: {
                 message: 'fields required',
