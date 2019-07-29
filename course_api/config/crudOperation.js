@@ -1,6 +1,8 @@
 /* eslint-disable prefer-destructuring */
 const mysql = require('mysql2/promise');
 
+const winston = require('./winston');
+
 const pool = mysql.createPool({
     host: process.env.COURSE_HOST,
     user: process.env.COURSE_USER,
@@ -28,7 +30,7 @@ const readRowCourse = async (courseId) => {
             throw 'Yet to be added..';
         } else obj.data = result[0][0];
     } catch (err) {
-    // winston.log(err);
+        winston.error(err.stack);
         obj.error = err;
     }
     return obj;
@@ -40,7 +42,7 @@ const createRowCourse = async (data) => {
         const result = await readRowCourse(data.courseId);
         obj.data = result.data;
     } catch (err) {
-    // winston.log(err);
+        winston.error(err.stack);
         obj.error = err;
     }
     return obj;
@@ -57,7 +59,7 @@ const updateRowCourse = async (courseId, data) => {
         }
 
     } catch (err) {
-    // winston.log(err);
+        winston.error(err.stack);
         obj.error = err;
     }
     return obj;
@@ -72,8 +74,7 @@ const deleteRowCourse = async (courseId) => {
             throw 'Yet to be added..';
         }
     } catch (err) {
-    // winston.log(err);
-        console.log(err);
+        winston.error(err.stack);
         obj.error = err;
     }
     return obj;
