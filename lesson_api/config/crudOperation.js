@@ -34,24 +34,30 @@ const readRowLesson = async (lessonId) => {
 const createRowLesson = async (data) => {
   const obj = { error: null, data: null };
   try {
+    if (data.lessonId === '' || data.lessonTitle === '' || data.lessonType === '' || data.lessonCategory === '') {
+      throw 'Enter the values';
+    }
     await pool.query(`INSERT INTO Lesson SET lessonId=?,lessonNumber=?,lessonTitle=?,lessonDescp=?,lessonImage=?,courseId=?`, [data.lessonId, data.lessonNumber, data.lessonTitle, data.lessonDescp, data.lessonImage, data.courseId])
     const result = await readRowLesson(data.lessonId);
     obj.data = result.data;
   } catch (err) {
     // winston.log(err);
-    obj.error = err;
+    obj.error = { message: err }
   }
   return obj;
 }
 const updateRowLesson = async (data) => {
   const obj = { error: null, data: null };
   try {
+    if (data.lessonNumber === '' || data.lessonTitle === '' || data.lessonDescp === '' || data.lessonImage === '') {
+      throw 'Enter the values';
+    }
     await pool.query(`UPDATE Lesson SET lessonNumber=?,lessonTitle=?,lessonDescp=?,lessonImage=? WHERE lessonId=?`, [data.lessonNumber, data.lessonTitle, data.lessonDescp, data.lessonImage, data.lessonId])
     const result = await readRowLesson(data.lessonId);
     obj.data = result.data;
   } catch (err) {
     // winston.log(err);
-    obj.error = err;
+    obj.error = { message: err }
   }
   return obj;
 }

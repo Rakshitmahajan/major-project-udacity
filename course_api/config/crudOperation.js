@@ -18,7 +18,7 @@ const readCourse = async () => {
         const result = await pool.query('SELECT * from Course');
         obj.data = result[0];
     } catch (err) {
-        obj.error = err;
+        obj.error = { message: err }
     }
     return obj;
 }
@@ -31,25 +31,31 @@ const readRowCourse = async (courseId) => {
         } else obj.data = result[0][0];
     } catch (err) {
         winston.error(err.stack);
-        obj.error = err;
+        obj.error = { message: err }
     }
     return obj;
 }
 const createRowCourse = async (data) => {
     const obj = { error: null, data: null };
     try {
+        if (data.courseId === '' || data.courseTitle === '' || data.courseType === '' || data.courseCategory === '') {
+            throw 'Enter the values';
+        }
         await pool.query(`INSERT INTO Course SET courseId=?,courseTitle=?,courseDescp=?,courseType=?,courseCategory=?`, [data.courseId, data.courseTitle, data.courseDescp, data.courseType, data.courseCategory]);
         const result = await readRowCourse(data.courseId);
         obj.data = result.data;
     } catch (err) {
         winston.error(err.stack);
-        obj.error = err;
+        obj.error = { message: err }
     }
     return obj;
 }
 const updateRowCourse = async (courseId, data) => {
     const obj = { error: null, data: null };
     try {
+        if (data.courseTitle === '' || data.courseDescp === '') {
+            throw 'Enter the values';
+        }
         const rst = await pool.query(`UPDATE Course SET courseTitle=?,courseDescp=? WHERE courseId=?`, [data.courseTitle, data.courseDescp, courseId])
         if (rst[0].affectedRows) {
             const result = await readRowCourse(courseId);
@@ -60,7 +66,7 @@ const updateRowCourse = async (courseId, data) => {
 
     } catch (err) {
         winston.error(err.stack);
-        obj.error = err;
+        obj.error = { message: err }
     }
     return obj;
 }
@@ -75,7 +81,7 @@ const deleteRowCourse = async (courseId) => {
         }
     } catch (err) {
         winston.error(err.stack);
-        obj.error = err;
+        obj.error = { message: err }
     }
     return obj;
 }
