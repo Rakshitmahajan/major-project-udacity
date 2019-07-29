@@ -1,8 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import { BrowserRouter as Router } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
+import store from "./store";
+import Routes from './components/Routes';
+
+const routing = (
+  <Provider store={store}>
+    <Router>
+      <div>
+        <Routes />
+      </div>
+    </Router>
+  </Provider>
 );
+
+ReactDOM.render(routing, document.getElementById('root'));

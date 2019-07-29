@@ -1,10 +1,15 @@
 import React from 'react';
+import { Link } from "react-router-dom";
+import './LessonSidebar.css';
 class LessonSidebar extends React.Component {
-  state = {}
   render() {
     return (
-      <div>
-
+      <div className='sidenav'>
+        <Link to='/home'>Home</Link>
+        <Link to='catalog'>Catalog</Link>
+        <Link to='careerPortal'>career Portal</Link>
+        <Link to='setting'>Setting</Link>
+        <Link to='logout'>Logout</Link>
       </div>
     );
   }
