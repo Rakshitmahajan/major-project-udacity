@@ -11,8 +11,8 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.use('/', require('./routes/lesson'));
+app.use('/lesson', require('./routes/lesson'));
 
-app.listen(process.env.LESSON_PORT, () => console.log('Running on', process.env.LESSON_PORT));
+app.listen(process.env.LESSON_PORT, () => console.log('Lesson API Running on', process.env.LESSON_PORT));
 
 module.exports = app;

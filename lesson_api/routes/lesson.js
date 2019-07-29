@@ -2,6 +2,10 @@ const express = require('express');
 const sql = require('../config/crudOperation.js');
 
 const app = express.Router();
+app.get('/table/:courseId', async (req, res) => {
+  const result = await sql.readLesson(req.params.courseId);
+  res.json(result);
+})
 app.get('/:lessonId', async (req, res) => {
   const result = await sql.readRowLesson(req.params.lessonId);
   res.json(result);

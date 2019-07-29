@@ -10,6 +10,16 @@ const pool = mysql.createPool({
   connectionLimit: 10,
   queueLimit: 0,
 });
+const readLesson = async (courseId) => {
+  const obj = { error: null, data: null };
+  try {
+    const result = await pool.query('SELECT * from Lesson WHERE courseId=?', [courseId]);
+    obj.data = result[0];
+  } catch (err) {
+    obj.error = err;
+  }
+  return obj;
+}
 const readRowLesson = async (lessonId) => {
   const obj = { error: null, data: null };
   try {
@@ -24,7 +34,7 @@ const readRowLesson = async (lessonId) => {
 const createRowLesson = async (data) => {
   const obj = { error: null, data: null };
   try {
-    await pool.query(`INSERT INTO Lesson SET lessonId=?,lessonTitle=?,lessonDescp=?,lessonImage=?,courseId=?`, [data.lessonId, data.lessonTitle, data.lessonDescp, data.lessonImage, data.courseId])
+    await pool.query(`INSERT INTO Lesson SET lessonId=?,lessonNumber=?,lessonTitle=?,lessonDescp=?,lessonImage=?,courseId=?`, [data.lessonId, data.lessonNumber, data.lessonTitle, data.lessonDescp, data.lessonImage, data.courseId])
     const result = await readRowLesson(data.lessonId);
     obj.data = result.data;
   } catch (err) {
@@ -36,7 +46,7 @@ const createRowLesson = async (data) => {
 const updateRowLesson = async (data) => {
   const obj = { error: null, data: null };
   try {
-    await pool.query(`UPDATE Lesson SET lessonTitle=?,lessonDescp=?,lessonImage=? WHERE lessonId=?`, [data.lessonTitle, data.lessonDescp, data.lessonImage, data.lessonId])
+    await pool.query(`UPDATE Lesson SET lessonNumber=?,lessonTitle=?,lessonDescp=?,lessonImage=? WHERE lessonId=?`, [data.lessonNumber, data.lessonTitle, data.lessonDescp, data.lessonImage, data.lessonId])
     const result = await readRowLesson(data.lessonId);
     obj.data = result.data;
   } catch (err) {
@@ -57,6 +67,7 @@ const deleteRowLesson = async (lessonId) => {
   return obj;
 }
 module.exports = {
+  readLesson,
   readRowLesson,
   createRowLesson,
   updateRowLesson,
