@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use('/user', require('./routes/user'));
-app.use('/mentor', require('./routes/mentor'));
+// app.use('/mentor', require('./routes/mentor'));
 
 app.listen(process.env.RELATION_PORT, () => console.log('User Relation API Running on', process.env.RELATION_PORT));
 

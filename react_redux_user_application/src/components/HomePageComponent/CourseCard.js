@@ -5,7 +5,7 @@ class CourseCard extends React.Component {
   render() {
     return (
       <div className="card col col-sm-12 p-0 rounded-lg">
-        <Link className='col-sm-12' to={{ pathname: "/course", state: { courseId: this.props.course.courseId } }}>
+        <Link className='col-sm-12' to={{ pathname: "/course/" + this.props.course.courseId, state: { courseId: this.props.course.courseId } }}>
           <div className="card-body row col-sm-12 ">
             <div className="flex-col col-sm-9 pl-4">
               <p className="card-title col col-sm-12 h4 p-0 d-flex flex-column">{this.props.course.courseType}</p>

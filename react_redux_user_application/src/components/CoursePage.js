@@ -11,7 +11,6 @@ class CoursePage extends React.Component {
     this.props.readLesson(this.props.location.state.courseId);
   }
   render() {
-    // console.log(this.props);
     return (
       <div className="row col-sm-12 bg-light">
         <div className='col col-sm-1'>
@@ -23,7 +22,7 @@ class CoursePage extends React.Component {
             <div className='col-sm-1'></div>
             <div className="col-sm-10 p3">
               {this.props.lessonData.map(data => (
-                <div key={data.lessonId} className="col col-sm-12 pb-3 pt-3 m-0"><LessonCard lesson={data} /></div>
+                <div key={data.lessonId} className="col col-sm-12 pb-3 pt-3 m-0"><LessonCard lesson={data} courseId={this.props.location.state.courseId} /></div>
               ))}
             </div>
             <div className='col-sm-1'></div>
