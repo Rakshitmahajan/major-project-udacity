@@ -8,7 +8,7 @@ import CoursePage from './CoursePage';
 class Routes extends React.Component {
   render() {
     return (
-      <div>
+      <div className='bg-light'>
         <Route exact path='/home' component={HomePage} />
         <Route exact path='/course' component={CoursePage} />
       </div>
