@@ -15,38 +15,31 @@ export const readCourse = (userEmail) => dispatch => {
     //     });
     const data=[
         {
-            "courseId": "",
-            "courseTitle": "",
-            "courseDescp": "",
-            "courseType": "",
-            "courseCategory": ""
-        },
-        {
             "courseId": "CH1",
             "courseTitle": "Course 1",
             "courseDescp": "descp about GIT",
-            "courseType": "free",
+            "courseType": "COURSE",
             "courseCategory": "AI"
         },
         {
             "courseId": "CH2",
             "courseTitle": "Course 2",
             "courseDescp": "descp",
-            "courseType": "free",
+            "courseType": "COURSE",
             "courseCategory": "AI"
         },
         {
             "courseId": "CH3",
             "courseTitle": "Course 3",
             "courseDescp": "descp about GIT",
-            "courseType": "Course",
+            "courseType": "NANODEGREE PROGRAM",
             "courseCategory": "Java"
         },
         {
             "courseId": "CH4",
             "courseTitle": "course 4",
             "courseDescp": "desc",
-            "courseType": "free",
+            "courseType": "COURSE",
             "courseCategory": "git"
         },
         {
@@ -59,7 +52,7 @@ export const readCourse = (userEmail) => dispatch => {
     ];
     dispatch({
         type: "ALL_COURSE",
-        courses: data
+        course: data
     });
 };
   /*fetch(`http://10.10.5.192:8081/user/${userEmail}`)

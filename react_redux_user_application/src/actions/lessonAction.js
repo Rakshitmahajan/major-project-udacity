@@ -7,6 +7,7 @@ export const readLesson = (courseId) => dispatch => {
     //       lessons: resData.data
     //     })
     //   })
+    console.log('before data');
     const data=[
         {
             "lessonId": "l1",

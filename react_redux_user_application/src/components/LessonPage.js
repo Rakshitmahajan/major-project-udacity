@@ -24,7 +24,7 @@ class ChapterPage extends React.Component {
             <div className="col-sm-10 p3">
               <div className="col col-sm-12 pb-3 pt-3 m-0">
                 <p>sdcsdvvfvsvsvsvsvsvsvcsvcsvsdfghjklkjhgfdfghjkl;lkjhygtfd</p>
-                <Content />
+                {/* <Content /> */}
               </div>
               {/* {this.props.lessonData.map(data => (
                 <div key={data.lessonId} className="col col-sm-12 pb-3 pt-3 m-0"><LessonCard lesson={data} /></div>

@@ -32,7 +32,7 @@ class HomePage extends React.Component {
                         <div className='pb-3 pt-2'>
                             <p className='h6' id="nanodegree">CURRENT NANODEGREE ENROLLMENTS</p>
                             <div className="col-sm-12 p3">
-                                {this.props.courseData.map(data => (
+                                {this.props.courseData.nanodegreeCourse.map(data => (
                                     <div key={data.courseId} className=" courseCardHome"><CourseCard course={data} /></div>
                                 ))}
                             </div>
@@ -40,7 +40,7 @@ class HomePage extends React.Component {
                         <div className='pb-3 pt-2'>
                             <p className='h6' id='courses'>CURRENT COURSE ENROLLMENTS</p>
                             <div className="col-sm-12 p3">
-                                {this.props.courseData.map(data => (
+                                {this.props.courseData.freeCourse.map(data => (
                                     <div key={data.courseId} className=" courseCardHome"><CourseCard course={data} /></div>
                                 ))}
                             </div>
