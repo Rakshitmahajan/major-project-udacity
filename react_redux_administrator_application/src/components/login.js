@@ -28,8 +28,10 @@ class Login extends Component {
                 // const token = response.token;
                 // localStorage.setItem('jwtToken', token);
                 // Authorization(jwt.decode(token));
+                console.log('login sucessful')
                 alert('login sucessful');
             } else {
+                console.log(response.err.message)
                 alert(response.err.message);
             }
         });
