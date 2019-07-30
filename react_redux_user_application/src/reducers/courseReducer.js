@@ -1,9 +1,28 @@
-const initialState = [];
+const initialState = {
+  nanodegreeCourse: [],
+  freeCourse: []
+}
 export default (state = initialState, action) => {
   let newstate = JSON.parse(JSON.stringify(state));
   switch (action.type) {
     case "ALL_COURSE":
-      newstate = action.courses;
+      if (action.course.courseType === 'COURSE') {
+        let flag = 0;
+        newstate.freeCourse.map(data => {
+          if (data.courseId === action.course.courseId)
+            flag = 1;
+          return data;
+        })
+        if (flag === 0) newstate.freeCourse.push(action.course);
+      } else {
+        let flag = 0;
+        newstate.nanpdegreeCourse.map(data => {
+          if (data.courseId === action.course.courseId)
+            flag = 1;
+          return data;
+        })
+        if (flag === 0) newstate.nanpdegreeCourse.push(action.course);
+      }
       state = newstate;
       return state;
     default:

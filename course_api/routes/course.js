@@ -7,7 +7,6 @@ app.get('/table', async (req, res) => {
     res.json(result);
 });
 app.get('/:courseId', async (req, res) => {
-  
     const result = await sql.readRowCourse(req.params.courseId);
     res.json(result);
 });
