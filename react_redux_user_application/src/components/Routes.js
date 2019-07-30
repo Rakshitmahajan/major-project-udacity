@@ -4,13 +4,14 @@ import { Route } from "react-router-dom";
 
 import HomePage from './HomePage';
 import CoursePage from './CoursePage';
-
+import LessonPage from './LessonPage';
 class Routes extends React.Component {
   render() {
     return (
-      <div>
+      <div className='bg-light'>
         <Route exact path='/home' component={HomePage} />
-        <Route exact path='/course' component={CoursePage} />
+        <Route exact path='/course/:id' component={CoursePage} />
+        <Route exact path='/course/:id/:id' component={LessonPage} />
       </div>
 
     );

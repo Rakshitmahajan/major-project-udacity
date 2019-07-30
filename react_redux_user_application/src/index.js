@@ -7,13 +7,13 @@ import store from "./store";
 import Routes from './components/Routes';
 
 const routing = (
-  <Provider store={store}>
-    <Router>
-      <div>
-        <Routes />
-      </div>
-    </Router>
-  </Provider>
+    <Provider store={store}>
+        <Router>
+            <div className="bg-light">
+                <Routes />
+            </div>
+        </Router>
+    </Provider>
 );
 
 ReactDOM.render(routing, document.getElementById('root'));
