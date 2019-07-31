@@ -14,7 +14,7 @@ class HomePage extends React.Component {
     }
     render() {
         return (
-            <div className="row col-sm-12 bg-light">
+            <div className="row col-sm-11">
 
                 <CourseSideBar />
 

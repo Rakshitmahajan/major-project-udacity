@@ -11,7 +11,6 @@ import CourseCard from './HomePageComponent/CourseCard';
 import Video from './ContentPageComponent/Video';
 class ChapterPage extends React.Component {
   componentDidMount() {
-    console.log('lesson page', this.props.location.state);
     this.props.readAllConcept(this.props.location.state.courseId, this.props.location.state.lesson.lessonId);
     this.props.readConcept(this.props.location.state.courseId, this.props.location.state.lesson.lessonId);
 
