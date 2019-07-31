@@ -18,9 +18,9 @@ class CourseTopBar extends React.Component {
                                 </div>
                                 
                               </div>
-                              <div className="index--deadline-bar--2_LhW">
+                              <div className="index--deadline-bar--2_LhW ">
                                 <div className="deadline-bar--container--djlS_">
-                                  <div className="deadline-bar--content--X6Lwt shared--outer-container--3eppq">
+                                  <div className="deadline-bar--content--X6Lwt shared--outer-container--3eppq ">
                                     <p className="deadline-bar--large-info--3EH-W">All Lessons</p>
                                     <div className="deadline-bar--inner-content-container--ofeiZ">
                                       <div className="deadline-bar--content-context-label--1mbKu">
