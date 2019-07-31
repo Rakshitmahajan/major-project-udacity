@@ -17,13 +17,22 @@ class Image extends Component {
     }
     onSubmit = async (e)  => {
         e.preventDefault();
-        // const data = new FormData();
-        // await data.append('title', this.state.imageTitle);
-        // await data.append('image', this.state.image);
-        // fetch('http://localhost:5400/insertImage', {
-        //     method: 'POST',
-        //     body: data,
-        // })
+        this.props.onComponentSubmit(this.state);
+        const data = new FormData();
+        await data.append('title', this.state.imageTitle);
+        await data.append('image', this.state.image);
+        fetch('http://localhost:5400/insertImage', {
+            method: 'POST',
+            body: data,
+        }).then(Response => Response.json())
+        .then((response) => {
+            console.log(response)
+            if (response.err === null) {
+                this.props.onComponentSubmit('image',this.state.imageTitle);
+            } else {
+                alert(response.err.message);
+            }
+        });
 }
 render() {
     return (

@@ -5,7 +5,7 @@ class Comments extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            comments:''
+            comment:''
         };
     }
     onChange = (e) => {
@@ -13,13 +13,21 @@ class Comments extends Component {
     }
     onSubmit = async (e)  => {
         e.preventDefault();
-        // const data = new FormData();
-        // await data.append('title', this.state.imageTitle);
-        // await data.append('image', this.state.image);
-        // fetch('http://localhost:5400/insertImage', {
-        //     method: 'POST',
-        //     body: data,
-        // })
+        fetch('http://10.10.5.192:5000/comment', {
+            method: 'POST',
+            body: JSON.stringify(this.state),
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        }).then(Response => Response.json())
+        .then((response) => {
+            console.log(response)
+            if (response.error === null) {
+                this.props.onComponentSubmit('comment',response.data._id);
+            } else {
+                alert(response.error.message);
+            }
+        });
 }
 render() {
     return (
@@ -33,7 +41,7 @@ render() {
                                 <form onSubmit={this.onSubmit}>
                                     <div className="form-group">
                                         <label>Comments</label>
-                                        <input name="comments" className="form-control" placeholder="" type="text" onChange={this.onChange} />
+                                        <input name="comment" className="form-control" placeholder="" type="text" onChange={this.onChange} />
                                     </div>
                                     <div className="form-group">
                                         <input type="submit" value="Submit" className="btn btn-primary btn-block" onChange={this.onChange} />

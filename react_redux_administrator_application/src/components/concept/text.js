@@ -6,21 +6,29 @@ class Text extends Component {
         super(props);
         this.state = {
             heading: '',
-            text:''
+            paragraph:''
         };
     }
     onChange = (e) => {
         this.setState({ [e.target.name]: e.target.value });
     }
     onSubmit = async (e)  => {
-        // e.preventDefault();
-        // const data = new FormData();
-        // await data.append('title', this.state.imageTitle);
-        // await data.append('image', this.state.image);
-        // fetch('http://localhost:5400/insertImage', {
-        //     method: 'POST',
-        //     body: data,
-        // })
+        e.preventDefault();
+        fetch('http://10.10.5.192:5000/text', {
+            method: 'POST',
+            body: JSON.stringify(this.state),
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        }).then(Response => Response.json())
+        .then((response) => {
+            console.log(response)
+            if (response.error === null) {
+                this.props.onComponentSubmit('text',response.data._id);
+            } else {
+                alert(response.error.message);
+            }
+        });
 }
 render() {
     return (
@@ -33,12 +41,12 @@ render() {
                                 <h4 className="card-title mb-4 mt-1">Enter Text</h4>
                                 <form onSubmit={this.onSubmit}>
                                     <div className="form-group">
-                                        <label>Headin</label>
+                                        <label>Heading</label>
                                         <input name="heading" className="form-control" placeholder="" type="text" onChange={this.onChange} />
                                     </div>
                                     <div className="form-group">
                                         <label>Text</label>
-                                        <input name="text" className="form-control" placeholder="" type="text" onChange={this.onChange} />
+                                        <input name="paragraph" className="form-control" placeholder="" type="text" onChange={this.onChange} />
                                     </div>
                                     <div className="form-group">
                                         <input type="submit" value="Submit" className="btn btn-primary btn-block" onChange={this.onChange} />

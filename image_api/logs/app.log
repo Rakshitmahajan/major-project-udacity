@@ -193,3 +193,7 @@
 {"level":"info","message":"Magic happens on port 5400"}
 {"level":"info","message":"Magic happens on port 5400"}
 {"message":"::1 - - [30/Jul/2019:06:13:01 +0000] \"POST /insertImage HTTP/1.1\" 200 62 \"http://localhost:3000/lessonForm\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Mobile Safari/537.36\"\n","level":"info"}
+{"level":"info","message":"Magic happens on port 5400"}
+{"message":"::1 - - [31/Jul/2019:03:54:13 +0000] \"POST /insertImage HTTP/1.1\" 200 63 \"http://localhost:3000/mainForm\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Mobile Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [31/Jul/2019:03:54:50 +0000] \"POST /insertImage HTTP/1.1\" 200 47 \"http://localhost:3000/mainForm\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Mobile Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [31/Jul/2019:03:56:16 +0000] \"POST /insertImage HTTP/1.1\" 200 62 \"http://localhost:3000/mainForm\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Mobile Safari/537.36\"\n","level":"info"}

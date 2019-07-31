@@ -11,7 +11,7 @@ class LessonList extends React.Component {
         }
     }
     componentDidMount() {
-        fetch(`http://10.10.5.192:8000/lesson/table/${this.props.location.courseId}`)
+        fetch(`http://10.10.5.192:3031/lesson/table/${this.props.location.courseId}`)
             .then(res => res.json())
             .then((data) => {
                 this.setState({
@@ -37,7 +37,7 @@ class LessonList extends React.Component {
                             <tr key={lesson.lessonId}>
                                 <td>{lesson.lessonId}</td>
                                 <td>{lesson.lessonTitle}</td>
-                                <td><Link to={{pathname:'/mainForm',lessonId:lesson.lessonId}}><button>ADD</button></Link></td>
+                                <td><Link to={{pathname:'/mainForm',lessonId:lesson.lessonId,courseId:this.props.location.courseId}}><button>ADD</button></Link></td>
                             </tr>
                         )}
                     </tbody>
