@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import './signup.css'
 class LessonForm extends Component {
     constructor(props) {
@@ -11,7 +11,8 @@ class LessonForm extends Component {
             lessonDescp: '',
             lessonImage: '',
             lessonNumber: '',
-            image: null
+            image: null,
+            redirect:false
         };
     }
     onChange = (e) => {
@@ -32,10 +33,7 @@ class LessonForm extends Component {
             .then(async (response) => {
                 console.log(response)
                 if (response.error === null) {
-                    // this.setState({ redirect:true })
-                    // const token = response.token;
-                    // localStorage.setItem('jwtToken', token);
-                    // Authorization(jwt.decode(token));
+                    this.setState({ redirect:true })
                     const data = new FormData();
                     await data.append('title', this.state.lessonImage);
                     await data.append('image', this.state.image);
@@ -44,13 +42,17 @@ class LessonForm extends Component {
                         body: data,
                     })
                     alert('Lesson entered');
+                    this.setState({ redirect:true })
                 } else {
-                    console.log(response.error.message)
                     alert(response.error.message);
                 }
             });
     }
     render() {
+        if(this.state.redirect === true)
+        {
+            return <Redirect to="/home" />
+        }
         return (
             <div>
                 <div className="header">
@@ -61,7 +63,7 @@ class LessonForm extends Component {
                         <aside className="col-sm-7">
                             <div className="card">
                                 <article className="card-body">
-                                    <h4 className="card-title mb-4 mt-1">Enter Course</h4>
+                                    <h4 className="card-title mb-4 mt-1">Enter Lesson</h4>
                                     <form onSubmit={this.onSubmit}>
                                         <div className="form-group">
                                             <label>CourseId</label>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom'
 import Image from './image';
 import Text from './text';
 import Video from './video';
@@ -15,7 +16,8 @@ class MainForm extends Component {
             courseId: props.location.courseId,
             concept: [],
             conceptTitle: '',
-            components: []
+            components: [],
+            redirect:false
         }
     }
     onComponentSubmit = (type, id) => {
@@ -37,6 +39,7 @@ class MainForm extends Component {
                 console.log(response)
                 if (response.error === null) {
                     alert('sucessful');
+                    this.setState({ redirect:true })
                 } else {
                     console.log(response.error.message)
                     alert(response.error.message);
@@ -75,6 +78,10 @@ class MainForm extends Component {
     }
 
     render() {
+        if(this.state.redirect === true)
+        {
+            return <Redirect to="/home" />
+        }
         return (
             <div>
                 <div className="header">

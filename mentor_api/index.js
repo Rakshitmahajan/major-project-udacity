@@ -1,6 +1,11 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const dotenv = require('dotenv');
+
+dotenv.config({
+    path: '../.env',
+});
 
 const morgan = require('morgan');
 
@@ -16,8 +21,6 @@ app.use(morgan('combined', { stream: winston.stream }));
 app.use(require('./routes/mentorLogin'));
 app.use(require('./routes/mentorSignup'));
 
-const port = 5000;
-
-app.listen(port, () => winston.log('info', `Magic happens on port ${port}`));
+app.listen(process.env.MENTOR_PORT, () => winston.log('info', `Magic happens on port ${process.env.MENTOR_PORT}`));
 
 module.exports = app;
