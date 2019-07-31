@@ -1,25 +1,22 @@
 const express = require('express');
-const pool = require('../config/CodeCrudOperation');
+const pool = require('../config/TextCrudOperation');
 
 const app = express.Router();
-// app.get('/table/', async (req, res) => {
-//   const result = await sql.readCourse(req.params.courseId);
-//   res.json(result);
-// })
-app.get('/', async (req, res) => {
-  const result = await pool.readCode();
+
+app.get('/:id', async (req, res) => {
+  const result = await pool.readText(req.params.id);
   res.json(result);
 })
 app.post('/', async (req, res) => {
-  const result = await pool.createCode();
+  const result = await pool.createText(req.body);
   res.json(result);
 })
-// app.put('/:userEmail', async (req, res) => {
-//   const result = await pool.updateRelation();
-//   res.json(result);
-// })
+app.put('/', async (req, res) => {
+  const result = await pool.updateText(req.body);
+  res.json(result);
+})
 app.delete('/', async (req, res) => {
-  const result = await pool.deleteCode();
+  const result = await pool.deleteText(req.body);
   res.json(result);
 })
 module.exports = app;
