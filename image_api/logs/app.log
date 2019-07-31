@@ -197,3 +197,15 @@
 {"message":"::1 - - [31/Jul/2019:03:54:13 +0000] \"POST /insertImage HTTP/1.1\" 200 63 \"http://localhost:3000/mainForm\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Mobile Safari/537.36\"\n","level":"info"}
 {"message":"::1 - - [31/Jul/2019:03:54:50 +0000] \"POST /insertImage HTTP/1.1\" 200 47 \"http://localhost:3000/mainForm\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Mobile Safari/537.36\"\n","level":"info"}
 {"message":"::1 - - [31/Jul/2019:03:56:16 +0000] \"POST /insertImage HTTP/1.1\" 200 62 \"http://localhost:3000/mainForm\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Mobile Safari/537.36\"\n","level":"info"}
+{"level":"info","message":"Magic happens on port 5400"}
+{"message":"::1 - - [31/Jul/2019:05:06:56 +0000] \"GET /uploads/a1.jpg HTTP/1.1\" 404 153 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36\"\n","level":"info"}
+{"level":"info","message":"Magic happens on port 5400"}
+{"message":"::1 - - [31/Jul/2019:05:08:46 +0000] \"GET /favicon.ico HTTP/1.1\" 404 150 \"http://localhost:5400/uploads/a1.jpg\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36\"\n","level":"info"}
+{"level":"info","message":"Magic happens on port 5400"}
+{"message":"::1 - - [31/Jul/2019:05:17:14 +0000] \"POST /insertImage HTTP/1.1\" 200 84 \"http://localhost:3000/lessonForm\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Mobile Safari/537.36\"\n","level":"info"}
+{"message":"::ffff:10.10.6.20 - - [31/Jul/2019:05:54:53 +0000] \"GET /favicon.ico HTTP/1.1\" 404 150 \"http://10.10.2.69:5400/uploads/a1.jpg\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36 OPR/62.0.3331.99\"\n","level":"info"}
+{"message":"::1 - - [31/Jul/2019:06:09:10 +0000] \"POST /insertImage HTTP/1.1\" 200 84 \"http://localhost:3000/home\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Mobile Safari/537.36\"\n","level":"info"}
+{"level":"info","message":"Magic happens on port undefined"}
+{"level":"info","message":"Magic happens on port undefined"}
+{"level":"info","message":"Magic happens on port undefined"}
+{"level":"info","message":"Magic happens on port 5400"}

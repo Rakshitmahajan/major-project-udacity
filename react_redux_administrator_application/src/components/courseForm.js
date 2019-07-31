@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import './signup.css'
 class CourseForm extends Component {
     constructor() {
@@ -9,7 +9,8 @@ class CourseForm extends Component {
             courseTitle: '',
             courseDescp: '',
             courseType: 'Course',
-            courseCategory: 'Programming and development'
+            courseCategory: 'Programming and development',
+            redirect:false
         };
     }
     onChange = (e) => {
@@ -28,12 +29,8 @@ class CourseForm extends Component {
             .then((response) => {
                 console.log(response)
                 if (response.error === null) {
-                    // this.setState({ redirect:true })
-                    // const token = response.token;
-                    // localStorage.setItem('jwtToken', token);
-                    // Authorization(jwt.decode(token));
-                    console.log('course entered')
                     alert('course entered');
+                    this.setState({ redirect:true })
                 } else {
                     console.log(response.error.message)
                     alert(response.error.message);
@@ -41,6 +38,10 @@ class CourseForm extends Component {
             });
     }
     render() {
+        if(this.state.redirect === true)
+        {
+            return <Redirect to="/home" />
+        }
         return (
             <div>
                 <div className="header">

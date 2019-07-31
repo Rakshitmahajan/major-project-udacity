@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import { Redirect,Link } from 'react-router-dom'
 import './signup.css'
 class Signup extends Component {
     constructor() {
@@ -10,7 +10,8 @@ class Signup extends Component {
             phoneNumber:'',
             email:'',
             password:'',
-            password2:''
+            password2:'',
+            redirect:false
         };
     }
     onChange = (e) => {
@@ -29,12 +30,17 @@ class Signup extends Component {
                 console.log(response);
                 if (response.err === null) {
                     alert('signup sucessful')
+                    this.setState({ redirect:true })
                 } else {
                     alert(response.err.message);
                 }
             });
     }
     render() {
+        if(this.state.redirect === true)
+        {
+            return <Redirect to="/" />
+        }
         return (
             <div>
                 <div className="header">
@@ -45,7 +51,7 @@ class Signup extends Component {
                         <aside className="col-sm-7">
                             <div className="card">
                                 <article className="card-body">
-                                   <Link to='/login' className="float-right btn btn-outline-primary">Login</Link>
+                                   <Link to='/' className="float-right btn btn-outline-primary">Login</Link>
                                     <h4 className="card-title mb-4 mt-1">Sign up</h4>
                                     <form onSubmit={this.onSubmit}>
                                         <div className="form-group">

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import { Redirect,Link } from 'react-router-dom'
 import './signup.css'
 class Login extends Component {
     constructor() {
@@ -7,6 +7,7 @@ class Login extends Component {
         this.state = {
             email: '',
             password: '',
+            redirect:false
         };
     }
     onChange = (e) => {
@@ -24,19 +25,18 @@ class Login extends Component {
         .then((response) => {
             console.log(response)
             if (response.err === null) {
-                // this.setState({ redirect:true })
-                // const token = response.token;
-                // localStorage.setItem('jwtToken', token);
-                // Authorization(jwt.decode(token));
-                console.log('login sucessful')
                 alert('login sucessful');
+                this.setState({ redirect:true })
             } else {
-                console.log(response.err.message)
                 alert(response.err.message);
             }
         });
     }
     render() {
+        if(this.state.redirect === true)
+        {
+            return <Redirect to="/home" />
+        }
         return (
             <div>
                 <div className="header">

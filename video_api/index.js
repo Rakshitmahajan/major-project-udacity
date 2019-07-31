@@ -1,6 +1,12 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const dotenv = require('dotenv');
+
+dotenv.config({
+    path: '../.env',
+});
+
 
 const morgan = require('morgan');
 
@@ -20,8 +26,7 @@ app.use(require('./routes/delete'));
 app.use(require('./routes/update'));
 app.use(require('./routes/read'));
 
-const port = 5200;
 
-app.listen(port, () => winston.log('info', `Magic happens on port ${port}`));
+app.listen(process.env.VIDEO_PORT, () => winston.log('info', `Magic happens on port ${process.env.VIDEO_PORT}`));
 
 module.exports = app;

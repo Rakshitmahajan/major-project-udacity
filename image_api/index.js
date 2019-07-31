@@ -1,6 +1,11 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const dotenv = require('dotenv');
+
+dotenv.config({
+    path: '../.env',
+});
 
 const morgan = require('morgan');
 
@@ -11,6 +16,8 @@ const app = express();
 
 app.use(cors());
 
+app.use('/uploads',express.static('uploads'))
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(morgan('combined', { stream: winston.stream }));
@@ -20,8 +27,6 @@ app.use(require('./routes/delete'));
 app.use(require('./routes/update'));
 app.use(require('./routes/read'));
 
-const port = 5400;
-
-app.listen(port, () => winston.log('info', `Magic happens on port ${port}`));
+app.listen(process.env.IMAGE_PORT, () => winston.log('info', `Magic happens on port ${process.env.IMAGE_PORT}`));
 
 module.exports = app;
