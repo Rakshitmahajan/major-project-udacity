@@ -1,0 +1,29 @@
+table{
+    width: 70%;
+}
+td,th{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+.container{
+    margin-left: 10%;
+    margin-top: 20px;
+}
+.btn {
+    background-color: rgb(9, 16, 29);
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 12px;
+  }
+
+.btndiv{
+    margin-right: 30%;
+}

@@ -1,7 +1,7 @@
 const db = require('./sqlConnection');
 
-async function insertImage(req) {
-    const { title, link } = req;
+async function insertImage(req, link) {
+    const { title } = req;
     if (!title || !link) {
         return ({
             err: {
@@ -88,8 +88,8 @@ async function deleteImage(imageTitle) {
     }
 }
 
-async function updateImage(req) {
-    const { title, link } = req;
+async function updateImage(req, link) {
+    const { title } = req;
     if (!title || !link) {
         return ({
             err: {
