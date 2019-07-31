@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import './LessonCard.css';
 class LessonCard extends React.Component {
   render() {
-    console.log(this.props)
     return (
       <div className="">
         <Link className='col-sm-12 text-decoration-none' to={{ pathname: "/course/" + this.props.courseId + "/" + this.props.lesson.lessonId, state: { courseId: this.props.courseId, lesson: this.props.lesson } }}>

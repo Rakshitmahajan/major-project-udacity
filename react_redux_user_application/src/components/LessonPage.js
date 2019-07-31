@@ -2,22 +2,18 @@ import React from "react";
 // import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-// import ChapterSidebar from './LessonPageComponent/ChapterSidebar';
+import ChapterSidebar from './LessonPageComponent/ChapterSidebar';
 // import ChapterTopbar from './LessonPageComponent/ChapterTopbar';
 import Content from './ContentPage';
 import { readConcept } from '../actions/contentAction';
 import { readAllConcept } from '../actions/contentTitleAction';
-import CourseCard from './HomePageComponent/CourseCard';
-import Video from './ContentPageComponent/Video';
 class ChapterPage extends React.Component {
   componentDidMount() {
     this.props.readAllConcept(this.props.location.state.courseId, this.props.location.state.lesson.lessonId);
     this.props.readConcept(this.props.location.state.courseId, this.props.location.state.lesson.lessonId);
-
-    // this.props.readConcept('CH5', 'L10');
   }
   render() {
-    // console.log('state', this.state);
+    // console.log('lesson props', this.props);
     return (
       <div className="col col-sm-12">
         <div className='col col-sm-12'>
@@ -25,7 +21,7 @@ class ChapterPage extends React.Component {
         </div>
         <div className='col col-sm-12'>
           <div className='col-sm-12 pb-4'>
-            {/* <ChapterSidebar /> */}
+            <ChapterSidebar contentTitle={this.props.contentTitle} />
           </div>
           <div className='row col-sm-12 pt-5 pl-5'>
             <div className="col-sm-12 p3">
