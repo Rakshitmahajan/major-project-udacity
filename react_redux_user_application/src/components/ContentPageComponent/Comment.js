@@ -3,7 +3,7 @@ class Comment extends React.Component {
   state = {}
   render() {
     return (
-      <blockquote>
+      <blockquote className="border-left">
         <p>{this.props.comment}</p>
       </blockquote>
     );

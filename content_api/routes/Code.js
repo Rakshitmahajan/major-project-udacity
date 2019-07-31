@@ -3,8 +3,8 @@ const pool = require('../config/CodeCrudOperation');
 
 const app = express.Router();
 
-app.get('/', async (req, res) => {
-  const result = await pool.readCode(req.body);
+app.get('/:id', async (req, res) => {
+  const result = await pool.readCode(req.params.id);
   res.json(result);
 })
 app.post('/', async (req, res) => {

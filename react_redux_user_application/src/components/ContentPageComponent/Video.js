@@ -3,7 +3,7 @@ class Video extends React.Component {
   state = {}
   render() {
     return (
-      <iframe width="180%" height="500" src={this.props.src} border="2" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+      <iframe width="640" height="360" src={this.props.src} allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
     );
   }
 }

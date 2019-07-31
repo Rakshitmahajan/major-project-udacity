@@ -5,7 +5,7 @@ class Text extends React.Component {
     return (
       <div>
         <h4>{this.props.heading}</h4>
-        <p>{this.props.para}</p>
+        <p>{this.props.paragraph}</p>
       </div>
     );
   }

@@ -3,7 +3,7 @@ import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
- import CourseSideBar from './HomePageComponent/CourseSideBar';
+import CourseSideBar from './HomePageComponent/CourseSideBar';
 import CourseCard from './HomePageComponent/CourseCard';
 import { readCourse } from '../actions/courseAction';
 
@@ -14,12 +14,12 @@ class HomePage extends React.Component {
     }
     render() {
         return (
-            <div className="row col-sm-12 bg-light">
-                
-                    <CourseSideBar/>
-                
+            <div className="row col-sm-11">
+
+                <CourseSideBar />
+
                 <div className='row col-sm-10 content'>
-                    
+
                     <div className='col col-sm-1'></div>
                     <div className='col pt-5'>
                         <div className='pb-3'>

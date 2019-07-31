@@ -20,11 +20,10 @@ class Image extends React.Component {
   //   modal.style.display = "none";
   // }
   render() {
-    console.log(this.props.src);
     return (
       <div>
         <div>
-          <img id='myImg' src={this.props.src} className="img-fluid" alt="Responsive image" onClick={this.imagePopup} />
+          <img id='myImg' src={this.props.src} className="img-fluid" alt="Responsive" onClick={this.imagePopup} />
         </div>
         <div>
           <p>

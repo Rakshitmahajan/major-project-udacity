@@ -1,36 +1,49 @@
-/* eslint-disable prefer-destructuring */
-const mysql = require('mysql2/promise');
-const pool = mysql.createPool({
-  host: process.env.USER_COURSE_HOST,
-  user: process.env.USER_COURSE_USER,
-  password: process.env.USER_COURSE_PD,
-  database: process.env.USER_COURSE_DB,
-  waitForConnections: true,
-  connectionLimit: 10,
-  queueLimit: 0,
-});
-const readCode = async (data) => {
-  const obj = { error: null, data: null };
-  console.log(data.code);
+const Code = require('../model/codeSchema');
+
+const readCode = async (id) => {
+  let obj = { error: null, data: null };
   try {
-    if (!data.id) throw 'Enter data';
-    const codeData = await pool.query('SELECT code form Code WHERE id=?', [data.id]);
-    console.log('csc', codeData);
-    obj.data = codeData;
+    if (!id) throw 'Enter data';
+    const codeData = await Code.find({ _id: id }, result => result);
+    obj.data = codeData[0];
   } catch (err) {
-    console.log(err);
     obj.error = err;
   }
   return obj;
 }
 const createCode = async (data) => {
-
+  let obj = { error: null, data: null };
+  try {
+    if (!data.code) throw 'Enter data';
+    const newuser = new Code(data);
+    const result = await newuser.save();
+    obj.data = result;
+  } catch (err) {
+    obj.error = err;
+  }
+  return obj;
 }
 const updateCode = async (data) => {
-
+  let obj = { error: null, data: null };
+  try {
+    if (!data.code || !data.id) throw 'Enter data';
+    const result = await Code.updateOne({ _id: data.id }, { $set: { code: data.code } });
+    obj = await readCode(data.id);
+  } catch (err) {
+    obj.error = err;
+  }
+  return obj;
 }
 const deleteCode = async (data) => {
-
+  let obj = { error: null, data: null };
+  try {
+    if (!data.id) throw 'Enter data';
+    const result = await Code.remove({ _id: data.id });
+    obj.data = result;
+  } catch (err) {
+    obj.error = err;
+  }
+  return obj;
 }
 module.exports = {
   readCode,
