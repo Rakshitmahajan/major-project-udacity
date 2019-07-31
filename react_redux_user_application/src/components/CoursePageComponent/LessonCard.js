@@ -7,7 +7,7 @@ class LessonCard extends React.Component {
     return (
       <div className="card flex-row col-sm-12 p-0 m-0 rounded-lg">
         <div className="flex-col col-sm-9 p-0 pl-3 m-0">
-          <Link className='col-sm-12' to={{ pathname: "/course/" + this.props.courseId + "/" + this.props.lesson.lessonId, state: { courseId: this.props } }}>
+          <Link className='col-sm-12' to={{ pathname: "/course/" + this.props.courseId + "/" + this.props.lesson.lessonId, state: { courseId: this.props.courseId, lesson: this.props.lesson } }}>
             <div className="card-body flex-col col-sm-12 pl-4 pb-5">
               <p className="card-title col col-sm-12 h6 p-0 d-flex flex-column">Lesson {this.props.lesson.lessonNumber}</p>
               <p className="card-title col col-sm-12 h3 p-0 d-flex flex-column">{this.props.lesson.lessonTitle}</p>

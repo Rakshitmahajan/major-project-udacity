@@ -11,7 +11,6 @@ class CoursePage extends React.Component {
         this.props.readLesson(this.props.location.state.courseId);
     }
     render() {
-    // console.log(this.props);
         return (
             <div className="row col-sm-12 bg-light">
                 <div className='col col-sm-1'>

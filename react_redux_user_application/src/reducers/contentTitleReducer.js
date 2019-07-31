@@ -2,8 +2,8 @@ const initialState = [];
 export default (state = initialState, action) => {
   let newstate = JSON.parse(JSON.stringify(state));
   switch (action.type) {
-    case "ALL_LESSON":
-      newstate = action.lessons;
+    case "CONTENT_TITLE":
+      newstate.push(action.data);
       state = newstate;
       return state;
     default:
