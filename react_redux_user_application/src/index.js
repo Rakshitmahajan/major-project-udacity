@@ -9,7 +9,7 @@ import Routes from './components/Routes';
 const routing = (
     <Provider store={store}>
         <Router>
-            <div className="bg-light">
+            <div className="">
                 <Routes />
             </div>
         </Router>

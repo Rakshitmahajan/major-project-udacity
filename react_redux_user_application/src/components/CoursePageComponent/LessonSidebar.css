@@ -1,35 +1,49 @@
+*,:after,:before{box-sizing:border-box;}
+nav{display:block;}
+ul{margin-bottom:1rem;}
+ul{margin-top:0;}
+svg:not(:root){overflow:hidden;}
+*,:after,:before{box-sizing:inherit;}
+body ::-moz-selection{background:rgba(164,228,245,.4);}
+body ::selection{background:rgba(164,228,245,.4);}
+.vds-icon{height:2rem;width:2rem;display:inline-block;fill:currentColor;line-height:0;stroke:currentColor;vertical-align:middle;}
+.vds-icon svg{height:100%;width:100%;stroke-width:0;}
+.vds-icon--lg{height:2.5rem;width:2.5rem;}
+.vds-visually-hidden{border:0;clip:rect(1px,1px,1px,1px);-webkit-clip-path:inset(100%);clip-path:inset(100%);height:1px;overflow:hidden;padding:0;position:absolute;white-space:nowrap;width:1px;}
+.vds-visually-hidden:active,.vds-visually-hidden:focus{clip:auto;-webkit-clip-path:none;clip-path:none;height:auto;overflow:visible;position:static;white-space:inherit;width:auto;}
+._layout-module--nav--3qaiq{background:#1f2932;bottom:0;height:100%;left:0;overflow:hidden;position:absolute;top:0;-webkit-transform:translateX(0);transform:translateX(0);transition:all .2s ease-in-out;z-index:10;}
+._layout-module--nav--3qaiq._layout-module--small-primary--rlHms{width:4rem;}
+._layout-module--nav-contents--3VsBp{display:flex;height:100%;}
+._layout-module--nav-contents--3VsBp ._layout-module--primary-nav--x6Tkg{height:100%;}
+._layout-module--nav-contents--3VsBp ._layout-module--primary-nav--x6Tkg{flex-grow:0;flex-shrink:0;position:relative;overflow:hidden;}
+._layout-module--small-primary--rlHms ._layout-module--primary-nav--x6Tkg{width:4rem;}
+._nav-module--_nav--2rp19{display:flex;flex-direction:column;font-size:2rem;height:100%;overflow-x:hidden;overflow-y:auto;padding:0;}
+._nav-module--_nav--2rp19 ._nav-module--logo--1Up9O{margin-left:1rem;margin-right:1rem;}
+._nav-module--nav-small--3uIgM ._nav-module--logo--1Up9O{width:2rem;}
+._nav-module--nav-small--3uIgM ._nav-module--nav-item-title--3oRT2{opacity:0;overflow:hidden;position:absolute;text-indent:-999em;}
+._nav-module--logo--1Up9O{flex:0 0 auto;margin:1rem 0;}
+._nav-module--nav-groups--3Eal6{display:flex;flex-direction:column;flex:1 1 100%;justify-content:space-between;}
+._nav-module--nav-group--2Tv0l{list-style:none;margin:0;padding:0;}
+._nav-module--nav-item--2yHv8{line-height:1;margin-bottom:.25rem;}
+._nav-module--nav-item--2yHv8 a{align-items:center;color:#dbe2e8;display:flex;padding:.5rem .75rem;text-decoration:none;}
+._nav-module--nav-item-icon-container--2gNdP{display:inline-block;position:relative;text-align:center;}
+._nav-module--nav-item-icon--rHRSl{position:relative;width:2rem;}
+._nav-module--nav-item-title--3oRT2{font-size:1rem;}
+*,:after,:before{box-sizing:border-box;}
+nav{display:block;}
+ul{margin-bottom:1rem;}
+ul{margin-top:0;}
+svg:not(:root){overflow:hidden;}
+*,:after,:before{box-sizing:inherit;}
+body ::-moz-selection{background:rgba(164,228,245,.4);}
+body ::selection{background:rgba(164,228,245,.4);}
+.vds-visually-hidden{border:0;clip:rect(1px,1px,1px,1px);-webkit-clip-path:inset(100%);clip-path:inset(100%);height:1px;overflow:hidden;padding:0;position:absolute;white-space:nowrap;width:1px;}
+.vds-visually-hidden:active,.vds-visually-hidden:focus{clip:auto;-webkit-clip-path:none;clip-path:none;height:auto;overflow:visible;position:static;white-space:inherit;width:auto;}
+.vds-icon{line-height:0;fill:currentColor;stroke:currentColor;display:inline-block;vertical-align:middle;width:2rem;height:2rem;}
+.vds-icon svg{width:100%;height:100%;stroke-width:0;}
+.vds-icon--lg{width:2.5rem;height:2.5rem;}
+/*! CSS Used from: https://classroom.udacity.com/css/app.22cd7.css */
+html div,html li,html nav,html ul{line-height:1.33333em;margin:0;padding:0;}
+html a{color:#02b3e4;text-decoration:none;}
+html li{list-style:none;}
 
-.sidenavHome {
-  height: 100%;
-  width: 18%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #1F2932;
-  overflow-x: hidden;
-  padding-top: 20px;
-}
-
-.sidenavHome a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 20px;
-  color: #DBE2E8;
-  display: block;
-}
-
-.sidenavHome a:hover {
-  color: #f1f1f1;
-}
-
-.main {
-  margin-left: 160px; /* Same as the width of the sidenav */
-  font-size: 28px; /* Increased text to enable scrolling */
-  padding: 0px 10px;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}

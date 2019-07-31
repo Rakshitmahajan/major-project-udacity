@@ -14,27 +14,9 @@ export const readCourse = (userEmail) => dispatch => {
     //         });
     //     });
     const data=[
-        {
-            "courseId": "CH1",
-            "courseTitle": "Course 1",
-            "courseDescp": "descp about GIT",
-            "courseType": "COURSE",
-            "courseCategory": "AI"
-        },
-        {
-            "courseId": "CH2",
-            "courseTitle": "Course 2",
-            "courseDescp": "descp",
-            "courseType": "COURSE",
-            "courseCategory": "AI"
-        },
-        {
-            "courseId": "CH3",
-            "courseTitle": "Course 3",
-            "courseDescp": "descp about GIT",
-            "courseType": "NANODEGREE PROGRAM",
-            "courseCategory": "Java"
-        },
+        
+        
+        
         {
             "courseId": "CH4",
             "courseTitle": "course 4",
