@@ -399,6 +399,7 @@ html h4 {
   padding: 0 2rem;
   margin: 0 auto;
   width: 100%;
+  background-color: grey;
 }
 
 @media (max-width:61.24em) {
@@ -409,13 +410,13 @@ html h4 {
 
 /*! CSS Used from: https://classroom.udacity.com/css/1.a94ae.css */
 .deadline-bar--container--djlS_ {
-  background-color: #fafbfc;
-  border-top: 1px solid #dbe2e8;
+  background-color: grey;;
+  border-top: 1px solid grey;
   position: relative;
 }
 
 .deadline-bar--content--X6Lwt {
-  background-color: #fafbfc;
+  background-color: grey;;
   display: flex;
   align-items: center;
   min-height: 48px;
@@ -473,7 +474,7 @@ html h4 {
   }
 }
 
-/*! CSS Used from: https://classroom.udacity.com/css/7.85d1e.css */
+
 .index--container--GSOp4 {
   background-color: #fff;
 }
