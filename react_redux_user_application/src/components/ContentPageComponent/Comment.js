@@ -4,7 +4,7 @@ class Comment extends React.Component {
   render() {
     return (
       <blockquote className="border-left">
-        <p>{this.props.comment}</p>
+        <p className='h5'>{this.props.comment}</p>
       </blockquote>
     );
   }

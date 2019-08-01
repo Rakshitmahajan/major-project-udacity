@@ -59,7 +59,7 @@ class LessonCard extends React.Component {
                     <div className="index-module--thumb--3ud4h index-module--_image--3QmIX" style={{ backgroundImage: 'url(https://s3.amazonaws.com/video.udacity-data.com/topher/2017/August/59a3a294_2-8-working-with-remotes2x/2-8-working-with-remotes2x.jpg)' }}>
 
                     </div>
-                    <div className="index-module--full--3vMOI index-module--_image--3QmIX " style={{ backgroundImage: 'url(https://s3.amazonaws.com/video.udacity-data.com/topher/2017/August/59a3a294_2-8-working-with-remotes2x/2-8-working-with-remotes2x.jpg)' }}>
+                    <div className="index-module--full--3vMOI index-module--_image--3QmIX " style={{ backgroundImage: `url(${this.props.lesson.lessonImage})` }}>
 
 
                     </div>

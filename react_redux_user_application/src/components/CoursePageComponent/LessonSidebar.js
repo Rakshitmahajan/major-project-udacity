@@ -8,7 +8,7 @@ class LessonSidebar extends React.Component {
         <div className="_layout-module--nav-contents--3VsBp">
           <div className="_layout-module--primary-nav--x6Tkg">
             <div className="_nav-module--nav-small--3uIgM _nav-module--_nav--2rp19"><a
-               target="_blank"><svg width="177" height="31"
+              target="_blank"><svg width="177" height="31"
                 className="_nav-module--logo--1Up9O">
                 <title>Udacity Logo</title>
                 <g fill="none" fillRule="evenodd">
