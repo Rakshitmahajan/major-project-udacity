@@ -9,8 +9,8 @@ class Home extends Component {
                 <div className="header">
                     <h1>UDACITY</h1>
                 </div>
-                <div class="container">
-                    <div class="jumbotron">
+                <div className="container">
+                    <div className="jumbotron">
                         <h3>This is admin pannel for Udacity </h3>
                         <Link to='/courseList' className="btn btn-outline-primary">View Courses</Link>
                         <Link to='/courseForm' className="btn btn-outline-primary">Add Course</Link>

@@ -5,7 +5,6 @@ class Video extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            title: '',
             link:''
         };
     }
@@ -14,21 +13,7 @@ class Video extends Component {
     }
     onSubmit = async (e)  => {
         e.preventDefault();
-        fetch('http://localhost:5200/insertVideo', {
-            method: 'POST',
-            body: JSON.stringify(this.state),
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        }).then(Response => Response.json())
-        .then((response) => {
-            console.log(response)
-            if (response.err === null) {
-                this.props.onComponentSubmit('comment',this.state.title);
-            } else {
-                alert(response.err.message);
-            }
-        });
+        this.props.onComponentSubmit('video',this.state.title);
 }
 render() {
     return (
@@ -41,11 +26,7 @@ render() {
                                 <h4 className="card-title mb-4 mt-1">Enter Video</h4>
                                 <form onSubmit={this.onSubmit}>
                                     <div className="form-group">
-                                        <label>Title</label>
-                                        <input name="title" className="form-control" placeholder="" type="text" onChange={this.onChange} />
-                                    </div>
-                                    <div className="form-group">
-                                        <label>Link</label>
+                                        <label>Video Link</label>
                                         <input name="link" className="form-control" placeholder="" type="text" onChange={this.onChange} />
                                     </div>
                                     <div className="form-group">

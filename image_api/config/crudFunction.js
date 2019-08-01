@@ -52,13 +52,7 @@ async function readImage(imageTitle) {
                 data: null,
             })
         } else {
-            return ({
-                err: null,
-                data: {
-                    title: rows[0].title,
-                    link: rows[0].link
-                }
-            })
+            return (rows[0].link)
         }
     } catch (err) {
         console.log(err);

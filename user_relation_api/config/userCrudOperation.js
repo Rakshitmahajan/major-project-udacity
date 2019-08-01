@@ -70,7 +70,7 @@ const updateRelation = async (courseId, data) => {
 const deleteRelation = async (data) => {
   const obj = { error: null, data: null };
   try {
-    const result = await pool.query(`DELETE from UserCourse WHERE courseId =? AND userEmail=?`, [data.courseId, data.userEmail]);
+    const result = await pool.query(`DELETE from UserCourse WHERE courseId =?`, [data.courseId]);
     if (result[0].affectedRows) {
       obj.data = { message: `${data.courseId} deleted` };
     } else {
