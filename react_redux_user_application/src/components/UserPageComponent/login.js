@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Redirect, Link } from 'react-router-dom';
-// import { userDetail } from '../actions/userAction';
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { loginUser } from '../../actions/userAction';
 import './signup.css'
 class Login extends Component {
     constructor() {
@@ -11,32 +13,41 @@ class Login extends Component {
             redirect: false
         };
     }
+    componentWillMount() {
+
+        console.log(localStorage.token);
+    }
     onChange = (e) => {
         this.setState({ [e.target.name]: e.target.value });
     }
     onSubmit = (e) => {
         e.preventDefault();
-        fetch('http://10.10.4.101:2001/studentLogin', {
-            method: 'POST',
-            body: JSON.stringify(this.state),
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        }).then(Response => Response.json())
-            .then((response) => {
-                console.log(response)
-                if (response.err === null) {
-                    // alert('login sucessful');
-                    this.setState({ redirect: true })
-                } else {
-                    alert(response.err.message);
-                }
-            });
+        this.props.loginUser(this.state);
+        console.log(this.state);
+        // (this.state.redirect === true) {
+        // if (localStorage.toke !== null) {
+
+        this.props.history.push('/home');
+        // }
+        // }
+        // fetch('http://10.10.4.101:2001/studentLogin', {
+        //     method: 'POST',
+        //     body: JSON.stringify(this.state),
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //     },
+        // }).then(Response => Response.json())
+        //     .then((response) => {
+        //         console.log(response)
+        //         if (response.err === null) {
+        //             alert('login sucessful');
+        //             this.setState({ redirect: true })
+        //         } else {
+        //             alert(response.err.message);
+        //         }
+        //     });
     }
     render() {
-        if (this.state.redirect === true) {
-            return <Redirect to="/home" />
-        }
         return (
             <div>
                 <div className="header">
@@ -71,7 +82,7 @@ class Login extends Component {
         );
     }
 }
-export default Login;
+// export default Login;
 
-// Login.propTypes = { userDetail: PropTypes.func.isRequired };
-// export default connect(null, { readCourse })(Login);
+Login.propTypes = { loginUser: PropTypes.func.isRequired };
+export default connect(null, { loginUser })(Login);

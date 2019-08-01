@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { signupUser } from '../../actions/userAction';
 import './signup.css'
 class Signup extends Component {
     constructor() {
@@ -18,21 +21,22 @@ class Signup extends Component {
     }
     onSubmit = (e) => {
         e.preventDefault();
-        fetch('http://10.10.2.69:2001/studentSignup', {
-            method: 'POST',
-            body: JSON.stringify(this.state),
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        }).then(Response => Response.json())
-            .then((response) => {
-                console.log(response);
-                if (response.err === null) {
-                    alert('signup sucessful')
-                } else {
-                    alert(response.err.message);
-                }
-            });
+        this.props.signupUser(this.state);
+        // fetch('http://10.10.2.69:2001/studentSignup', {
+        //     method: 'POST',
+        //     body: JSON.stringify(this.state),
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //     },
+        // }).then(Response => Response.json())
+        //     .then((response) => {
+        //         console.log(response);
+        //         if (response.err === null) {
+        //             alert('signup sucessful')
+        //         } else {
+        //             alert(response.err.message);
+        //         }
+        //     });
     }
     render() {
         return (
@@ -86,5 +90,5 @@ class Signup extends Component {
         );
     }
 }
-
-export default Signup;
+Signup.propTypes = { signupUser: PropTypes.func.isRequired };
+export default connect(null, { signupUser })(Signup);

@@ -3,9 +3,9 @@ import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
-import CourseSideBar from './HomePageComponent/CourseSideBar';
-import CourseCard from './HomePageComponent/CourseCard';
-import { readCourse } from '../actions/courseAction';
+import CourseSideBar from './CourseSideBar';
+import CourseCard from './CourseCard';
+import { readCourse } from '../../actions/courseAction';
 
 import './HomePage.css';
 class HomePage extends React.Component {

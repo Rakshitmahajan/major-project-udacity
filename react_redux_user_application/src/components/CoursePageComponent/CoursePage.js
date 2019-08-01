@@ -2,10 +2,10 @@ import React from "react";
 // import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import LessonSidebar from './CoursePageComponent/LessonSidebar';
-import LessonTopbar from './CoursePageComponent/LessonTopbar';
-import LessonCard from './CoursePageComponent/LessonCard';
-import { readLesson } from '../actions/lessonAction';
+import LessonSidebar from './LessonSidebar';
+import LessonTopbar from './LessonTopbar';
+import LessonCard from './LessonCard';
+import { readLesson } from '../../actions/lessonAction';
 
 // import './CoursePage.css';
 class CoursePage extends React.Component {

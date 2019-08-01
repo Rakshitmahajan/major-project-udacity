@@ -1,12 +1,12 @@
 import React from 'react';
 // import { connect } from "react-redux";
 // import PropTypes from "prop-types";
-import Code from './ContentPageComponent/Code';
-import Comment from './ContentPageComponent/Comment';
-import Form from './ContentPageComponent/Form';
-import Image from './ContentPageComponent/Image';
-import Text from './ContentPageComponent/Text';
-import Video from './ContentPageComponent/Video';
+import Code from './Code';
+import Comment from './Comment';
+import Form from './Form';
+import Image from './Image';
+import Text from './Text';
+import Video from './Video';
 class Content extends React.Component {
   render() {
     return (

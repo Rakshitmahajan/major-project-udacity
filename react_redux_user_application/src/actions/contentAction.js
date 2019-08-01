@@ -1,5 +1,4 @@
 export const readConcept = (courseId, lessonId, conceptTitle) => dispatch => {
-  console.log('content ', courseId, lessonId, conceptTitle);
   fetch(`http://10.10.5.192:5000/concept/${courseId}/${lessonId}/${conceptTitle}`, {
     method: 'GET',
     headers: { "Content-Type": "application/json" }
@@ -8,7 +7,13 @@ export const readConcept = (courseId, lessonId, conceptTitle) => dispatch => {
     .then(resData => {
       if (resData.data !== null) {
         resData.data.concept.map(data => {
-          fetch(`http://10.10.5.192:5000/${data.type}/${data.id}`)
+          if (data.type === 'image' || data.type === 'video') {
+            dispatch({
+              type: "CONTENT",
+              format: data.type,
+              data: data
+            })
+          } else fetch(`http://10.10.5.192:5000/${data.type}/${data.id}`)
             .then(res => res.json())
             .then(resp => {
               dispatch({
