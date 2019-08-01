@@ -1,11 +1,14 @@
 import React from 'react';
-import DropdownList from './DropdownList';
+import { Link } from "react-router-dom";
 class ChapterSidebar extends React.Component {
   state = {}
   render() {
+    console.log(this.props.contentTitle);
     return (
-      <div className='col col-sm-12'>
-        <DropdownList />
+      <div>
+        {this.props.contentTitle.map((data, key) => (
+          <Link key={key} to='#'>{data.conceptTitle}</Link>
+        ))}
       </div>
     );
   }

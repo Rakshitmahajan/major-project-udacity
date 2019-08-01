@@ -1,9 +1,9 @@
 export const readCourse = (userEmail) => dispatch => {
-  fetch(`http://localhost:8081/user/${userEmail}`)
+  fetch(`http://10.10.5.192:8081/user/${userEmail}`)
     .then(res => res.json())
     .then(resData => {
       resData.data.map(data => {
-        fetch(`http://localhost:8000/course/${data.courseId}`)
+        fetch(`http://10.10.5.192:8000/course/${data.courseId}`)
           .then(res => res.json())
           .then(resData1 => {
             dispatch({

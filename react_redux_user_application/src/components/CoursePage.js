@@ -20,7 +20,7 @@ class CoursePage extends React.Component {
                     <div className=''>
                         <LessonTopbar />
                     </div>
-                    <div className='row  pl-3 w-100'>
+                    <div className='row pl-2 w-100'>
                         <div className='col-sm-1'>
                             <LessonSidebar />
                         </div>
