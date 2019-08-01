@@ -7,6 +7,7 @@ import LessonForm from './components/lessonForm'
 import CourseList from './components/courseList'
 import MainForm from './components/concept/mainForm'
 import LessonList from './components/lessonList'
+import ConceptList from './components/conceptList'
 import Home from './components/home'
 class App extends Component {
   render() {
@@ -20,6 +21,7 @@ class App extends Component {
         <Route path="/courseList" component={CourseList}></Route>
         <Route path="/mainForm" component={MainForm}></Route>
         <Route path="/lessonList" component={LessonList}></Route>
+        <Route path="/conceptList" component={ConceptList}></Route>
       </Router>
     );
   }

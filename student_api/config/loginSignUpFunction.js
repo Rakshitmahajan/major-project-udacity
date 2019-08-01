@@ -83,9 +83,7 @@ async function loginStudent(req) {
         }
         if (bcrypt.compareSync(password, rows[0].password)) {
             return ({
-                err: {
-                    message: null
-                },
+                err: null,
                 data: {
                     firstname: rows[0].firstName,
                     lastName: rows[0].lastName,

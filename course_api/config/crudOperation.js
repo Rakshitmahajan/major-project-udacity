@@ -72,17 +72,35 @@ const updateRowCourse = async (courseId, data) => {
 }
 const deleteRowCourse = async (courseId) => {
     const obj = { error: null, data: null };
-    try {
-        const result = await pool.query(`DELETE from Course WHERE courseId =?`, [courseId]);
-        if (result[0].affectedRows) {
-            obj.data = { message: `${courseId} deleted` };
-        } else {
-            throw 'Yet to be added..';
-        }
-    } catch (err) {
-        winston.error(err.stack);
-        obj.error = { message: err }
-    }
+    fetch(`http://10.10.5.192:8081/user/`, {
+        method: 'delete',
+        body: courseId,
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    }).then(Response => Response.json())
+        .then((res) => {
+            fetch(`http://10.10.5.192:3031/lesson/course/${courseId}`, {
+                method: 'delete',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            }).then(Response => Response.json())
+                .then((res) => {
+                    console.log(res)
+                    try {
+                        const result = await pool.query(`DELETE from Course WHERE courseId =?`, [courseId]);
+                        if (result[0].affectedRows) {
+                            obj.data = { message: `${courseId} deleted` };
+                        } else {
+                            throw 'Yet to be added..';
+                        }
+                    } catch (err) {
+                        winston.error(err.stack);
+                        obj.error = { message: err }
+                    }
+                })
+        })
     return obj;
 }
 module.exports = {

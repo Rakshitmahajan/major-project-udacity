@@ -22,4 +22,8 @@ app.delete('/:lessonId', async (req, res) => {
     const result = await sql.deleteRowLesson(req.params.lessonId);
     res.json(result);
 })
+app.delete('course/:courseId', async (req, res) => {
+    const result = await sql.deleteRowLessonFromCourse(req.params.courseId);
+    res.json(result);
+})
 module.exports = app;

@@ -11,15 +11,11 @@ class LessonForm extends Component {
             lessonDescp: '',
             lessonImage: '',
             lessonNumber: '',
-            image: null,
             redirect:false
         };
     }
     onChange = (e) => {
         this.setState({ [e.target.name]: e.target.value });
-    }
-    onFileChange = async (e) => {
-        await this.setState({ image: e.target.files[0] });
     }
     onSubmit = (e) => {
         e.preventDefault();
@@ -33,14 +29,6 @@ class LessonForm extends Component {
             .then(async (response) => {
                 console.log(response)
                 if (response.error === null) {
-                    this.setState({ redirect:true })
-                    const data = new FormData();
-                    await data.append('title', this.state.lessonImage);
-                    await data.append('image', this.state.image);
-                    fetch('http://localhost:5400/insertImage', {
-                        method: 'POST',
-                        body: data,
-                    })
                     alert('Lesson entered');
                     this.setState({ redirect:true })
                 } else {
@@ -86,12 +74,8 @@ class LessonForm extends Component {
                                             <input name="lessonDescp" className="form-control" placeholder="" type="text" onChange={this.onChange} />
                                         </div>
                                         <div className="form-group">
-                                            <label>lessonImage Name</label>
+                                            <label>lessonImage</label>
                                             <input name="lessonImage" className="form-control" placeholder="" type="text" onChange={this.onChange} />
-                                        </div>
-                                        <div className="form-group">
-                                            <label>Upload Image</label>
-                                            <input name="image" className="form-control" placeholder="" type="file" onChange={this.onFileChange} />
                                         </div>
                                         <div className="form-group">
                                             <input type="submit" value="Submit" className="btn btn-primary btn-block" onChange={this.onChange} />

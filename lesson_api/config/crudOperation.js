@@ -72,10 +72,22 @@ const deleteRowLesson = async (lessonId) => {
   }
   return obj;
 }
+const deleteRowLessonFromCourse = async (courseId) => {
+  const obj = { error: null, data: null };
+  try {
+    const result = await pool.query(`DELETE from Lesson WHERE courseId =?`, [courseId])
+    obj.data = result[0];
+  } catch (err) {
+    // winston.log(err);
+    obj.error = err;
+  }
+  return obj;
+}
 module.exports = {
   readLesson,
   readRowLesson,
   createRowLesson,
   updateRowLesson,
-  deleteRowLesson
+  deleteRowLesson,
+  deleteRowLessonFromCourse
 }
