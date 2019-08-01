@@ -7,7 +7,7 @@ class LessonCard extends React.Component {
   render() {
     return (
       <div className="">
-        <Link className='col-sm-12 text-decoration-none' to={{ pathname: "/course/" + this.props.courseId + "/" + this.props.lesson.lessonId, state: { courseId: this.props.courseId, lesson: this.props.lesson } }}>
+        <Link className='col-sm-12 text-decoration-none' to={{ pathname: "/course/" + this.props.lesson.courseId + "/" + this.props.lesson.lessonId, state: { lesson: this.props.lesson } }}>
           <div>
             <div
               className="index--lesson-card--mwX1V index--card-interactive--1EHiQ shared--card-interactive--2Jtvl shared--card--3X88h text-decoration-none">

@@ -10,11 +10,11 @@ import Video from './ContentPageComponent/Video';
 class Content extends React.Component {
   render() {
     return (
-      < div className='col-sm-12' >
+      < div className='main'>
         {this.props.type === 'code' ? (< Code code={this.props.data.code} />) : null}
         {this.props.type === 'comment' ? (< Comment comment={this.props.data.comment} />) : null}
         {this.props.type === 'quiz' ? (< Form data={this.props.data} />) : null}
-        {this.props.type === 'image' ? (<Image src={this.props.data.url} />) : null}
+        {this.props.type === 'image' ? (<Image src={this.props.data.url} alt='' />) : null}
         {this.props.type === 'text' ? (<Text heading={this.props.data.heading} paragraph={this.props.data.paragraph} />) : null}
         {this.props.type === 'video' ? (<Video src={this.props.data.source} />) : null}
       </div >

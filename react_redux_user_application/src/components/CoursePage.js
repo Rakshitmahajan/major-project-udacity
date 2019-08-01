@@ -7,10 +7,11 @@ import LessonTopbar from './CoursePageComponent/LessonTopbar';
 import LessonCard from './CoursePageComponent/LessonCard';
 import { readLesson } from '../actions/lessonAction';
 
-import './CoursePage.css';
+// import './CoursePage.css';
 class CoursePage extends React.Component {
     componentWillMount() {
-        this.props.readLesson(this.props.location.state.courseId);
+        // console.log('CoursePage', this.props.location.state);
+        this.props.readLesson(this.props.location.state.course.courseId);
     }
     render() {
         return (
@@ -18,7 +19,7 @@ class CoursePage extends React.Component {
 
                 <div className='w-100'>
                     <div className=''>
-                        <LessonTopbar />
+                        <LessonTopbar course={this.props.location.state.course} />
                     </div>
                     <div className='row pl-2 w-100'>
                         <div className='col-sm-1'>
@@ -26,7 +27,7 @@ class CoursePage extends React.Component {
                         </div>
                         <div className="col-sm-10 pt-5 p3">
                             {this.props.lessonData.map(data => (
-                                <div key={data.lessonId} className=""><LessonCard lesson={data} courseId={this.props.location.state.courseId} /></div>
+                                <div key={data.lessonId} className=""><LessonCard lesson={data} /></div>
                             ))}
                         </div>
 

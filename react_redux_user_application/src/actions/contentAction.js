@@ -1,12 +1,11 @@
-export const readConcept = (courseId, lessonId) => dispatch => {
-  console.log(courseId, lessonId);
-  fetch(`http://10.10.5.192:5000/concept/${courseId}/${lessonId}`, {
+export const readConcept = (courseId, lessonId, conceptTitle) => dispatch => {
+  console.log('content ', courseId, lessonId, conceptTitle);
+  fetch(`http://10.10.5.192:5000/concept/${courseId}/${lessonId}/${conceptTitle}`, {
     method: 'GET',
     headers: { "Content-Type": "application/json" }
   })
     .then(res => res.json())
     .then(resData => {
-      console.log(resData);
       if (resData.data !== null) {
         resData.data.concept.map(data => {
           fetch(`http://10.10.5.192:5000/${data.type}/${data.id}`)

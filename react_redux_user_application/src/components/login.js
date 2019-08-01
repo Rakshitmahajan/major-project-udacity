@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect, Link } from 'react-router-dom';
-import { userDetail } from '../actions/userAction';
+// import { userDetail } from '../actions/userAction';
 import './signup.css'
 class Login extends Component {
     constructor() {
@@ -16,7 +16,7 @@ class Login extends Component {
     }
     onSubmit = (e) => {
         e.preventDefault();
-        fetch('http://10.10.2.69:2001/studentLogin', {
+        fetch('http://10.10.4.101:2001/studentLogin', {
             method: 'POST',
             body: JSON.stringify(this.state),
             headers: {
