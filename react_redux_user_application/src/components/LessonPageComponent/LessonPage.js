@@ -24,20 +24,20 @@ class ChapterPage extends React.Component {
     return (
       <div>
         <Sidebar />
-        <div className="main">
-          <div class="navbar">
+        <div className='main'>
+          <div className="navbar">
             <a href="#contact">Remote Repositories</a>
           </div>
-          <div >
-            {this.props.contentData.map((data, key) => (
-              <Content key={key} type={data.type} data={data.data} />
-            ))}
-            <div className="_main--footer-container--3vC-_">
-              <button className="vds-button vds-button--secondary" aria-busy="false" type="button">
-                <span className="vds-button__content">Next</span>
-              </button></div>
+          {this.props.contentData.map((data, key) => (
+            <Content key={key} type={data.type} data={data.data} />
+          ))}
+          <div className="_main--footer-container--3vC-_">
+            <button className="vds-button vds-button--secondary" aria-busy="false" type="button">
+              <span className="vds-button__content">Next</span>
+            </button>
           </div>
         </div>
+
       </div>
     );
   }
