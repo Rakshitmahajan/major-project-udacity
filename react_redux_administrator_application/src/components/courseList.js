@@ -35,7 +35,7 @@ class CourseList extends React.Component {
                     })
                 }
                 else {
-                    alert('cant delete');
+                    alert('Course not empty ');
                 }
             })
     }
