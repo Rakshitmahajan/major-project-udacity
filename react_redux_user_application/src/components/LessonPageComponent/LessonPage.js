@@ -13,10 +13,10 @@ class ChapterPage extends React.Component {
     this.props.readConcept(this.props.location.state.data.courseId, this.props.location.state.data.lessonId, this.props.location.state.data.conceptTitle);
   }
   render() {
-    console.log(this.props.location.state.data.conceptTitle)
     return (
       <div>
         <Sidebar contentTitle={this.props.contentTitle} />
+        {console.log(this.props.location.state.data)}
         <div className='main'>
           <div className="navbar">
             <a className='' href="#">{this.props.location.state.data.conceptTitle}</a>

@@ -5,6 +5,7 @@ export const readConcept = (courseId, lessonId, conceptTitle) => dispatch => {
   })
     .then(res => res.json())
     .then(resData => {
+      // console.log(resData.data);
       if (resData.data !== null) {
         dispatch({
           type: "CONTENT",

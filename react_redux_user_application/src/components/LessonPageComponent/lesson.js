@@ -14,11 +14,13 @@ class ChapterPage extends React.Component {
     return (
       <div>
         {this.props.contentTitle.map((data, key) => (
-          <Link key={key} className=' text-decoration-none'
-            to={{
-              pathname: "/course/" + data.courseId + '/' + data.lessonId + '/' + data.conceptTitle,
-              state: { data: data }
-            }}>{data.conceptTitle}</Link>
+          <div key={key}>
+            <Link key={key} className=' text-decoration-none'
+              to={{
+                pathname: "/course/" + data.courseId + '/' + data.lessonId + '/' + data.conceptTitle,
+                state: { data: data }
+              }}>{data.conceptTitle}</Link>
+          </div>
         ))}
       </div>
     );

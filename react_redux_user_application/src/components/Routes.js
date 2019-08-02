@@ -8,7 +8,7 @@ import CoursePage from './CoursePageComponent/CoursePage';
 import LessonPage from './LessonPageComponent/LessonPage';
 import Lesson from './LessonPageComponent/lesson';
 import Logout from './UserPageComponent/Logout';
-import NotFound from './Notfound.js';
+// import NotFound from './Notfound.js';
 class Routes extends React.Component {
   render() {
     return (
