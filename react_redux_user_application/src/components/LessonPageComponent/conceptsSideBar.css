@@ -46,6 +46,7 @@ body {
   font-size: 20px;
   /* Increased text to enable scrolling */
   padding: 0px 10px;
+  padding-top: 5em;
 }
 
 /* Add an active class to the active dropdown button */

@@ -10,7 +10,7 @@ import Video from './Video';
 class Content extends React.Component {
   render() {
     return (
-      < div className='main'>
+      < div className=''>
         {this.props.type === 'code' ? (< Code code={this.props.data.code} />) : null}
         {this.props.type === 'comment' ? (< Comment comment={this.props.data.comment} />) : null}
         {this.props.type === 'quiz' ? (< Form data={this.props.data} />) : null}
