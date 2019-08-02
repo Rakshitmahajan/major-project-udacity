@@ -38,9 +38,12 @@ const createRelation = async (data) => {
     if (data.courseId === '' || data.userEmail === '') {
       throw 'Enter the values';
     }
-    await pool.query(`INSERT INTO UserCourse SET courseId=?,userEmail=?`, [data.courseId, data.userEmail]);
-    const result = await readRowRelation(data);
-    obj.data = result.data[0];
+    const rst = await readRowRelation(data);
+    if (!rst.data[0]) {
+      await pool.query(`INSERT INTO UserCourse SET courseId=?,userEmail=?`, [data.courseId, data.userEmail]);
+      const result = await readRowRelation(data);
+      obj.data = result.data[0];
+    } else obj.data = rst.data[0];
   } catch (err) {
     // winston.error(err.stack);
     obj.error = { message: err }

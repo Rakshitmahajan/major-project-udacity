@@ -15,7 +15,7 @@ const readConceptTitle = async (courseId, lessonId) => {
   let obj = { error: null, data: null };
   try {
     if (!courseId || !lessonId) throw 'Enter data';
-    const conceptData = await Concept.find({ $and: [{ courseId: courseId }, { lessonId: lessonId }] }, { conceptTitle: 1, courseId: 1, lessonId: 1, _id: 0 }, result => result);
+    const conceptData = await Concept.find({ courseId: courseId, lessonId: lessonId }, { conceptTitle: 1, courseId: 1, lessonId: 1, _id: 0 }, result => result);
     obj.data = conceptData;
   } catch (err) {
     obj.error = err;
@@ -23,13 +23,11 @@ const readConceptTitle = async (courseId, lessonId) => {
   return obj;
 }
 
-const readConceptData = async (courseId, lessonId) => {
+const readConceptData = async (courseId, lessonId, conceptTitle) => {
   let obj = { error: null, data: null };
   try {
-    // if (!courseId || !lessonId || !conceptTitle) throw 'Enter data';
-    // const conceptData = await Concept.find({ courseId: courseId, lessonId: lessonId, conceptTitle: conceptTitle }, result => result);
     if (!courseId || !lessonId) throw 'Enter data';
-    const conceptData = await Concept.find({ courseId: courseId, lessonId: lessonId }, result => result);
+    const conceptData = await Concept.find({ courseId: courseId, lessonId: lessonId, conceptTitle: conceptTitle }, result => result);
     if (conceptData.length > 0) {
       obj.data = conceptData[0];
     }

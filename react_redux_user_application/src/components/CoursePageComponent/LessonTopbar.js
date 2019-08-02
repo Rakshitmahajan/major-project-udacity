@@ -13,8 +13,8 @@ class CourseTopBar extends React.Component {
               <div className="index--container--GSOp4">
                 <div className="index--lesson-info--3UNsy shared--outer-container--3eppq">
                   <div className="index--title-container--2XSQg">
-                    <h5 className="index--lesson-subtitle--2WJbh shared--header-meta--19afO">Course</h5>
-                    <h3 className="index--lesson-title--3nKEi shared--header-small--1fJEM">GitHub & Collaboration</h3>
+                    <h5 className="index--lesson-subtitle--2WJbh shared--header-meta--19afO">{this.props.course.courseType}</h5>
+                    <h3 className="index--lesson-title--3nKEi shared--header-small--1fJEM">{this.props.course.courseTitle}</h3>
                   </div>
 
                 </div>

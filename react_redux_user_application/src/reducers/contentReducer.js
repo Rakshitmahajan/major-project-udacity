@@ -4,6 +4,8 @@ export default (state = initialState, action) => {
   switch (action.type) {
     case "CONTENT":
       let data = { type: action.format, data: action.data }
+      // console.log(action);
+      if (action.key === 0) newstate = [];
       newstate.push(data);
       state = newstate;
       return state;

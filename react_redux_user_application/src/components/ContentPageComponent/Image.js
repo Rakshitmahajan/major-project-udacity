@@ -1,42 +1,26 @@
-/*
-https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal_img
-*/
 import React from 'react';
-import './Image';
+import './concepts.css';
 class Image extends React.Component {
-  state = {}
-  // imagePopup = () => {
-  //   var modal = document.getElementById("myModal");
-  //   var img = document.getElementById("myImg");
-  //   var modalImg = document.getElementById("img01");
-  //   var captionText = document.getElementById("caption");
-  //   modal.style.display = "block";
-  //   modalImg.src = this.src;
-  //   captionText.innerHTML = this.alt;
-  //   var span = document.getElementsByClassName("close")[0];
-  // }
-  // spanOnclick = () => {
-  //   var modal = document.getElementById("myModal");
-  //   modal.style.display = "none";
-  // }
   render() {
     return (
-      <div>
-        <div>
-          <img id='myImg' src={this.props.src} className="img-fluid" alt="Responsive" onClick={this.imagePopup} />
-        </div>
-        <div>
-          <p>
-            <em className='text-muted blockquote-footer'>
-              {this.props.caption}
-            </em>
-          </p>
-        </div>
-        {/* <div id="myModal" className="modal">
-          <span className="close" onClick={this.spanOnclick}>&times;</span>
-          <img className="modal-content" id="img01" />
-          <div id="caption"></div>
-        </div> */}
+      <div className="index--container--2OwOl">
+        <div className="index--atom--lmAIo layout--content--3Smmq">
+          <div>
+            <a href="#" className="image-atom--image-atom--1XDdu">
+              <div className="index--image-atom-content--YoZVu">
+                <div className="index--image-and-annotations-container--1o6QP">
+                  <img src={this.props.src} alt={this.props.alt} width="2512px" className="index--image--1wh9w" />
+                  <div className="index--caption--34paT p-0">
+                    <div className="index-module--markdown--2MdcR ureact-markdown ">
+                      <p><em>{this.props.caption}</em></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <span></span>
+        </div><br />
       </div>
     );
   }
