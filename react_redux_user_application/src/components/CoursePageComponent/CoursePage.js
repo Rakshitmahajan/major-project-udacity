@@ -7,10 +7,8 @@ import LessonTopbar from './LessonTopbar';
 import LessonCard from './LessonCard';
 import { readLesson } from '../../actions/lessonAction';
 
-// import './CoursePage.css';
 class CoursePage extends React.Component {
     componentWillMount() {
-        // console.log('CoursePage', this.props.location.state);
         this.props.readLesson(this.props.location.state.course.courseId);
     }
     render() {
