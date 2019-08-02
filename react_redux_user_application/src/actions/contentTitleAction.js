@@ -5,6 +5,11 @@ export const readAllConcept = (courseId, lessonId) => dispatch => {
   })
     .then(res => res.json())
     .then(resData => {
+      dispatch({
+        type: "CONTENT_TITLE",
+        error: 1,
+        data: []
+      })
       if (resData.data.length > 0) {
         resData.data.map(data => {
           dispatch({
@@ -20,7 +25,6 @@ export const readAllConcept = (courseId, lessonId) => dispatch => {
           error: 1,
           data: []
         })
-        console.log('error');
       }
 
     })

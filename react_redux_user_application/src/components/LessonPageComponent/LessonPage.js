@@ -13,13 +13,14 @@ class ChapterPage extends React.Component {
     this.props.readConcept(this.props.location.state.data.courseId, this.props.location.state.data.lessonId, this.props.location.state.data.conceptTitle);
   }
   render() {
-
+    console.log(this.props.location.state.data.conceptTitle)
     return (
       <div>
         <Sidebar contentTitle={this.props.contentTitle} />
         <div className='main'>
           <div className="navbar">
-            <a href="#">{this.props.contentData.conceptTitle}</a>
+            <a className='' href="#">{this.props.location.state.data.conceptTitle}</a>
+
           </div>
           {this.props.contentData.map((data, key) => (
             <Content key={key} type={data.type} data={data.data} />
