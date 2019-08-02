@@ -10,23 +10,24 @@ import './conceptsSideBar.css';
 import './conceptsTopBar.css';
 class ChapterPage extends React.Component {
   componentWillMount() {
-    console.log('lesson Page', this.props.location.state);
-    this.props.readAllConcept(this.props.location.state.lesson.courseId, this.props.location.state.lesson.lessonId);
-    console.log('lesson Page', this.props);
-    this.props.readConcept(this.props.location.state.lesson.courseId, this.props.location.state.lesson.lessonId, 'Git demmo');
-    // this.props.readConcept(this.props.contentTitle[0].courseId, this.props.contentTitle[0].lessonId, this.props.contentTitle[0].conceptTitle);
-  }
-  read = (courseId, lessonId, conceptTitle) => {
-    console.log(courseId, lessonId);
-    this.props.readConcept(courseId, lessonId, conceptTitle);
+    console.log(this.props.match.path);
+    if (this.props.match.path === '/course/:courseId/:lessonId') {
+      this.props.readAllConcept(this.props.location.state.lesson.courseId, this.props.location.state.lesson.lessonId);
+      this.props.readConcept(this.props.location.state.lesson.courseId, this.props.location.state.lesson.lessonId, 'Git demmo');
+    } else {
+      console.log(this.props.location.state.data.conceptTitle);
+      this.props.readConcept(this.props.location.state.data.courseId, this.props.location.state.data.lessonId, this.props.location.state.data.conceptTitle);
+    }
   }
   render() {
+
     return (
       <div>
-        <Sidebar />
+        <Sidebar contentTitle={this.props.contentTitle} />
         <div className='main'>
           <div className="navbar">
-            <a href="#">Remote Repositories</a>
+            {/* {console.log('dcsd', this.props.contentData)} */}
+            <a href="#">{this.props.contentData.conceptTitle}</a>
           </div>
           {this.props.contentData.map((data, key) => (
             <Content key={key} type={data.type} data={data.data} />

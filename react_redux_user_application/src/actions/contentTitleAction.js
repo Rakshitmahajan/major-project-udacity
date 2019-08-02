@@ -12,7 +12,5 @@ export const readAllConcept = (courseId, lessonId) => dispatch => {
         })
         return data;
       })
-      console.log('before');
-
     })
 }
