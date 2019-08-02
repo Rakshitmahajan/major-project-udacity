@@ -20,8 +20,9 @@ class Routes extends React.Component {
         {/* <Route component={Login} /> */}
         {/* </Switch>) : (<Switch> */}
         <Route path='/home' component={HomePage} />
-        <Route exact path='/course/:lesson' component={CoursePage} />
-        <Route exact path='/course/:lesson/:chapter' component={LessonPage} />
+        <Route exact path='/course/:courseId' component={CoursePage} />
+        <Route exact path='/course/:courseId/:lessonId' component={LessonPage} />
+        <Route exact path='/course/:courseId/:lessonId/:concept' component={LessonPage} />
         <Route exact path='/logout' component={Logout} />
         {/* <Route component={Login} />
           </Switch>)} */}
