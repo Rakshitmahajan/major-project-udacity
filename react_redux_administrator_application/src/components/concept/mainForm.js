@@ -23,6 +23,9 @@ class MainForm extends Component {
     onComponentSubmit = (type, id) => {
         this.state.concept.push({ type, id })
     }
+    onImageSubmit = (type, url, caption) => {
+        this.state.concept.push({ type, url, caption})
+    }
     onChange = (e) => {
         this.setState({ [e.target.name]: e.target.value });
     }
@@ -48,7 +51,7 @@ class MainForm extends Component {
     }
     addImage = () => {
         this.setState({
-            components: [...this.state.components, <Image onComponentSubmit={this.onComponentSubmit} />]
+            components: [...this.state.components, <Image onImageSubmit={this.onImageSubmit} />]
         })
     }
     addVideo = () => {

@@ -13,7 +13,7 @@ class Video extends Component {
     }
     onSubmit = async (e)  => {
         e.preventDefault();
-        this.props.onComponentSubmit('video',this.state.title);
+        this.props.onComponentSubmit('video',this.state.link);
 }
 render() {
     return (

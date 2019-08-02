@@ -1,6 +1,8 @@
 const bcrypt = require('bcryptjs');
 const db = require('./sqlConnection');
 
+const jwt = require('jsonwebtoken');
+
 const winston = require('./winston');
 
 async function err_check(firstName, lastName, email, phoneNumber, password, password2) {
@@ -82,6 +84,10 @@ async function loginMentor(req) {
             });
         }
         if (bcrypt.compareSync(password, rows[0].password)) {
+            const token = jwt.sign({
+                email:rows[0].email,
+                phoneNumber:rows[0].phoneNumber
+            }, 'thisissomesecreatkey')
             return ({
                 err: null,
                 data: {
@@ -89,7 +95,8 @@ async function loginMentor(req) {
                     lastName: rows[0].lastName,
                     email: rows[0].email,
                     phoneNumber: rows[0].phoneNumber
-                }
+                },
+                token:token
             });
         } else {
             return ({

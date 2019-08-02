@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
+import Logout from './logout'
 import './signup.css'
 
 class Home extends Component {
@@ -15,6 +16,7 @@ class Home extends Component {
                         <Link to='/courseList' className="btn btn-outline-primary">View Courses</Link>
                         <Link to='/courseForm' className="btn btn-outline-primary">Add Course</Link>
                     </div>
+                <div><Logout onClick={this.onClick}/></div>
                 </div>
             </div>
         )

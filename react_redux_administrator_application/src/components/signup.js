@@ -68,7 +68,7 @@ class Signup extends Component {
                                         </div>
                                         <div className="form-group">
                                             <label>Phone Number</label>
-                                            <input name="phoneNumber" className="form-control" placeholder="Email" type="text" onChange={this.onChange}/>
+                                            <input name="phoneNumber" className="form-control" placeholder="phone no" type="text" onChange={this.onChange}/>
                                         </div>
                                         <div className="form-group">
                                             <label>Password</label>
@@ -77,6 +77,9 @@ class Signup extends Component {
                                         <div className="form-group">
                                             <label>Confirm password</label>
                                             <input name="password2" className="form-control" placeholder="Confirm password" type="password" onChange={this.onChange}/>
+                                        </div>
+                                        <div className="form-group">
+                                            <button className="btn btn-danger btn-block">Signup With Google</button>
                                         </div>
                                         <div className="form-group">
                                         <input type="submit" value="Submit"  className="btn btn-primary btn-block" onChange={this.onChange}/>

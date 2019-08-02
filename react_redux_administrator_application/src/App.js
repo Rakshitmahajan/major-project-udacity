@@ -10,20 +10,45 @@ import LessonList from './components/lessonList'
 import ConceptList from './components/conceptList'
 import Home from './components/home'
 class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      auth:false
+    }
+  }
+  onLogin(){
+    if(localStorage.getItem('jwtToken'))
+    {
+      console.log('1');
+      this.setState({
+        auth:true
+      })
+    }
+  }
   render() {
-    return (
-      <Router>
-        <Route exact path="/home" component={Home}></Route>
-        <Route exact path="/" component={Login}></Route>
-        <Route path="/signup" component={Signup}></Route>
-        <Route path="/courseForm" component={CourseForm}></Route>
-        <Route path="/lessonForm" component={LessonForm}></Route>
-        <Route path="/courseList" component={CourseList}></Route>
-        <Route path="/mainForm" component={MainForm}></Route>
-        <Route path="/lessonList" component={LessonList}></Route>
-        <Route path="/conceptList" component={ConceptList}></Route>
-      </Router>
-    );
+    if(localStorage.getItem('jwtToken')){
+      return (
+        <Router>
+          <Route exact path="/home" component={Home}></Route>
+          <Route exact path="/" component={Login}></Route>
+          <Route path="/signup" component={Signup}></Route>
+          <Route path="/courseForm" component={CourseForm}></Route>
+          <Route path="/lessonForm" component={LessonForm}></Route>
+          <Route path="/courseList" component={CourseList}></Route>
+          <Route path="/mainForm" component={MainForm}></Route>
+          <Route path="/lessonList" component={LessonList}></Route>
+          <Route path="/conceptList" component={ConceptList}></Route>
+        </Router>
+      );
+    }
+    else {
+      return (
+        <Router>
+          <Route exact path="/" component={Login}></Route>
+          <Route path="/signup" component={Signup}></Route>
+        </Router>
+      );
+    }
   }
 }
 
