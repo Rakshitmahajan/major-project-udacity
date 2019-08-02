@@ -16,7 +16,7 @@ class Content extends React.Component {
         {this.props.type === 'quiz' ? (< Form data={this.props.data} />) : null}
         {this.props.type === 'image' ? (<Image src={this.props.data.url} alt='' />) : null}
         {this.props.type === 'text' ? (<Text heading={this.props.data.heading} paragraph={this.props.data.paragraph} />) : null}
-        {this.props.type === 'video' ? (<Video src={this.props.data.source} />) : null}
+        {this.props.type === 'video' ? (<Video src={this.props.data.id} />) : null}
       </div >
     );
   }

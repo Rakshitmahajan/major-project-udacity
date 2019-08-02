@@ -22,5 +22,24 @@
       To create a production bundle, use `npm run build`.
     -->
 </body>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
 
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAAxLzadUWHtPdkTHq3rivmi9dXF3tIWls",
+    authDomain: "major-udacity.firebaseapp.com",
+    databaseURL: "https://major-udacity.firebaseio.com",
+    projectId: "major-udacity",
+    storageBucket: "",
+    messagingSenderId: "274972276287",
+    appId: "1:274972276287:web:ddec93ac3292d4ed"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
 </html>
