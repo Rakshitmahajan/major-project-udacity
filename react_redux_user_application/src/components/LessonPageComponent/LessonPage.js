@@ -10,12 +10,12 @@ import './conceptsSideBar.css';
 import './conceptsTopBar.css';
 class ChapterPage extends React.Component {
   componentWillMount() {
-    console.log(this.props.match.path);
+    // console.log(this.props.match.path);
     if (this.props.match.path === '/course/:courseId/:lessonId') {
       this.props.readAllConcept(this.props.location.state.lesson.courseId, this.props.location.state.lesson.lessonId);
       this.props.readConcept(this.props.location.state.lesson.courseId, this.props.location.state.lesson.lessonId, 'Git demmo');
     } else {
-      console.log(this.props.location.state.data.conceptTitle);
+      // console.log(this.props.location.state.data.conceptTitle);
       this.props.readConcept(this.props.location.state.data.courseId, this.props.location.state.data.lessonId, this.props.location.state.data.conceptTitle);
     }
   }
@@ -32,11 +32,6 @@ class ChapterPage extends React.Component {
           {this.props.contentData.map((data, key) => (
             <Content key={key} type={data.type} data={data.data} />
           ))}
-          <div className="_main--footer-container--3vC-_">
-            <button className="vds-button vds-button--secondary" aria-busy="false" type="button">
-              <span className="vds-button__content">Next</span>
-            </button>
-          </div>
         </div>
 
       </div>
