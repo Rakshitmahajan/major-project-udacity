@@ -5,12 +5,23 @@ export const readAllConcept = (courseId, lessonId) => dispatch => {
   })
     .then(res => res.json())
     .then(resData => {
-      resData.data.map(data => {
+      if (resData.data.length > 0) {
+        resData.data.map(data => {
+          dispatch({
+            type: "CONTENT_TITLE",
+            error: 0,
+            data
+          })
+          return data;
+        })
+      } else {
         dispatch({
           type: "CONTENT_TITLE",
-          data
+          error: 1,
+          data: []
         })
-        return data;
-      })
+        console.log('error');
+      }
+
     })
 }
