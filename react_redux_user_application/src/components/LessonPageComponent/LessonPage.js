@@ -26,7 +26,7 @@ class ChapterPage extends React.Component {
         <Sidebar />
         <div className='main'>
           <div className="navbar">
-            <a href="#contact">Remote Repositories</a>
+            <a href="#">Remote Repositories</a>
           </div>
           {this.props.contentData.map((data, key) => (
             <Content key={key} type={data.type} data={data.data} />

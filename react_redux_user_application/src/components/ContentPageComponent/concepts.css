@@ -1,4 +1,4 @@
-/*! CSS Used from: https://classroom.udacity.com/css/11.0ae79.css */
+
 *,
 :after,
 :before {
@@ -694,7 +694,7 @@ input[type=radio].index-module--radio--J18uO+label:before {
     margin-left: -.7em;
     position: relative;
     transition: border .2s ease-in-out, box-shadow .2s ease-in-out;
-    vertical-align: middle;
+    
     width: 5px;
 }
 
@@ -1115,7 +1115,7 @@ p code {
     height: 2.5rem;
 }
 
-/*! CSS Used from: https://classroom.udacity.com/css/app.78ebc.css */
+
 html div,
 html h1,
 html h2,
@@ -1253,16 +1253,7 @@ html label {
     white-space: nowrap;
 }
 
-.hamburger--hamburger--1oS_7 {
-    align-self: flex-start;
-    margin-right: 1rem;
-}
 
-.hamburger--hamburger-link--3-KRS {
-    display: block;
-    margin: 0 -.5rem;
-    padding: .5rem;
-}
 
 .index--_header--36qYf {
     font-size: 18px;
@@ -1306,7 +1297,6 @@ html label {
     margin-right: auto;
 }
 
-/*! CSS Used from: https://classroom.udacity.com/css/2.de71e.css */
 .youtube-player--_embed-responsive--wS2qC {
     position: relative;
     display: block;
@@ -1666,7 +1656,7 @@ html label {
     clear: both;
 }
 
-/*! CSS Used from: https://classroom.udacity.com/css/10.c39d5.css */
+
 label:before {
     margin-right: 2rem;
 }
