@@ -23,7 +23,7 @@ class Code extends Component {
         .then((response) => {
             console.log(response)
             if (response.error === null) {
-                this.props.onComponentSubmit('code',response.data._id,this.state);
+                this.props.onComponentSubmit('code',response.data._id);
             } else {
                 alert(response.error.message);
             }

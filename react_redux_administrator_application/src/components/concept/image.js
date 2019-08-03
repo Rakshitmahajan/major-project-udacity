@@ -29,7 +29,7 @@ class Image extends Component {
             .then((response) => {
                 console.log(response)
                 if (response.err === null) {
-                    this.props.onImageSubmit('image', this.state.title, this.state.caption, response.data);
+                    this.props.onImageSubmit('image', response.data.link, this.state.caption);
                 } else {
                     alert(response.err.message);
                 }

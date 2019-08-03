@@ -23,7 +23,7 @@ class Comments extends Component {
         .then((response) => {
             console.log(response)
             if (response.error === null) {
-                this.props.onComponentSubmit('comment',response.data._id,this.state);
+                this.props.onComponentSubmit('comment',response.data._id);
             } else {
                 alert(response.error.message);
             }
