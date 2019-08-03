@@ -82,6 +82,10 @@ async function loginStudent(req) {
             });
         }
         if (bcrypt.compareSync(password, rows[0].password)) {
+            const token = jwt.sign({
+                email:rows[0].email,
+                phoneNumber:rows[0].phoneNumber
+            }, 'thisissomesecreatkey')
             return ({
                 err: null,
                 data: {
@@ -89,7 +93,8 @@ async function loginStudent(req) {
                     lastName: rows[0].lastName,
                     email: rows[0].email,
                     phoneNumber: rows[0].phoneNumber
-                }
+                },
+                token:token
             });
         } else {
             return ({

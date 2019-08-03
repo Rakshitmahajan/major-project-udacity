@@ -15,7 +15,7 @@ const storage = multer.diskStorage({
 const upload = multer({storage:storage});
 
 router.post('/insertImage', upload.single('image'), async (req, res) => {
-    const result = await insertImage(req.body,`http://localhost:5400/uploads/${req.file.originalname}`);
+    const result = await insertImage(req.body,`http://10.10.4.101:5400/uploads/${req.file.originalname}`);
     res.json(result);
 });
 

@@ -24,7 +24,7 @@ class Text extends Component {
         .then((response) => {
             console.log(response)
             if (response.error === null) {
-                this.props.onComponentSubmit('text',response.data._id);
+                this.props.onComponentSubmit('text',response.data._id,this.state);
             } else {
                 alert(response.error.message);
             }

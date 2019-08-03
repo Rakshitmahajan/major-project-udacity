@@ -1,25 +1,27 @@
-import { connect } from 'react-redux';
 import React, { Component } from 'react';
-import { logout } from '../../actions/userAction';
-import PropTypes from 'prop-types';
+import { Redirect } from 'react-router-dom'
 
-class Logout extends Component {
-  state = {};
-  componentDidMount() {
-    this.props.logout();
-  }
-  render() {
-    return (
-      <div>
-        {/* {this.props.history.push('/login')} */}
-        {/* <li className="nav-item">
-          <a className="nav-link" href="/" onClick={this.props.logout}>
-            SignOut
-          </a>
-        </li> */}
-      </div>
-    );
-  }
+class Logout  extends Component {
+    constructor(){
+        super();
+        this.state = {
+            redirect:false
+        }
+    }
+    onClick = () => {
+        localStorage.removeItem('jwtToken');
+        this.setState({
+            redirect:true
+        })
+    }
+    render(){
+        if(this.state.redirect === true)
+        {
+            return <Redirect to="/" />
+        }
+        return (
+            <button onClick={this.onClick}> Logout </button>
+        )
+    }
 }
-Logout.propTypes = { logout: PropTypes.func.isRequired };
-export default connect(null, { logout })(Logout);
+export default Logout;

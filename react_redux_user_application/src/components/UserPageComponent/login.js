@@ -1,53 +1,48 @@
 import React, { Component } from 'react';
-import { Redirect, Link } from 'react-router-dom';
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import { loginUser } from '../../actions/userAction';
+import { Redirect, Link } from 'react-router-dom'
 import './signup.css'
 class Login extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             email: '',
             password: '',
             redirect: false
         };
     }
-    componentWillMount() {
-
-        console.log(localStorage.token);
-    }
     onChange = (e) => {
         this.setState({ [e.target.name]: e.target.value });
     }
+    onPress = (e) => {
+        alert('not yet enabled')
+    }
     onSubmit = (e) => {
         e.preventDefault();
-        this.props.loginUser(this.state);
-        console.log(this.state);
-        // (this.state.redirect === true) {
-        // if (localStorage.toke !== null) {
-
-        this.props.history.push('/home');
-        // }
-        // }
-        // fetch('http://10.10.4.101:2001/studentLogin', {
-        //     method: 'POST',
-        //     body: JSON.stringify(this.state),
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //     },
-        // }).then(Response => Response.json())
-        //     .then((response) => {
-        //         console.log(response)
-        //         if (response.err === null) {
-        //             alert('login sucessful');
-        //             this.setState({ redirect: true })
-        //         } else {
-        //             alert(response.err.message);
-        //         }
-        //     });
+        fetch('http://10.10.4.101:2000/mentorLogin', {
+            method: 'POST',
+            body: JSON.stringify(this.state),
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        }).then(Response => Response.json())
+            .then((response) => {
+                console.log(response)
+                if (response.err === null) {
+                    const token = response.token;
+                    localStorage.setItem('jwtToken', token);
+                    alert('login sucessful');
+                    this.setState({ redirect: true })
+                } else {
+                    alert(response.err.message);
+                }
+            });
     }
     render() {
+        if (this.state.redirect === true) 
+        {
+            this.props.history.push('/home');
+            return <Redirect to="/home" />
+        }
         return (
             <div>
                 <div className="header">
@@ -73,6 +68,9 @@ class Login extends Component {
                                             <input type="submit" value="Submit" className="btn btn-primary btn-block" onChange={this.onChange} />
                                         </div>
                                     </form>
+                                    <div className="form-group">
+                                            <button className="btn btn-danger btn-block" onClick={this.onPress}>Login With Google</button>
+                                        </div>
                                 </article>
                             </div>
                         </aside>
@@ -82,7 +80,5 @@ class Login extends Component {
         );
     }
 }
-// export default Login;
 
-Login.propTypes = { loginUser: PropTypes.func.isRequired };
-export default connect(null, { loginUser })(Login);
+export default Login;

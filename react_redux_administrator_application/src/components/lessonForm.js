@@ -11,34 +11,55 @@ class LessonForm extends Component {
             lessonDescp: '',
             lessonImage: '',
             lessonNumber: '',
-            redirect:false
+            image: null,
+            redirect: false
         };
     }
     onChange = (e) => {
         this.setState({ [e.target.name]: e.target.value });
     }
+    onImageChange = async (e) => {
+        await this.setState({ image: e.target.files[0] });
+        console.log(this.state.image)
+    }
+
     onSubmit = (e) => {
         e.preventDefault();
-        fetch('http://10.10.5.192:3031/lesson', {
+        const data = new FormData();
+        data.append('title', this.state.lessonImage);
+        data.append('image', this.state.image);
+        fetch('http://10.10.4.101:5400/insertImage', {
             method: 'POST',
-            body: JSON.stringify(this.state),
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        }).then(Response => Response.json())
-            .then(async (response) => {
+            body: data,
+        }).then(res => res.json())
+            .then((response) => {
                 console.log(response)
-                if (response.error === null) {
-                    alert('Lesson entered');
-                    this.setState({ redirect:true })
-                } else {
-                    alert(response.error.message);
-                }
-            });
+                this.setState({
+                    lessonImage:response.data.link
+                })
+                fetch('http://10.10.5.192:3031/lesson', {
+                    method: 'POST',
+                    body: JSON.stringify(this.state),
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                }).then(Response => Response.json())
+                    .then(async (response) => {
+                        console.log(response)
+                        if (response.error === null) {
+                            this.setState({ redirect: true })
+                            alert('Lesson entered');
+                            this.setState({ redirect: true })
+                        } else {
+                            alert(response.error.message);
+                        }
+                    });
+            })
     }
+
+
     render() {
-        if(this.state.redirect === true)
-        {
+        if (this.state.redirect === true) {
             return <Redirect to="/home" />
         }
         return (
@@ -76,6 +97,10 @@ class LessonForm extends Component {
                                         <div className="form-group">
                                             <label>lessonImage</label>
                                             <input name="lessonImage" className="form-control" placeholder="" type="text" onChange={this.onChange} />
+                                        </div>
+                                        <div className="form-group">
+                                            <label>Upload image</label>
+                                            <input type="file" name="image" className="form-control" onChange={this.onImageChange} ></input>
                                         </div>
                                         <div className="form-group">
                                             <input type="submit" value="Submit" className="btn btn-primary btn-block" onChange={this.onChange} />

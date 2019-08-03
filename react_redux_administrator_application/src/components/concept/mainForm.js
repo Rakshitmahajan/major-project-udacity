@@ -20,11 +20,11 @@ class MainForm extends Component {
             redirect:false
         }
     }
-    onComponentSubmit = (type, id) => {
-        this.state.concept.push({ type, id })
+    onComponentSubmit = (type, id, data) => {
+        this.state.concept.push({ type, id, data })
     }
-    onImageSubmit = (type, url, caption) => {
-        this.state.concept.push({ type, url, caption})
+    onImageSubmit = (type, title, caption, data) => {
+        this.state.concept.push({ type, title, caption, data })
     }
     onChange = (e) => {
         this.setState({ [e.target.name]: e.target.value });
