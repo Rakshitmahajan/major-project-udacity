@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import { connect } from 'react-redux';
 import Login from './UserPageComponent/login';
 import Signup from './UserPageComponent/signup';
@@ -12,29 +12,24 @@ class Routes extends React.Component {
   render() {
     if (localStorage.getItem('jwtToken')) {
       return (
-        <div className=' ' >
-          {/* {console.log(this.props.auth, localStorage.token)}
-          {this.props.auth.email === null &&
-            localStorage.token === undefined ? (<Switch> */}
+        <Router>
           <Route exact path='/' component={Login} />
           <Route exact path='/signup' component={Signup} />
-          {/* <Route component={Login} /> */}
-          {/* </Switch>) : (<Switch> */}
           <Route path='/home' component={HomePage} />
           <Route exact path='/course/:courseId' component={CoursePage} />
           <Route exact path='/course/:courseId/:lessonId' component={LessonPage} />
           <Route exact path='/course/:courseId/:lessonId/:concept' component={LessonPage} />
           <Route exact path='/logout' component={Logout} />
-          {/* <Route component={Login} />
-            </Switch>)} */}
-        </div>
+        </Router>
       );
     }
     else {
-      <div className=' ' >
+      return(
+        <Router>
         <Route exact path='/' component={Login} />
         <Route exact path='/signup' component={Signup} />
-      </div>
+      </Router>
+      )
     }
   }
 }
