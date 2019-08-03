@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
 import { Redirect, Link } from 'react-router-dom'
+=======
+import { Link } from 'react-router-dom';
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { loginUser } from '../../actions/userAction';
+>>>>>>> 705fba8d7791dcf835d2a91102cb5b015e51d1c2
 import './signup.css'
 class Login extends Component {
     constructor(props) {

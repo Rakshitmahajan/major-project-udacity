@@ -11,6 +11,9 @@ export default (state = initialState, action) => {
       if (flag === 0) {
         newstate.push(action.data);
       }
+      if (action.error === 1) {
+        return [];
+      }
       state = newstate;
       return state;
     default:

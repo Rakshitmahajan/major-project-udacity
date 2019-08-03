@@ -6,8 +6,9 @@ import Signup from './UserPageComponent/signup';
 import HomePage from './HomePageComponent/HomePage';
 import CoursePage from './CoursePageComponent/CoursePage';
 import LessonPage from './LessonPageComponent/LessonPage';
+import Lesson from './LessonPageComponent/lesson';
 import Logout from './UserPageComponent/Logout';
-import NotFound from './Notfound.js';
+// import NotFound from './Notfound.js';
 class Routes extends React.Component {
   render() {
     if (localStorage.getItem('jwtToken')) {
@@ -34,6 +35,18 @@ class Routes extends React.Component {
       <div className=' ' >
         <Route exact path='/' component={Login} />
         <Route exact path='/signup' component={Signup} />
+<<<<<<< HEAD
+=======
+        {/* <Route component={Login} /> */}
+        {/* </Switch>) : (<Switch> */}
+        <Route path='/home' component={HomePage} />
+        <Route exact path='/course/:courseId' component={CoursePage} />
+        <Route exact path='/course/:courseId/:lessonId' component={Lesson} />
+        <Route exact path='/course/:courseId/:lessonId/:concept' component={LessonPage} />
+        <Route exact path='/logout' component={Logout} />
+        {/* <Route component={Login} />
+          </Switch>)} */}
+>>>>>>> 705fba8d7791dcf835d2a91102cb5b015e51d1c2
       </div>
     }
   }
