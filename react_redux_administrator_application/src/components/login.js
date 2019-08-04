@@ -13,6 +13,9 @@ class Login extends Component {
     onChange = (e) => {
         this.setState({ [e.target.name]: e.target.value });
     }
+    onPress = (e) => {
+        alert('not yet enabled')
+    }
     onSubmit = (e) => {
         e.preventDefault();
         fetch('http://10.10.4.101:2000/mentorLogin', {
@@ -62,12 +65,12 @@ class Login extends Component {
                                             <input name="password" className="form-control" placeholder="password" type="password" onChange={this.onChange} />
                                         </div>
                                         <div className="form-group">
-                                            <button className="btn btn-danger btn-block">Login With Google</button>
-                                        </div>
-                                        <div className="form-group">
                                             <input type="submit" value="Submit" className="btn btn-primary btn-block" onChange={this.onChange} />
                                         </div>
                                     </form>
+                                    <div className="form-group">
+                                            <button className="btn btn-danger btn-block" onClick={this.onPress}>Login With Google</button>
+                                        </div>
                                 </article>
                             </div>
                         </aside>

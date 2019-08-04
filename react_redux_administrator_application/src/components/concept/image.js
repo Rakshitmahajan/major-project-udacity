@@ -1,21 +1,42 @@
 import React, { Component } from 'react';
-// import { url } from 'react-router-dom'
 import '../signup.css'
 class Image extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            url: '',
-            caption: ''
+            title: '',
+            caption: '',
+            image:null,
         };
     }
     onChange = (e) => {
         this.setState({ [e.target.name]: e.target.value });
     }
+    onImageChange = (e) => {
+        this.setState({ image: e.target.files[0] });
+        console.log(this.state.image)
+    }
+
     onSubmit = async (e) => {
         e.preventDefault();
-        this.props.onImageSubmit('image', this.state.url, this.state.caption);
+        const data = new FormData();
+        await data.append('title', this.state.imageTitle);
+        await data.append('image', this.state.image);
+        fetch('http://10.10.4.101:5400/insertImage', {
+            method: 'POST',
+            body: data,
+        }).then(Response => Response.json())
+            .then((response) => {
+                console.log(response)
+                if (response.err === null) {
+                    this.props.onImageSubmit('image', response.data.link, this.state.caption);
+                } else {
+                    alert(response.err.message);
+                }
+            });
+        this.props.onComponentSubmit('image', this.state.link);
     }
+
     render() {
         return (
             <div>
@@ -27,8 +48,12 @@ class Image extends Component {
                                     <h4 className="card-title mb-4 mt-1">Enter Image</h4>
                                     <form onSubmit={this.onSubmit}>
                                         <div className="form-group">
-                                            <label>Image url</label>
-                                            <input name="url" className="form-control" placeholder="" type="text" onChange={this.onChange} />
+                                            <label>Image Title</label>
+                                            <input name="title" className="form-control" placeholder="" type="text" onChange={this.onChange} />
+                                        </div>
+                                        <div className="form-group">
+                                            <label>Upload image</label>
+                                            <input type="file" name="image" className="form-control" onChange={this.onImageChange} ></input>
                                         </div>
                                         <div className="form-group">
                                             <label>Image caption</label>

@@ -1,13 +1,13 @@
-import { combineReducers } from "redux";
-import userData from './userReducer';
-import courseData from "./courseReducer";
-import lessonData from './lessonReducer';
-import contentData from './contentReducer';
-import contentTitle from './contentTitleReducer';
+import { combineReducers } from 'redux';
+import user from './UserReducer';
+import course from './CourseReducer';
+import lesson from './LessonReducer';
+import chapter from './ChapterReducer';
+import content from './ContentReducer';
 export default combineReducers({
-  userData,
-  courseData,
-  lessonData,
-  contentTitle,
-  contentData
-})
+  user,
+  course,
+  lesson,
+  chapter,
+  content
+});
