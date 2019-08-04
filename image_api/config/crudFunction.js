@@ -24,8 +24,8 @@ async function insertImage(req, link) {
         return ({
             err: null,
             data: {
-                'title': title,
-                'link': link,
+                title: title,
+                link: link,
             }
         })
     } catch (err) {

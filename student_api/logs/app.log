@@ -90,3 +90,15 @@
 {"message":"::ffff:10.10.5.192 - - [01/Aug/2019:13:35:44 +0000] \"POST /studentLogin HTTP/1.1\" 200 117 \"http://localhost:3000/home\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36\"\n","level":"info"}
 {"message":"::ffff:10.10.5.192 - - [01/Aug/2019:13:38:32 +0000] \"POST /studentLogin HTTP/1.1\" 200 117 \"http://localhost:3000/home\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36\"\n","level":"info"}
 {"message":"::ffff:10.10.6.20 - - [02/Aug/2019:04:50:55 +0000] \"POST /studentLogin HTTP/1.1\" 200 117 \"http://localhost:40679/home\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36 OPR/62.0.3331.99\"\n","level":"info"}
+{"message":"::ffff:10.10.4.101 - - [02/Aug/2019:06:17:57 +0000] \"POST /studentLogin HTTP/1.1\" 200 117 \"http://10.10.5.192:3000/home\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36\"\n","level":"info"}
+{"message":"::ffff:10.10.4.101 - - [02/Aug/2019:06:18:38 +0000] \"POST /studentLogin HTTP/1.1\" 200 117 \"http://10.10.5.192:3000/home\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36\"\n","level":"info"}
+{"level":"info","message":"STUDENT API Magic happens on port 2001"}
+{"level":"info","message":"STUDENT API Magic happens on port 2001"}
+{"level":"info","message":"STUDENT API Magic happens on port 2001"}
+{"message":"::ffff:10.10.5.192 - - [02/Aug/2019:09:40:46 +0000] \"POST /studentLogin HTTP/1.1\" 200 117 \"http://localhost:45213/home\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36\"\n","level":"info"}
+{"message":"::ffff:10.10.5.192 - - [02/Aug/2019:10:57:17 +0000] \"POST /studentLogin HTTP/1.1\" 200 117 \"http://localhost:45213/home\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36\"\n","level":"info"}
+{"message":"::ffff:10.10.5.192 - - [02/Aug/2019:11:03:46 +0000] \"POST /studentLogin HTTP/1.1\" 200 117 \"http://localhost:45213/home\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36\"\n","level":"info"}
+{"message":"::ffff:10.10.4.101 - - [02/Aug/2019:16:37:26 +0000] \"POST /studentLogin HTTP/1.1\" 200 117 \"-\" \"PostmanRuntime/7.15.2\"\n","level":"info"}
+{"message":"::ffff:10.10.4.101 - - [02/Aug/2019:16:38:19 +0000] \"POST /studentSignup HTTP/1.1\" 200 113 \"-\" \"PostmanRuntime/7.15.2\"\n","level":"info"}
+{"message":"::ffff:10.10.4.101 - - [02/Aug/2019:16:38:26 +0000] \"POST /studentLogin HTTP/1.1\" 200 111 \"-\" \"PostmanRuntime/7.15.2\"\n","level":"info"}
+{"level":"info","message":"STUDENT API Magic happens on port 2001"}
