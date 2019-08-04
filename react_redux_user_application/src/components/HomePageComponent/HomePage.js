@@ -26,7 +26,7 @@ class HomePage extends React.Component {
                             <p className='h5 pb-4 breadcrumb-item active'><a href="#nanodegree" className="text-decoration-none">NANODEGREE</a>  |  <a href="#courses" className="text-decoration-none">COURSES</a></p>
                         </div>
                         <div className='pb-3 pt-2'>
-                            {/* <p className='h6'>LATEST ACTIVITY</p> */}
+                             <p className='h6'>LATEST ACTIVITY</p> 
                             {/* <CourseCard /> */}
                         </div>
                         <div className='pb-3 pt-2'>
