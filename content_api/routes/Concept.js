@@ -3,7 +3,7 @@ const pool = require('../config/ConceptCrudOperation');
 const fetch = require('node-fetch');
 const app = express.Router();
 fun = async (data) => {
-  const result = await fetch(`http://10.10.5.192:5000/${data.type}/${data.id}`)
+  const result = await fetch(`http://localhost:5000/${data.type}/${data.id}`)
     .then(res => res.json())
     .then(resp => {
       // let data2 = resp.data

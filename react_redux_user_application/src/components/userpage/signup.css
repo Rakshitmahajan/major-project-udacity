@@ -1,0 +1,615 @@
+
+.loading-wrapper_container__3rfyH {
+    position: relative;
+}
+
+.button__btn__2MHEg {
+    border: none;
+    border-radius: 4px;
+    -webkit-box-shadow: 12px 15px 20px rgba(0, 0, 0, .1);
+    box-shadow: 12px 15px 20px rgba(0, 0, 0, .1);
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Open Sans, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: .165em;
+    max-width: 100%;
+    overflow: hidden;
+    text-align: center;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    -webkit-transition: background-color .2s ease-in-out, border-color .2s ease-in-out, -webkit-box-shadow .2s ease-in-out;
+    transition: background-color .2s ease-in-out, border-color .2s ease-in-out, -webkit-box-shadow .2s ease-in-out;
+    -o-transition: .2s box-shadow ease-in-out, .2s background-color ease-in-out, .2s border-color ease-in-out;
+    transition: box-shadow .2s ease-in-out, background-color .2s ease-in-out, border-color .2s ease-in-out;
+    transition: box-shadow .2s ease-in-out, background-color .2s ease-in-out, border-color .2s ease-in-out, -webkit-box-shadow .2s ease-in-out;
+    white-space: nowrap;
+}
+
+.button__btn__2MHEg:focus,
+.button__btn__2MHEg:hover {
+    -webkit-box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, .1);
+    box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, .1);
+}
+
+.button__btn__2MHEg:disabled {
+    background-color: #7d97ad;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    cursor: default;
+    opacity: .7;
+}
+
+.button_primary__1qhjh {
+    background: #02b3e4;
+}
+
+.button_standard__1p9sb {
+    padding: 1.2em 4em;
+}
+
+.button_nav__29WTj {
+    background: #02ccba;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    min-width: 8em;
+    padding: .75em 1em;
+    text-transform: none;
+}
+
+.button_body__29iIF {
+    background: #fff;
+    border: 1px solid #02b3e4;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #7d97ad;
+    min-width: 8em;
+    padding: .75em 1em;
+}
+
+.text-input_text-input__3KeW4 {
+    height: 44px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 1px solid #dbe2e8;
+    font-size: 14px;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(46, 60, 73, .05);
+    box-shadow: 0 2px 2px 0 rgba(46, 60, 73, .05);
+    border-radius: 2px;
+    color: #2e3d49;
+}
+
+.text-input_text-input__3KeW4:active,
+.text-input_text-input__3KeW4:focus {
+    outline: none;
+    border-color: #02b3e4;
+}
+
+.text-input_text-input__3KeW4::-webkit-input-placeholder {
+    color: #7d97ad;
+}
+
+.text-input_text-input__3KeW4::-moz-placeholder {
+    color: #7d97ad;
+}
+
+.text-input_text-input__3KeW4:-ms-input-placeholder {
+    color: #7d97ad;
+}
+
+.text-input_text-input__3KeW4::-ms-input-placeholder {
+    color: #7d97ad;
+}
+
+.text-input_text-input__3KeW4::placeholder {
+    color: #7d97ad;
+}
+
+/*! CSS Used from: https://auth.udacity.com/static/css/main.cfdbd7f0.chunk.css */
+body * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form-group {
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.form-group input[type=email],
+.form-group input[type=password],
+.form-group input[type=text] {
+    width: 100%;
+}
+
+.form-group input+input {
+    margin-left: 20px;
+}
+
+.form-group input {
+    border-radius: 4px;
+}
+
+.form-group+.form-group {
+    margin-top: 20px;
+}
+
+@media (max-width:46.24em) {
+    .form-group {
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .form-group input+input {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        margin-top: 20px;
+    }
+}
+
+.tos-blurb {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #525c65;
+    max-width: 500px;
+    margin: 20px 0;
+    text-align: left;
+}
+
+.app_content__Kl-ZQ {
+    padding: 40px;
+}
+
+@media (max-width:46.24em) {
+    .app_content__Kl-ZQ {
+        padding: 25px;
+    }
+}
+
+.alert__alert__nhpvN {
+    padding: 20px 25px;
+    border-radius: 2px;
+    color: #fff;
+    text-align: left;
+}
+
+.alert_success__1bTs6 {
+    background-color: #15c26b;
+}
+
+.alert_error__3rDC3 {
+    background-color: #f04546;
+}
+
+.alert_hidden__2ikXu {
+    display: none;
+}
+
+.tabbed-pane_tabbed-pane__2DfHq {
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-box-shadow: 2px 2px 3px 0 rgba(117, 124, 129, .12);
+    box-shadow: 2px 2px 3px 0 rgba(117, 124, 129, .12);
+    max-width: 620px;
+    border: 1px solid #dbe2e8;
+    text-align: center;
+}
+
+.tabbed-pane_tabs__1rsRG {
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.tabbed-pane__tab__2Q7yi {
+    -ms-flex: auto;
+    flex: auto;
+    padding: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.tabbed-pane__tab__2Q7yi+.tabbed-pane__tab__2Q7yi {
+    border-left: 1px solid #dbe2e8;
+}
+
+.tabbed-pane__tab__2Q7yi:focus,
+.tabbed-pane__tab__2Q7yi:hover {
+    background: #fff !important;
+}
+
+.tabbed-pane_tab__1UGlv {
+    cursor: pointer;
+    background: #fafbfc;
+    border-bottom: 1px solid #dbe2e8;
+    font-weight: 600;
+    color: #7d97ad;
+}
+
+.tabbed-pane_tab-selected__3MxJq {
+    cursor: default;
+    background: #fff;
+    font-weight: 700;
+    color: #2e3d49;
+}
+
+.tabbed-pane_tab-selected__3MxJq:focus,
+.tabbed-pane_tab-selected__3MxJq:hover {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.tabbed-pane_content__3zivd {
+    background: #fff;
+    padding: 40px 60px;
+}
+
+@media (max-width:46.24em) {
+    .tabbed-pane_content__3zivd {
+        padding: 30px;
+    }
+}
+
+.form-header_header__UhqWw {
+    font-size: 34px;
+    font-weight: 300;
+    line-height: 1.3;
+    color: #2e3d49;
+    text-align: center;
+}
+
+.form-header_description__2ic93 {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #525c65;
+    margin: 15px 0;
+    text-align: center;
+}
+
+.or-separator_contain__3YaFK {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.or-separator_flex__6ViaO {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.or-separator_line__x5QkI {
+    width: 80%;
+}
+
+hr {
+    width: 100%;
+    height: 1px;
+    background-color: #dbe2e8;
+    border: none;
+    margin: 20px 0;
+}
+
+.or-separator_text__2YQdZ {
+    margin: 0 10px;
+    -webkit-transform: translateY(-3px);
+    transform: translateY(-3px);
+    min-width: 32px;
+}
+
+._provider-button_provider-button__3AGeE {
+    width: 100%;
+    border: none;
+    color: #757c81;
+    text-transform: none;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .08), 0 1px 4px rgba(0, 0, 0, .12);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .08), 0 1px 4px rgba(0, 0, 0, .12);
+    border-radius: 4px;
+    letter-spacing: 0;
+    min-width: 200px;
+}
+
+@media (min-width:46.25em) {
+    ._provider-button_provider-button__3AGeE+._provider-button_provider-button__3AGeE {
+        margin-left: 15px;
+    }
+}
+
+@media (max-width:46.24em) {
+    ._provider-button_provider-button__3AGeE {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 10px;
+    }
+}
+
+._provider-button_label__1gtgk {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+._provider-button_label__1gtgk img {
+    height: 24px;
+    width: 24px;
+    margin-right: 15px;
+}
+
+a,
+body,
+div,
+form,
+iframe,
+img,
+span {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+body {
+    line-height: 1;
+}
+
+body {
+    color: #525c65;
+    font-size: 16px !important;
+}
+
+a {
+    color: #02b3e4;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+a:hover {
+    color: #2e3d49;
+}
+
+.provider-buttons_buttons__tVEWg {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+@media (max-width:46.24em) {
+    .provider-buttons_buttons__tVEWg {
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+}
+
+.form_alerts__2mutj {
+    margin-bottom: 20px;
+}
+
+.form_alerts__2mutj>div+div {
+    margin-top: 20px;
+}
+
+.form_primary-button__37eaW {
+    width: 100%;
+}
+
+.form_form__1IFP- {
+    margin: 0 0 30px;
+}
+
+.header_header__1ZcYO {
+    display: -ms-flexbox;
+    display: flex;
+    background: #fff;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 1.5rem 0;
+    -webkit-box-shadow: 0 5px 15px 0 rgba(46, 61, 73, .12);
+    box-shadow: 0 5px 15px 0 rgba(46, 61, 73, .12);
+}
+
+.header_logo__3Il0I {
+    margin: 0 auto;
+    width: 200px;
+    height: 35px;
+    background: url(https://auth.udacity.com/static/media/logo.5df7f2ae.svg) transparent no-repeat;
+}
+
+.header_logo-container__1Ji6p {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+*,
+:after,
+:before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fff;
+    color: #11161a;
+    font-family: Open Sans, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    text-align: left;
+}
+
+[tabindex="-1"]:focus {
+    outline: 0 !important;
+}
+
+hr {
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    overflow: visible;
+}
+
+img {
+    border-style: none;
+    vertical-align: middle;
+}
+
+button {
+    border-radius: 0;
+}
+
+button:focus {
+    outline: 1px dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+}
+
+button,
+input {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0;
+}
+
+button,
+input {
+    overflow: visible;
+}
+
+button {
+    text-transform: none;
+}
+
+button,
+html [type=button] {
+    -webkit-appearance: button;
+}
+
+[type=button]::-moz-focus-inner,
+button::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+}
+
+body {
+    font-family: Open Sans, sans-serif;
+    color: #11161a;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+:after,
+:before {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+body {
+    padding: 0;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+hr {
+    border: 0;
+    border-bottom: 1px solid hsla(0, 0%, 100%, .3);
+    border-top: 1px solid rgba(0, 7, 9, .1);
+    height: 0;
+}
+
+body ::-moz-selection {
+    background: rgba(164, 228, 245, .4);
+}
+
+body ::selection {
+    background: rgba(164, 228, 245, .4);
+}
+
+[type=email],
+[type=password],
+[type=text] {
+    border-radius: .25rem;
+    border: 1px solid #96a0aa;
+    height: 3rem;
+    padding: .625rem 1rem;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+    width: 100%;
+}
+
+[type=email]:focus,
+[type=password]:focus,
+[type=text]:focus {
+    -webkit-box-shadow: 0 0 0 4px #02b3e4;
+    box-shadow: 0 0 0 4px #02b3e4;
+    outline: none;
+}
+
+[type=email]:disabled,
+[type=password]:disabled,
+[type=text]:disabled {
+    cursor: not-allowed;
+    opacity: .24;
+    pointer-events: none;
+}
+
+[type=email]::-webkit-input-placeholder,
+[type=password]::-webkit-input-placeholder,
+[type=text]::-webkit-input-placeholder {
+    color: #96a0aa;
+}
+
+[type=email]::-moz-placeholder,
+[type=password]::-moz-placeholder,
+[type=text]::-moz-placeholder {
+    color: #96a0aa;
+}
+
+[type=email]:-ms-input-placeholder,
+[type=password]:-ms-input-placeholder,
+[type=text]:-ms-input-placeholder {
+    color: #96a0aa;
+}
+
+[type=email]::-ms-input-placeholder,
+[type=password]::-ms-input-placeholder,
+[type=text]::-ms-input-placeholder {
+    color: #96a0aa;
+}
+
+[type=email]::placeholder,
+[type=password]::placeholder,
+[type=text]::placeholder {
+    color: #96a0aa;
+}
