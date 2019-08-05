@@ -60,13 +60,7 @@ class Routes extends Component {
               <Route exact path="/signup" component={Signup} />
               <Route component={Login} />
             </Switch>
-<<<<<<< HEAD
-          )} */}
-        
-
-=======
           )}
->>>>>>> f8068e58fa0ade7e80665b2b71085135c1f312eb
       </div>
     );
   }
