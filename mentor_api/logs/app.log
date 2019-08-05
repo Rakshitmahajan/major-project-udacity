@@ -148,3 +148,4 @@
 {"message":"::ffff:10.10.2.196 - - [04/Aug/2019:19:10:12 +0000] \"POST /mentorLogin HTTP/1.1\" 200 292 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36\"\n","level":"info"}
 {"message":"::ffff:10.10.2.196 - - [04/Aug/2019:19:15:57 +0000] \"POST /mentorLogin HTTP/1.1\" 200 292 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36\"\n","level":"info"}
 {"message":"::ffff:10.10.2.196 - - [04/Aug/2019:19:17:14 +0000] \"POST /mentorLogin HTTP/1.1\" 200 48 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36\"\n","level":"info"}
+{"level":"info","message":"Magic happens on port 2000"}
