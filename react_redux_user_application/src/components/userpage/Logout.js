@@ -13,6 +13,7 @@ class Logout extends Component {
 }
 onClick = () => {
     localStorage.removeItem('jwtToken');
+    localStorage.removeItem('user');
     this.setState({
         redirect:true
     })
