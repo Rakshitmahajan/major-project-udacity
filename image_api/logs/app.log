@@ -452,3 +452,4 @@
 {"message":"::ffff:10.10.4.101 - - [03/Aug/2019:11:11:31 +0000] \"GET /readimage/dummy HTTP/1.1\" 304 - \"http://10.10.5.192:44379/lesson\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36\"\n","level":"info"}
 {"message":"::ffff:10.10.4.101 - - [03/Aug/2019:11:11:31 +0000] \"GET /readimage/CHmain_L3 HTTP/1.1\" 304 - \"http://10.10.5.192:44379/lesson\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36\"\n","level":"info"}
 {"level":"info","message":"Magic happens on port 5400"}
+{"level":"info","message":"Magic happens on port 5400"}

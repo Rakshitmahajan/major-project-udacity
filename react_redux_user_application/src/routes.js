@@ -12,6 +12,7 @@ import PostDisplay from './components/knowledgepage/PostDisplay';
 import SubmissionPage from './components/projectSubmission/submissionpage';
 import SubmitZip from './components/projectSubmission/submit-zip';
 // import Notfound from './components/Notfound';
+import Chat from './chat/App'
 import SubmissionView from './components/projectSubmission/submissionView'
 import { connect } from 'react-redux';
 
@@ -23,6 +24,7 @@ class Routes extends Component {
         {/* <Route exact path="/" component={Login} />
         <Route exact path="/signup" component={Signup} />
         <Route exact path='/home' component={Home} />
+        <Route exact path="/signup" component={Signup} />
         <Route exact path='/course' component={Course} />
         <Route exact path='/lesson' component={Lesson} />
         <Route exact path="/knowledge" component={Knowledge} />
@@ -32,7 +34,9 @@ class Routes extends Component {
         <Route exact path='/postdisplay' component={PostDisplay} />
         <Route exact path="/submissionpage" component={SubmissionPage} />
         <Route exact path="/submit-zip" component={SubmitZip} />
-        <Route exact path="/submissionview" component={SubmissionView} /> */}
+        <Route exact path="/submissionview" component={SubmissionView} />
+        <Route exact path="/chat" component={Chat} />
+         */}
 
         {localStorage.getItem('jwtToken') ? (
           <Switch>
@@ -40,6 +44,7 @@ class Routes extends Component {
             <Route exact path='/course' component={Course} />
             <Route exact path='/lesson' component={Lesson} />
             <Route exact path="/knowledge" component={Knowledge} />
+            <Route exact path="/chat" component={Chat} />
             <Route exact path="/activity" component={Activity} />
             <Route exact path="/post" component={Post} />
             <Route exact path="/" component={Login} />
