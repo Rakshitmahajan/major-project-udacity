@@ -1,0 +1,6 @@
+.online {
+    width:20%;
+    position: fixed;
+    z-index: 1;
+    overflow-x: hidden;
+}

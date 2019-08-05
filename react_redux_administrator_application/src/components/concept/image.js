@@ -20,7 +20,7 @@ class Image extends Component {
     onSubmit = async (e) => {
         e.preventDefault();
         const data = new FormData();
-        await data.append('title', this.state.imageTitle);
+        await data.append('title', this.state.title);
         await data.append('image', this.state.image);
         fetch('http://10.10.4.101:5400/insertImage', {
             method: 'POST',
@@ -29,7 +29,7 @@ class Image extends Component {
             .then((response) => {
                 console.log(response)
                 if (response.err === null) {
-                    this.props.onImageSubmit('image', response.data.link, this.state.caption);
+                    this.props.onImageSubmit('image', this.state.title, this.state.caption);
                 } else {
                     alert(response.err.message);
                 }

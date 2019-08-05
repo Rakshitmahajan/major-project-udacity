@@ -17,12 +17,12 @@ class SideBar extends React.Component {
               fill="#02B3E4"></path>
           </g>
         </svg></Link>
-        <a className="active" href="/home"><i className="vds-icon vds-icon--lg"
+        <Link className="active" to="/home"><i className="vds-icon vds-icon--lg"
           role="img"><span className="vds-visually-hidden"></span><svg viewBox="0 0 32 32">
             <path
               d="M11 25v-4a5 5 0 0 1 10 0v4h3V13.838l-8-6.546-8 6.546V25h3zm15-9.526V25a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-9.526l-.367.3a1 1 0 1 1-1.266-1.548l11-9a1 1 0 0 1 1.266 0l11 9a1 1 0 1 1-1.266 1.548l-.367-.3zM19 25v-4a3 3 0 0 0-6 0v4h6z"
               fillRule="nonzero"></path>
-          </svg></i> Home</a>
+          </svg></i> Home</Link>
         <a href="#"><i className="vds-icon vds-icon--lg"
           role="img"><span className="vds-visually-hidden"></span><svg viewBox="0 0 32 32">
             <path

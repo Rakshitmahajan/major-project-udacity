@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, Redirect } from "react-router-dom";
 import { loginUser } from '../../actions/UserAction';
 import { connect } from 'react-redux';
+import jwt from 'jsonwebtoken'
 import './Login.css';
 
 
@@ -27,7 +28,10 @@ class Login extends Component {
         console.log(response)
         if (response.err === null) {
           const token = response.token;
+          const userObj = jwt.decode(token);
+          console.log(userObj);
           localStorage.setItem('jwtToken', token);
+          localStorage.setItem('user',userObj.firstName);
           alert('login sucessful');
           this.setState({ redirect: true })
         } else {

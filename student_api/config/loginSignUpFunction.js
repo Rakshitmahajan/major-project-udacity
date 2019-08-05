@@ -2,6 +2,8 @@ const bcrypt = require('bcryptjs');
 const db = require('./sqlConnection');
 const winston = require('./winston');
 
+const jwt = require('jsonwebtoken');
+
 async function err_check(firstName, lastName, email, phoneNumber, password, password2) {
     if (!firstName || !email || !password || !password2 || !phoneNumber || !lastName) {
         return ('field required');
@@ -84,12 +86,13 @@ async function loginStudent(req) {
         if (bcrypt.compareSync(password, rows[0].password)) {
             const token = jwt.sign({
                 email:rows[0].email,
+                firstName:rows[0].firstName,
                 phoneNumber:rows[0].phoneNumber
             }, 'thisissomesecreatkey')
             return ({
                 err: null,
                 data: {
-                    firstname: rows[0].firstName,
+                    firstName: rows[0].firstName,
                     lastName: rows[0].lastName,
                     email: rows[0].email,
                     phoneNumber: rows[0].phoneNumber

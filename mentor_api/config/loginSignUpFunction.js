@@ -86,12 +86,13 @@ async function loginMentor(req) {
         if (bcrypt.compareSync(password, rows[0].password)) {
             const token = jwt.sign({
                 email:rows[0].email,
+                firstName: rows[0].firstName,
                 phoneNumber:rows[0].phoneNumber
             }, 'thisissomesecreatkey')
             return ({
                 err: null,
                 data: {
-                    firstname: rows[0].firstName,
+                    firstName: rows[0].firstName,
                     lastName: rows[0].lastName,
                     email: rows[0].email,
                     phoneNumber: rows[0].phoneNumber

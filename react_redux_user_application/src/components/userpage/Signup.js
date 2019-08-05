@@ -58,7 +58,7 @@ class Signup extends Component {
                 <div className="tabbed-pane_tabs__1rsRG"><button type="button"
                   className="button_nav__29WTj button__btn__2MHEg tabbed-pane_tab-selected__3MxJq tabbed-pane__tab__2Q7yi button_standard__1p9sb"
                 >Sign Up</button>
-                  <Link to='/' className="button_nav__29WTj button__btn__2MHEg tabbed-pane_tab__1UGlv tabbed-pane__tab__2Q7yi button_standard__1p9sb">Sign Up</Link>
+                  <Link to='/' className="button_nav__29WTj button__btn__2MHEg tabbed-pane_tab__1UGlv tabbed-pane__tab__2Q7yi button_standard__1p9sb">Sign In</Link>
                 </div>
                 <div className="tabbed-pane_content__3zivd">
                   <div>
