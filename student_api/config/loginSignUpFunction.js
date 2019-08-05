@@ -2,6 +2,8 @@ const bcrypt = require('bcryptjs');
 const db = require('./sqlConnection');
 const winston = require('./winston');
 
+const jwt = require('jsonwebtoken');
+
 async function err_check(firstName, lastName, email, phoneNumber, password, password2) {
     if (!firstName || !email || !password || !password2 || !phoneNumber || !lastName) {
         return ('field required');
