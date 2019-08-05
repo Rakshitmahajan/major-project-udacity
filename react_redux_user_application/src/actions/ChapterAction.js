@@ -1,5 +1,5 @@
 export const readChapters = (courseId, lessonId) => dispatch => {
-  fetch(`http://localhost:5000/concept/title/${courseId}/${lessonId}`, {
+  fetch(`http://10.10.5.192:5000/concept/title/${courseId}/${lessonId}`, {
     method: 'GET',
     headers: { "Content-Type": "application/json" }
   })
@@ -13,7 +13,7 @@ export const readChapters = (courseId, lessonId) => dispatch => {
 }
 export const currentChapter = (courseId, lessonId, chapterTitle) => dispatch => {
   // console.log('currentChapter', courseId, lessonId, chapterTitle)
-  fetch(`http://localhost:5000/concept/${courseId}/${lessonId}/${chapterTitle}`, {
+  fetch(`http://10.10.5.192:5000/concept/${courseId}/${lessonId}/${chapterTitle}`, {
     method: 'GET',
     headers: { "Content-Type": "application/json" }
   })

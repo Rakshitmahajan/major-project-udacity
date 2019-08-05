@@ -20,6 +20,8 @@ class Routes extends Component {
   render() {
     return (
       <div>
+        {/* <Route exact path="/" component={Login} />
+        <Route exact path="/signup" component={Signup} />
         <Route exact path='/home' component={Home} />
         <Route exact path='/course' component={Course} />
         <Route exact path='/lesson' component={Lesson} />
@@ -30,21 +32,21 @@ class Routes extends Component {
         <Route exact path='/postdisplay' component={PostDisplay} />
         <Route exact path="/submissionpage" component={SubmissionPage} />
         <Route exact path="/submit-zip" component={SubmitZip} />
-        <Route exact path="/submissionview" component={SubmissionView} />
+        <Route exact path="/submissionview" component={SubmissionView} /> */}
 
-        {/* {localStorage.getItem('jwtToken') ? (
-        <Route exact path="/" component={Login} />
-        <Route exact path="/signup" component={Signup} />
-        <Route exact path="/submissionpage" component={SubmissionPage} />
-        <Route exact path="/submit-zip" component={SubmitZip} />
-        <Route exact path="/submissionview" component={SubmissionView} />
-        {/*localStorage.getItem('jwtToken') ? (
+        {localStorage.getItem('jwtToken') ? (
           <Switch>
             <Route exact path='/home' component={Home} />
             <Route exact path='/course' component={Course} />
             <Route exact path='/lesson' component={Lesson} />
+            <Route exact path="/knowledge" component={Knowledge} />
+            <Route exact path="/activity" component={Activity} />
+            <Route exact path="/post" component={Post} />
             <Route exact path="/" component={Login} />
-            <Route exact path="/signup" component={Signup} />
+            <Route exact path='/postdisplay' component={PostDisplay} />
+            <Route exact path="/submissionpage" component={SubmissionPage} />
+            <Route exact path="/submit-zip" component={SubmitZip} />
+            <Route exact path="/submissionview" component={SubmissionView} />
             <Route component={Home} />
           </Switch>
         ) : (
@@ -53,7 +55,7 @@ class Routes extends Component {
               <Route exact path="/signup" component={Signup} />
               <Route component={Login} />
             </Switch>
-          )} */}
+          )}
       </div>
     );
   }

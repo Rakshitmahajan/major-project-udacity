@@ -1,6 +1,7 @@
 /// https://bootstrapious.com/p/bootstrap-sidebar
 // <Link className="h3 badge badge-success float-right" to={{ pathname: "updategame/" + data.title, state: { data } }}>u</Link>
 import React from 'react';
+import { Link } from "react-router-dom";
 import Logout from '../userpage/Logout';
 import './Sidebar.css';
 class SideBar extends React.Component {
@@ -37,12 +38,12 @@ class SideBar extends React.Component {
               d="M7.745 12c1.853 2.683 4.573 4 8.255 4 3.68 0 6.399-1.316 8.252-3.995-1.897-.003-7.4-.004-16.507-.005zM25 14.287C22.81 16.752 19.79 18 16 18c-3.79 0-6.81-1.249-9-3.714.002 1.967.002 5.203 0 9.707 0 .004 6.003.006 18.008.007-.008 0-.01-3.238-.009-9.713zM11 10V8.01C11 6.903 11.897 6 12.997 6h6.006C20.11 6 21 6.895 21 8.01V10h4.008c1.104 0 1.992.901 1.992 2.007v11.986A2.007 2.007 0 0 1 25.008 26H6.992A1.999 1.999 0 0 1 5 23.993V12.007C5 10.904 5.898 10 6.992 10H11zm1.997-2c.008 0 .003.005.003.01v1.98c0 .007 0 .01-.002.01h6.005c-.008 0-.003-.005-.003-.01V8.01c0-.007 0-.01.002-.01h-6.005z"
               fillRule="nonzero"></path>
           </svg></i> Carrer Portal</a>
-        <a href="/knowledge"><i className="vds-icon vds-icon--lg"
+        <Link to="/knowledge"><i className="vds-icon vds-icon--lg"
           role="img"><span className="vds-visually-hidden"></span><svg viewBox="0 0 32 32">
             <path
               d="M9.414 15H21a1 1 0 0 1 0 2H9.414l3.293 3.293a1 1 0 0 1-1.414 1.414l-5-5a1 1 0 0 1 0-1.414l5-5a1 1 0 0 1 1.414 1.414L9.414 15zM24 8h-4v2a1 1 0 0 1-2 0V7a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1v-3a1 1 0 0 1 2 0v2h4V8z"
               fillRule="nonzero"></path>
-          </svg></i>Knowledge</a>
+          </svg></i>Knowledge</Link>
         <a href=""><i className="vds-icon vds-icon--lg"
           role="img"><span className="vds-visually-hidden"></span><svg viewBox="0 0 32 32">
             <path
