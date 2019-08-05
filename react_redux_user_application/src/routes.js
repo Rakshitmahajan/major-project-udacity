@@ -8,6 +8,7 @@ import Signup from './components/userpage/Signup';
 import SubmissionPage from './components/projectSubmission/submissionpage';
 import SubmitZip from './components/projectSubmission/submit-zip';
 // import Notfound from './components/Notfound';
+import SubmissionView from './components/projectSubmission/submissionView'
 import { connect } from 'react-redux';
 
 class Routes extends Component {
@@ -22,7 +23,7 @@ class Routes extends Component {
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/submissionpage" component={SubmissionPage} />
         <Route exact path="/submit-zip" component={SubmitZip} />
-
+        <Route exact path="/submissionview" component={SubmissionView} />
         {/*localStorage.getItem('jwtToken') ? (
           <Switch>
             <Route exact path='/home' component={Home} />

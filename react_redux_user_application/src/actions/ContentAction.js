@@ -1,5 +1,5 @@
 export const readConcept = (courseId, lessonId, conceptTitle) => dispatch => {
-  fetch(`http://10.10.5.192:5000/concept/${courseId}/${lessonId}/${conceptTitle}`, {
+  fetch(`http://192.168.43.50/24:5000/concept/${courseId}/${lessonId}/${conceptTitle}`, {
     method: 'GET',
     headers: { "Content-Type": "application/json" }
   })
@@ -17,7 +17,7 @@ export const readConcept = (courseId, lessonId, conceptTitle) => dispatch => {
                 data: data
               })
             } else if (data.type === "image") {
-              fetch(`http://10.10.4.101:5400/readimage/${data.url}`)
+              fetch(`http://192.168.43.50/24:5400/readimage/${data.url}`)
                 .then(res => res.json())
                 .then(resp => {
                   dispatch({
@@ -26,7 +26,7 @@ export const readConcept = (courseId, lessonId, conceptTitle) => dispatch => {
                   })
                 })
             } else {
-              fetch(`http://10.10.5.192:5000/${data.type}/${data.id}`)
+              fetch(`http://192.168.43.50/24:5000/${data.type}/${data.id}`)
                 .then(res => res.json())
                 .then(resp => {
                   dispatch({

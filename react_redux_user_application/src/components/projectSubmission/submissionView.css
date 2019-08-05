@@ -1,0 +1,27 @@
+.UL {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  .LI {
+    float: left;
+  }
+  
+  .LI .try {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .LI .try:hover {
+    background-color: #111;
+  }
+
+  li {
+      list-style-type: disc;
+  }

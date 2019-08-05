@@ -9,18 +9,22 @@ export default class SubmitZip extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            details: '',
+            title: '',
             selectedFile:null,
+            email:'admin@1.com',
             
         };
     }
+
+    onChange = (e) => {
+        this.setState({ [e.target.name]: e.target.value });
+    }
+
     onChangeHandler = (event) =>{
-        
-       
         
            this.setState({
            selectedFile: event.target.files[0],
-           details: '',
+           
            
         })}
 
@@ -29,17 +33,18 @@ export default class SubmitZip extends React.Component {
             const data = new FormData();
 
             await data.append('file', this.state.selectedFile);
-            
-            fetch('http://localhost:8000/upload', {
+            await data.append('title', this.state.title);
+            await data.append('email', this.state.email);
+            fetch('http://localhost:5500/insertProject', {
             method: 'POST',
             body: data,
         }).then(Response => Response.json())
         .then((response) => {
             console.log(response)
             if (response === null) {
-                
+                alert ('Upload Failed')
             } else {
-                alert(response);
+                alert('Upload Successful');
             }
         });
         };
@@ -129,19 +134,11 @@ export default class SubmitZip extends React.Component {
                           <div className="form-group">
                           
                             <div className="notes-to-reviewer">
-                              <h3 ng-show="!isCareer" translate="" className="ng-scope">Submission Details</h3>
+                              <h3 ng-show="!isCareer" translate="" className="ng-scope">Enter Title for Project</h3>
                               <div className="row row-gap-small"></div>
-                              <p ng-show="!isCareer" className="text-left ng-scope" translate="">Are there any areas you
-                                would like your reviewer to pay particular attention to?</p>
-                                <div className="row row-gap-small"></div>
-                              <h3 ng-show="isCareer" translate="" className="ng-scope ng-hide">Additional Details (Required)
-                              </h3>
-                              <p ng-show="isCareer" className="text-left ng-scope ng-hide"
-                                translate="ADDITIONAL_DETAILS_TEXT">What else would you like your reviewer to know? The
-                                more detail you can give us, the better we can support you. Do you have links to
-                                specific job postings you are applying to? What are your career goals?</p> <textarea
+                              <input
                                 className="form-control ng-pristine ng-untouched ng-valid ng-empty"
-                                ng-model="ctrl.studentNotes" rows="4"></textarea>
+                                ng-model="ctrl.studentNotes" name="title"  placeholder="" type="text" onChange={this.onChange}></input>
                             </div> 
                             <div className="row row-gap-small"></div>
                             
