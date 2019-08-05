@@ -11,7 +11,7 @@ export default class SubmissionView extends React.Component {
         project: []
     }
     componentDidMount() {
-        fetch(`http://localhost:5500/readProject`)
+        fetch(`http://10.10.5.192:5500/readProject`)
             .then(res => res.json())
             .then(resp => {
                 console.log(resp)

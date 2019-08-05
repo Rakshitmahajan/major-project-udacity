@@ -1,5 +1,5 @@
 export const readConcept = (courseId, lessonId, conceptTitle) => dispatch => {
-  fetch(`http://localhost:5000/concept/${courseId}/${lessonId}/${conceptTitle}`, {
+  fetch(`http://10.10.5.192:5000/concept/${courseId}/${lessonId}/${conceptTitle}`, {
     method: 'GET',
     headers: { "Content-Type": "application/json" }
   })
@@ -26,7 +26,7 @@ export const readConcept = (courseId, lessonId, conceptTitle) => dispatch => {
                   })
                 })
             } else {
-              fetch(`http://localhost:5000/${data.type}/${data.id}`)
+              fetch(`http://10.10.5.192:5000/${data.type}/${data.id}`)
                 .then(res => res.json())
                 .then(resp => {
                   dispatch({
