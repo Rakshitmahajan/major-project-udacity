@@ -1,0 +1,40 @@
+.nav-header-large {
+  background: header-gradient;
+  padding: 0.85rem 0;
+
+  @include mq($from: $mobile-xl) {
+    padding: 3.8rem 0 4.3rem 0;
+  }
+}
+
+.logo-nav-wrapper {
+  display: grid;
+  margin-bottom: 1rem;
+  grid-template-columns: auto 1fr;
+
+  @include mq($from: $mobile-xl) {
+    margin-bottom: 3.25rem;
+  }
+}
+
+.logo-button {
+  background-color: transparent;
+  text-align: left;
+}
+
+.search-filter-toggle {
+  @include mq($from: $tablet) {
+    display: none;
+  }
+}
+
+.input-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-column-gap: 10px;
+  align-items: top;
+
+  @include mq($from: $tablet) {
+    grid-template-columns: 1fr;
+  }
+}
