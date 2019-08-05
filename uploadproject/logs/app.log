@@ -23,3 +23,31 @@
 {"message":"::1 - - [05/Aug/2019:07:15:37 +0000] \"POST /insertProject HTTP/1.1\" 200 - \"http://localhost:3000/submit-zip\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Mobile Safari/537.36\"\n","level":"info"}
 {"level":"info","message":"Magic happens on port 5500"}
 {"message":"::1 - - [05/Aug/2019:07:17:22 +0000] \"POST /insertProject HTTP/1.1\" 200 59 \"http://localhost:3000/submit-zip\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Mobile Safari/537.36\"\n","level":"info"}
+{"level":"info","message":"Magic happens on port 5500"}
+{"message":"::1 - - [05/Aug/2019:08:22:21 +0000] \"POST /insertProject HTTP/1.1\" 200 59 \"http://localhost:3000/submit-zip\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [05/Aug/2019:08:24:01 +0000] \"GET /readProject HTTP/1.1\" 200 - \"-\" \"PostmanRuntime/7.6.0\"\n","level":"info"}
+{"level":"info","message":"Magic happens on port 5500"}
+{"level":"info","message":"Magic happens on port 5500"}
+{"message":"::1 - - [05/Aug/2019:08:24:40 +0000] \"GET /readProject HTTP/1.1\" 200 48 \"-\" \"PostmanRuntime/7.6.0\"\n","level":"info"}
+{"message":"::1 - - [05/Aug/2019:08:25:02 +0000] \"POST /insertProject HTTP/1.1\" 200 59 \"http://localhost:3000/submit-zip\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [05/Aug/2019:08:25:20 +0000] \"GET /readProject HTTP/1.1\" 200 95 \"-\" \"PostmanRuntime/7.6.0\"\n","level":"info"}
+{"level":"info","message":"Magic happens on port 5500"}
+{"level":"info","message":"Magic happens on port 5500"}
+{"message":"::1 - - [05/Aug/2019:08:39:03 +0000] \"GET /readProject HTTP/1.1\" 200 95 \"http://localhost:3000/submissionview\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [05/Aug/2019:08:39:22 +0000] \"GET /readProject HTTP/1.1\" 304 - \"http://localhost:3000/submissionview\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [05/Aug/2019:08:39:32 +0000] \"GET /readProject HTTP/1.1\" 304 - \"http://localhost:3000/submissionview\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [05/Aug/2019:08:40:07 +0000] \"GET /readProject HTTP/1.1\" 304 - \"http://localhost:3000/submissionview\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [05/Aug/2019:08:40:48 +0000] \"GET /readProject HTTP/1.1\" 304 - \"http://localhost:3000/submissionview\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [05/Aug/2019:08:41:02 +0000] \"GET /readProject HTTP/1.1\" 304 - \"http://localhost:3000/submissionview\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [05/Aug/2019:08:41:15 +0000] \"GET /readProject HTTP/1.1\" 304 - \"http://localhost:3000/submissionview\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [05/Aug/2019:08:41:48 +0000] \"GET /readProject HTTP/1.1\" 304 - \"http://localhost:3000/submissionview\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [05/Aug/2019:08:42:45 +0000] \"GET /readProject HTTP/1.1\" 304 - \"http://localhost:3000/submissionview\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [05/Aug/2019:08:43:56 +0000] \"POST /insertProject HTTP/1.1\" 200 59 \"http://localhost:3000/submit-zip\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [05/Aug/2019:08:44:08 +0000] \"GET /readProject HTTP/1.1\" 200 142 \"http://localhost:3000/submissionview\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36\"\n","level":"info"}
+{"level":"info","message":"Magic happens on port 5500"}
+{"message":"::1 - - [05/Aug/2019:08:50:20 +0000] \"POST /insertProject HTTP/1.1\" 200 60 \"http://localhost:3000/submit-zip\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [05/Aug/2019:08:50:27 +0000] \"GET /readProject HTTP/1.1\" 200 190 \"http://localhost:3000/submissionview\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [05/Aug/2019:08:50:46 +0000] \"GET /readProject HTTP/1.1\" 304 - \"http://localhost:3000/submissionview\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [05/Aug/2019:08:50:58 +0000] \"GET /readProject HTTP/1.1\" 304 - \"http://localhost:3000/submissionview\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [05/Aug/2019:08:51:05 +0000] \"GET /readProject HTTP/1.1\" 304 - \"http://localhost:3000/submissionview\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [05/Aug/2019:08:51:14 +0000] \"GET /readProject HTTP/1.1\" 304 - \"http://localhost:3000/submissionview\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36\"\n","level":"info"}
