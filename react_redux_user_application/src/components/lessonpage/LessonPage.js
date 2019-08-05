@@ -21,7 +21,6 @@ class LessonPage extends Component {
     return (
       <div>
         <Sidebar />
-        <p>contentTitle=</p>
         <div className='main'>
           <div className="navbar">
             <a className='' href="#">{this.props.chapter ? this.props.chapter.conceptTitle : null}</a>

@@ -1,10 +1,10 @@
 const db = require('./sqlConnection');
 
 async function insertProject(title_project, email_project) {
-    const  title  = title_project;
-    const email  = email_project;
+    const title = title_project;
+    const email = email_project;
     console.log(title);
-    if (!title ) {
+    if (!title) {
         return ({
             err: {
                 message: 'fields required',
@@ -28,16 +28,16 @@ async function insertProject(title_project, email_project) {
             data: {
                 title: title,
                 email: email,
-                
+
             }
         })
     } catch (err) {
-        console.log(err);
+        return err;
     }
 }
 
 async function readProject() {
-    
+
     try {
         const [rows] = await db.query('select * FROM project');
         if (rows[0] == undefined) {
@@ -48,11 +48,11 @@ async function readProject() {
                 data: null,
             });
         } else {
-            console.log(rows);
-            //return (rows[0].title)
+            // console.log(rows);
+            return (rows)
         }
     } catch (err) {
-        console.log(err);
+        return err;
     }
 }
 
@@ -62,5 +62,5 @@ async function readProject() {
 module.exports = {
     insertProject,
     readProject,
-    
+
 };

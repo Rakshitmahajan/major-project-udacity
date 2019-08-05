@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import './LessonSidebar.css';
 class LessonSidebar extends React.Component {
   render() {
@@ -22,7 +22,7 @@ class LessonSidebar extends React.Component {
               </svg></a>
               <div className="_nav-module--nav-groups--3Eal6">
                 <ul className="_nav-module--nav-group--2Tv0l">
-                  <li className="_nav-module--nav-item--2yHv8"><a href="/home" title="Home"><span
+                  <li className="_nav-module--nav-item--2yHv8"><Link to="/home" title="Home"><span
                     className="_nav-module--nav-item-icon-container--2gNdP"><span
                       className="_nav-module--nav-item-icon--rHRSl"><i className="vds-icon vds-icon--lg"
                         role="img"><span className="vds-visually-hidden">Home</span><svg
@@ -31,7 +31,7 @@ class LessonSidebar extends React.Component {
                             d="M11 25v-4a5 5 0 0 1 10 0v4h3V13.838l-8-6.546-8 6.546V25h3zm15-9.526V25a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-9.526l-.367.3a1 1 0 1 1-1.266-1.548l11-9a1 1 0 0 1 1.266 0l11 9a1 1 0 1 1-1.266 1.548l-.367-.3zM19 25v-4a3 3 0 0 0-6 0v4h6z"
                             fillRule="nonzero"></path>
                         </svg></i></span></span><span
-                          className="_nav-module--nav-item-title--3oRT2">Home</span></a></li>
+                          className="_nav-module--nav-item-title--3oRT2">Home</span></Link></li>
                   <li className="_nav-module--nav-item--2yHv8"><a href="#"
                     target="_blank" title="Catalog"><span
                       className="_nav-module--nav-item-icon-container--2gNdP"><span
