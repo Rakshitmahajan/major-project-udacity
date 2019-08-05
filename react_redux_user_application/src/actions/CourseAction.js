@@ -1,12 +1,12 @@
 export const readCourse = (userEmail) => dispatch => {
-  fetch(`http://10.10.5.192:8081/user/${userEmail}`)
+  fetch(`http://localhost:8081/user/${userEmail}`)
     .then(res => res.json())
     .then(resData => {
       dispatch({
         type: 'CLEAR_COURSES'
       })
       resData.data.map(data => (
-        fetch(`http://10.10.5.192:8000/course/${data.courseId}`)
+        fetch(`http://localhost:8000/course/${data.courseId}`)
           .then(res => res.json())
           .then(resData1 => {
             dispatch({
