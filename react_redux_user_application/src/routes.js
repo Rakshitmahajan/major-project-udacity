@@ -5,6 +5,8 @@ import Course from './components/coursepage/CoursePage';
 import Lesson from './components/lessonpage/LessonPage';
 import Login from './components/userpage/Login';
 import Signup from './components/userpage/Signup';
+import SubmissionPage from './components/projectSubmission/submissionpage';
+import SubmitZip from './components/projectSubmission/submit-zip';
 // import Notfound from './components/Notfound';
 import { connect } from 'react-redux';
 
@@ -13,7 +15,15 @@ class Routes extends Component {
   render() {
     return (
       <div>
-        {localStorage.getItem('jwtToken') ? (
+        <Route exact path='/home' component={Home} />
+        <Route exact path='/course' component={Course} />
+        <Route exact path='/lesson' component={Lesson} />
+        <Route exact path="/" component={Login} />
+        <Route exact path="/signup" component={Signup} />
+        <Route exact path="/submissionpage" component={SubmissionPage} />
+        <Route exact path="/submit-zip" component={SubmitZip} />
+
+        {/*localStorage.getItem('jwtToken') ? (
           <Switch>
             <Route exact path='/home' component={Home} />
             <Route exact path='/course' component={Course} />
@@ -28,7 +38,7 @@ class Routes extends Component {
               <Route exact path="/signup" component={Signup} />
               <Route component={Login} />
             </Switch>
-          )}
+          )*/}
 
       </div>
     );
