@@ -9,7 +9,10 @@ import Knowledge from './components/knowledgepage/KnowledgePage';
 import Activity from './components/knowledgepage/ActivityPage';
 import Post from './components/knowledgepage/Post';
 import PostDisplay from './components/knowledgepage/PostDisplay';
+import SubmissionPage from './components/projectSubmission/submissionpage';
+import SubmitZip from './components/projectSubmission/submit-zip';
 // import Notfound from './components/Notfound';
+import SubmissionView from './components/projectSubmission/submissionView'
 import { connect } from 'react-redux';
 
 class Routes extends Component {
@@ -25,7 +28,17 @@ class Routes extends Component {
         <Route exact path="/post" component={Post} />
         <Route exact path="/" component={Login} />
         <Route exact path='/postdisplay' component={PostDisplay} />
+        <Route exact path="/submissionpage" component={SubmissionPage} />
+        <Route exact path="/submit-zip" component={SubmitZip} />
+        <Route exact path="/submissionview" component={SubmissionView} />
+
         {/* {localStorage.getItem('jwtToken') ? (
+        <Route exact path="/" component={Login} />
+        <Route exact path="/signup" component={Signup} />
+        <Route exact path="/submissionpage" component={SubmissionPage} />
+        <Route exact path="/submit-zip" component={SubmitZip} />
+        <Route exact path="/submissionview" component={SubmissionView} />
+        {/*localStorage.getItem('jwtToken') ? (
           <Switch>
             <Route exact path='/home' component={Home} />
             <Route exact path='/course' component={Course} />
@@ -41,6 +54,7 @@ class Routes extends Component {
               <Route component={Login} />
             </Switch>
           )} */}
+        )*/}
 
       </div>
     );

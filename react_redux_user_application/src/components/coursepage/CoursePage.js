@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-
+import ProjectCard from './ProjectCard';
 import LessonSidebar from './LessonSidebar';
 import LessonTopbar from './LessonTopbar';
 import LessonCard from './LessonCard';
@@ -28,6 +28,7 @@ class CoursePage extends Component {
               {this.props.lesson.map(data => (
                 <div key={data.lessonId} className=""><LessonCard lesson={data} /></div>
               ))}
+              <ProjectCard/>
             </div>
 
           </div>

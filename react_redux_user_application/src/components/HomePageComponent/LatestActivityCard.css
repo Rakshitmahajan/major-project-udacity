@@ -1,0 +1,633 @@
+/*! CSS Used from: https://classroom.udacity.com/css/11.3921c.css */
+*,
+:after,
+:before {
+    box-sizing: border-box;
+}
+
+ol {
+    margin-bottom: 1rem;
+}
+
+ol {
+    margin-top: 0;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+button {
+    border-radius: 0;
+}
+
+button:focus {
+    outline: 1px dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+}
+
+button {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0;
+}
+
+button {
+    overflow: visible;
+}
+
+button {
+    text-transform: none;
+}
+
+button,
+html [type=button] {
+    -webkit-appearance: button;
+}
+
+[type=button]::-moz-focus-inner,
+button::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+}
+
+*,
+:after,
+:before {
+    box-sizing: inherit;
+}
+
+h3,
+h4,
+p {
+    margin: 0;
+}
+
+body ::-moz-selection {
+    background: rgba(164, 228, 245, .4);
+}
+
+body ::selection {
+    background: rgba(164, 228, 245, .4);
+}
+
+h3,
+h4,
+p {
+    margin-bottom: 1.5rem;
+}
+
+h3>:last-child,
+h3>:last-child>:last-child,
+h3>:last-child>:last-child>:last-child,
+h4:last-child,
+p:last-child {
+    margin-bottom: 0;
+}
+
+.vds-button {
+    height: 3rem;
+    padding: 0 2rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: #fff;
+    border: transparent;
+    border-radius: .25rem;
+    color: #02b3e4;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Open Sans, sans-serif;
+    font-size: .8125rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    line-height: 1.5rem;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    transition: all .3s ease;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    vertical-align: middle;
+}
+
+.vds-button:active,
+.vds-button:focus {
+    outline: none;
+    background: #f7f7f8;
+}
+
+.vds-button__content {
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    overflow-y: hidden;
+}
+
+.vds-button--primary {
+    background: #02b3e4;
+    color: #fff;
+}
+
+.vds-button--primary:active,
+.vds-button--primary:focus {
+    background: #017a9b;
+}
+
+.vds-button--primary {
+    box-shadow: 0 0 8px 0 rgba(17, 22, 26, .16), 0 4px 8px 0 rgba(17, 22, 26, .08), 0 8px 16px 0 rgba(17, 22, 26, .08);
+}
+
+.vds-button--primary:hover {
+    box-shadow: 0 4px 16px 4px rgba(17, 22, 26, .16), 0 4px 8px 0 rgba(17, 22, 26, .08), 0 16px 24px 0 rgba(17, 22, 26, .08);
+}
+
+.vds-button--primary:active {
+    box-shadow: 0 0 4px 0 rgba(17, 22, 26, .16), 0 2px 4px 0 rgba(17, 22, 26, .08), 0 4px 8px 0 rgba(17, 22, 26, .08);
+}
+
+.vds-button--primary:focus {
+    box-shadow: 0 0 0 4px #02b3e4;
+}
+
+.vds-button__icon {
+    padding: 0 2rem 0 1.5rem;
+}
+
+.vds-button__icon .vds-icon {
+    margin-right: .5rem;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.vds-button__icon--right {
+    padding: 0 1.5rem 0 2rem;
+}
+
+.vds-button__icon--right .vds-icon {
+    margin-left: .5rem;
+    margin-right: 0;
+    order: 2;
+}
+
+.vds-heading--h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 2rem;
+    max-width: 40rem;
+}
+
+.vds-heading--h6 {
+    font-size: .8125rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    line-height: 1.5rem;
+    max-width: 40rem;
+    text-transform: uppercase;
+}
+
+.vds-icon {
+    height: 2rem;
+    width: 2rem;
+    display: inline-block;
+    fill: currentColor;
+    line-height: 0;
+    stroke: currentColor;
+    vertical-align: middle;
+}
+
+.vds-icon svg {
+    height: 100%;
+    width: 100%;
+    stroke-width: 0;
+}
+
+.vds-icon--lg {
+    height: 2.5rem;
+    width: 2.5rem;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.75rem;
+    max-width: 40rem;
+}
+
+.vds-color--green {
+    color: #15c26b !important;
+}
+
+.vds-spacing--stack-3x {
+    margin-bottom: 1.5rem;
+}
+
+*,
+:after,
+:before {
+    box-sizing: border-box;
+}
+
+ol {
+    margin-bottom: 1rem;
+}
+
+ol {
+    margin-top: 0;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+button {
+    border-radius: 0;
+}
+
+button:focus {
+    outline: 1px dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+}
+
+button {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+button {
+    overflow: visible;
+}
+
+button {
+    text-transform: none;
+}
+
+button,
+html [type=button] {
+    -webkit-appearance: button;
+}
+
+[type=button]::-moz-focus-inner,
+button::-moz-focus-inner {
+    padding: 0;
+    border-style: none;
+}
+
+*,
+:after,
+:before {
+    box-sizing: inherit;
+}
+
+h3,
+h4,
+p {
+    margin: 0;
+}
+
+body ::-moz-selection {
+    background: rgba(164, 228, 245, .4);
+}
+
+body ::selection {
+    background: rgba(164, 228, 245, .4);
+}
+
+h3,
+h4,
+p {
+    margin-bottom: 1.5rem;
+}
+
+h3>:last-child,
+h3>:last-child>:last-child,
+h3>:last-child>:last-child>:last-child,
+h4:last-child,
+p:last-child {
+    margin-bottom: 0;
+}
+
+.vds-heading--h4 {
+    font-size: 1rem;
+    line-height: 1.75rem;
+    font-weight: 600;
+}
+
+@media screen and (min-width:48rem) {
+    .vds-heading--h4 {
+        font-size: 1.125rem;
+        line-height: 2rem;
+        max-width: 40rem;
+    }
+}
+
+.vds-heading--h6 {
+    font-size: .8125rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+    max-width: 40rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.75rem;
+    max-width: 40rem;
+}
+
+.vds-color--green {
+    color: #15c26b !important;
+}
+
+.vds-spacing--stack-3x {
+    margin-bottom: 1.5rem;
+}
+
+.vds-button {
+    font-family: Open Sans, sans-serif;
+    font-size: .8125rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    height: 3rem;
+    padding: 0 2rem;
+    background: #fff;
+    border: transparent;
+    border-radius: .25rem;
+    color: #02b3e4;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    vertical-align: middle;
+    transition: all .3s ease;
+}
+
+.vds-button:active,
+.vds-button:focus {
+    outline: none;
+    background: #f7f7f8;
+}
+
+.vds-button__content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow-y: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+.vds-button--primary {
+    background: #02b3e4;
+    color: #fff;
+}
+
+.vds-button--primary:active,
+.vds-button--primary:focus {
+    background: #017a9b;
+}
+
+.vds-button--primary {
+    box-shadow: 0 0 8px 0 rgba(17, 22, 26, .16), 0 4px 8px 0 rgba(17, 22, 26, .08), 0 8px 16px 0 rgba(17, 22, 26, .08);
+}
+
+.vds-button--primary:hover {
+    box-shadow: 0 4px 16px 4px rgba(17, 22, 26, .16), 0 4px 8px 0 rgba(17, 22, 26, .08), 0 16px 24px 0 rgba(17, 22, 26, .08);
+}
+
+.vds-button--primary:active {
+    box-shadow: 0 0 4px 0 rgba(17, 22, 26, .16), 0 2px 4px 0 rgba(17, 22, 26, .08), 0 4px 8px 0 rgba(17, 22, 26, .08);
+}
+
+.vds-button--primary:focus {
+    box-shadow: 0 0 0 4px #02b3e4;
+}
+
+.vds-button__icon {
+    padding: 0 2rem 0 1.5rem;
+}
+
+.vds-button__icon .vds-icon {
+    margin-right: .5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.vds-button__icon--right {
+    padding: 0 1.5rem 0 2rem;
+}
+
+.vds-button__icon--right .vds-icon {
+    order: 2;
+    margin-right: 0;
+    margin-left: .5rem;
+}
+
+.vds-icon {
+    line-height: 0;
+    fill: currentColor;
+    stroke: currentColor;
+    display: inline-block;
+    vertical-align: middle;
+    width: 2rem;
+    height: 2rem;
+}
+
+.vds-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke-width: 0;
+}
+
+.vds-icon--lg {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+/*! CSS Used from: https://classroom.udacity.com/css/app.3594f.css */
+html div,
+html h3,
+html h4,
+html li,
+html ol,
+html p {
+    line-height: 1.33333em;
+    margin: 0;
+    padding: 0;
+}
+
+html li {
+    list-style: none;
+}
+
+html h3,
+html h4 {
+    font-weight: 400;
+    font-size: .875rem;
+}
+
+html ol {
+    list-style: none;
+}
+
+html main h3 {
+    font-size: .65625rem;
+}
+
+html main h4 {
+    color: #2e3d49;
+    font-size: .9625rem;
+}
+
+html main li,
+html main p {
+    font-size: .875rem;
+}
+
+html h3 {
+    font-weight: 600;
+    color: #2e3d49;
+}
+
+html h3,
+html h4 {
+    margin: 0;
+    padding: 0;
+}
+
+html h4 {
+    font-size: 14px;
+}
+
+.shared--curtain--2_FSP {
+    border-radius: 6px;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    text-indent: -999em;
+    top: 0;
+    transition: box-shadow .2s ease-in-out;
+    width: 100%;
+    z-index: 2;
+}
+
+.card--card--2WKj9 {
+    border-radius: .5rem;
+    box-shadow: 0 0 8px 0 rgba(17, 22, 26, .16), 0 4px 8px 0 rgba(17, 22, 26, .08), 0 8px 16px 0 rgba(17, 22, 26, .08);
+    margin: 1.5rem 0;
+    overflow: hidden;
+    position: relative;
+    transition: box-shadow .3s ease-in-out;
+}
+
+.card--curtain--39f78 {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.card--latest-content--2gSJc {
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card--latest-content--2gSJc {
+    background: #f5fcfe;
+}
+
+.card--action--2EYXX {
+    min-width: 15rem;
+    position: relative;
+    width: 35%;
+}
+
+.card--action--2EYXX button {
+    display: block;
+    margin: 0 3rem 0 auto;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%) translateX(1rem);
+    transform: translateY(-50%) translateX(1rem);
+    z-index: 2;
+}
+
+.card--header--NzeCJ {
+    padding: 1.5rem 2rem .5rem;
+}
+
+.card--header--NzeCJ h3 {
+    font-size: .8125rem;
+    font-weight: 600;
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
+
+.card--header--NzeCJ h4 {
+    font-size: 1.125rem;
+}
+
+.card--summary--2Bu6P {
+    padding: 0 2rem 1.5rem;
+}
+
+.card--summary--2Bu6P p {
+    line-height: 1.5rem;
+}
+
+.card--card--2WKj9:hover {
+    box-shadow: 0 4px 16px 4px rgba(17, 22, 26, .16), 0 4px 8px 0 rgba(17, 22, 26, .08), 0 16px 24px 0 rgba(17, 22, 26, .08);
+}
+
+@media (max-width:61.24em) {
+    .card--action--2EYXX {
+        min-width: 12rem;
+        width: 30%;
+    }
+}
+
+@media (max-width:46.24em) {
+    .card--latest-content--2gSJc {
+        flex-direction: column;
+        position: relative;
+    }
+
+    .card--header--NzeCJ,
+    .card--summary--2Bu6P {
+        position: relative;
+        z-index: 2;
+    }
+
+    .card--action--2EYXX {
+        min-width: unset;
+        position: static;
+        width: 100%;
+    }
+
+    .card--action--2EYXX button {
+        display: inline-block;
+        margin: 1rem 2rem 1.5rem;
+        top: 0;
+        -webkit-transform: none;
+        transform: none;
+    }
+}

@@ -17,7 +17,7 @@ export const readConcept = (courseId, lessonId, conceptTitle) => dispatch => {
                 data: data
               })
             } else if (data.type === "image") {
-              fetch(`http://10.10.4.101:5400/readimage/${data.url}`)
+              fetch(`http://192.168.43.50/24:5400/readimage/${data.url}`)
                 .then(res => res.json())
                 .then(resp => {
                   dispatch({
