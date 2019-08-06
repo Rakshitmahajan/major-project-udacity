@@ -11,6 +11,7 @@ import Post from './components/knowledgepage/Post';
 import PostDisplay from './components/knowledgepage/PostDisplay';
 import SubmissionPage from './components/projectSubmission/submissionpage';
 import SubmitZip from './components/projectSubmission/submit-zip';
+import Catalog from './components/homepage/catalog'
 // import Notfound from './components/Notfound';
 import Chat from './chat/App'
 import SubmissionView from './components/projectSubmission/submissionView'
@@ -41,6 +42,7 @@ class Routes extends Component {
         {localStorage.getItem('jwtToken') ? (
           <Switch>
             <Route exact path='/home' component={Home} />
+            <Route exact path='/catalog' component={Catalog} />
             <Route exact path='/course' component={Course} />
             <Route exact path='/lesson' component={Lesson} />
             <Route exact path="/knowledge" component={Knowledge} />
