@@ -73,7 +73,7 @@ class PostCard extends Component {
                       </div>
                     </div>
                     <span className="displayName_author__1nF9i" data-ref="author">
-                      {this.props.post.user !== undefined ? (this.props.user.firstName + " " + this.props.user.lastName) : null}
+                      {this.props.post.user !== undefined ? (this.props.post.user.firstName + " " + this.props.post.user.lastName) : null}
                     </span>
                   </div>
                 </div>

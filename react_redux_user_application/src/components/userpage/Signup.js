@@ -23,6 +23,7 @@ class Signup extends Component {
   }
   onSubmit = (e) => {
     e.preventDefault();
+    let postUser = { email: this.state.email, firstName: this.state.firstName, lastName: this.state.lastName }
     fetch('http://10.10.4.101:2001/studentSignup', {
       method: 'POST',
       body: JSON.stringify(this.state),
@@ -34,7 +35,16 @@ class Signup extends Component {
         console.log(response);
         if (response.err === null) {
           alert('signup sucessful')
+          fetch(`http://10.10.5.192:3032/user`, {
+            method: 'POST',
+            body: JSON.stringify(postUser),
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          }).then(res => res.json())
+            .then(res => console.log(res))
           this.setState({ redirect: true })
+
         } else {
           alert(response.err.message);
         }
