@@ -2,7 +2,7 @@ const initState = {
   error: null,
   success: null,
   user: {
-    email: 'admin@1.com',
+    email: '',
   },
   isAuth: false,
 };
@@ -10,8 +10,9 @@ export default function (state = initState, action) {
   let newState = JSON.parse(JSON.stringify(state));
   switch (action.type) {
     case "LOGIN_USER":
-      newState = action.payload;
-      if (localStorage.token === undefined && state.isAuth === false) {
+      newState.user = action.user;
+      if (localStorage.token !== null && state.isAuth === false) {
+        console.log('if ')
         newState.isAuth = true;
       }
       state = newState;

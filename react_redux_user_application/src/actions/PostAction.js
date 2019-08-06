@@ -12,6 +12,7 @@ export const allPost = () => dispatch => {
   fetch(`http://10.10.5.192:3032/post`)
     .then(res => res.json())
     .then(resp => {
+      console.log(resp)
       dispatch({
         type: "ALL_POST",
         allPost: resp.data

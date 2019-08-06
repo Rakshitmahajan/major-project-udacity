@@ -47,7 +47,6 @@ class Routes extends Component {
             <Route exact path="/chat" component={Chat} />
             <Route exact path="/activity" component={Activity} />
             <Route exact path="/post" component={Post} />
-            <Route exact path="/" component={Login} />
             <Route exact path='/postdisplay' component={PostDisplay} />
             <Route exact path="/submissionpage" component={SubmissionPage} />
             <Route exact path="/submit-zip" component={SubmitZip} />

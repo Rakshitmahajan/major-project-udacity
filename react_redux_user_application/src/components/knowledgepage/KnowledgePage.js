@@ -1,47 +1,44 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import Sidebar from '../knowledgepagecomponent/Sidebar';
-// import Topbar from './Topbar';
+import Sidebar from './Side';
+import Topbar from './Topbar';
 import PostCard from './PostCard';
 import { userKnowledge, allPost } from '../../actions/PostAction';
 class Knowledge extends Component {
   state = {}
   componentDidMount() {
-    this.props.userKnowledge(this.props.user.email);
+    this.props.userKnowledge(localStorage.getItem('email'));
     this.props.allPost();
   }
   render() {
-    // console.log(this.props)
     return (
-      <div className="row col-sm-11">
+      <div className="_layout_container__1W97h">
         <Sidebar />
-        <div className='row col-sm-10 content'>
-          <div className='col col-sm-1'></div>
-          <div className='col pt-5'>
-            <div className='pb-3'>
-              <p>top bar</p>
-              <Link className=' text-decoration-none' to='/activity'>Activity</Link>
-              <Link className=' text-decoration-none' to='/post'>Post</Link>
-            </div>
-
-            <div className='pb-3 pt-2'>
-              <div className="col-sm-12 p3">
-                {this.props.postData.map((data, key) => (
-                  <div key={key}><PostCard post={data} /></div>
-                ))}
+        <main className="_layout_main__1LhDA">
+          <div className="_layout_content-area__1eAnV div2">
+            <div id="main-layout-content" aria-labelledby="header-title" className="_body_body__2AI8L">
+              <div className="fullWidthWrapper_gray__2wWDF fullWidthWrapper_base__31JHr">
+                <div className="innerPageLayout_view-wrapper__12gOJ">
+                  <div className="navHeaderSmall_nav-header-small__1OoNJ">
+                    <Topbar />
+                  </div>
+                  <div>
+                    <div className="undefined fixedWidthWrapper_fixed-width-wrapper__1fJJV">
+                      {this.props.postData.map((data, key) => (
+                        <div key={key}><PostCard post={data} /></div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-
           </div>
-        </div>
-      </div>
+        </main>
+      </div >
     );
   }
 }
-
-// export default Knowledge;
 const mapsStateToProps = state => ({ user: state.user.user, postData: state.knowledge.allPost });
 Knowledge.propTypes = { userKnowledge: PropTypes.func.isRequired, allPost: PropTypes.func.isRequired };
 export default connect(mapsStateToProps, { userKnowledge, allPost })(Knowledge);

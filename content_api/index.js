@@ -7,8 +7,8 @@ const dotenv = require('dotenv');
 dotenv.config({
   path: '../.env',
 });
-// mongoose.connect('mongodb://admin:admin123@ds123796.mlab.com:23796/udacity', { useNewUrlParser: true })
-mongoose.connect("mongodb://localhost:27017/udacity")
+// mongoose.connect("mongodb://localhost:27017/udacity")
+mongoose.connect("mongodb://admin:admin123@ds123796.mlab.com:23796/udacity", { useNewUrlParser: true })
   .then(() => console.log('connected'))
   .catch((err) => console.log('not connected', err));
 

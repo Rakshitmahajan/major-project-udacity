@@ -25,13 +25,13 @@ class Login extends Component {
       },
     }).then(Response => Response.json())
       .then((response) => {
-        console.log(response)
         if (response.err === null) {
           const token = response.token;
           const userObj = jwt.decode(token);
-          console.log(userObj);
           localStorage.setItem('jwtToken', token);
-          localStorage.setItem('user',userObj.firstName);
+          localStorage.setItem('user', userObj.firstName);
+          localStorage.setItem('email', userObj.email);
+          this.props.loginUser(userObj.email);
           alert('login sucessful');
           this.setState({ redirect: true })
         } else {

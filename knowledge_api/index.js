@@ -8,7 +8,8 @@ dotenv.config({
   path: '../.env',
 });
 
-mongoose.connect("mongodb://localhost:27017/knwoledge")
+// mongoose.connect("mongodb://localhost:27017/knwoledge")
+mongoose.connect("mongodb://admin:admin123@ds259347.mlab.com:59347/knowledge", { useNewUrlParser: true })
   .then(() => console.log('connected'))
   .catch((err) => console.log('not connected', err));
 

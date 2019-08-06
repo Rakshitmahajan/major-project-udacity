@@ -8,7 +8,6 @@ const schema = mongoose.Schema({
   detail: { type: String, default: '' },
   category: { type: String, default: '' },
   project: { type: String, default: '' },
-  upvotes: { type: Number, default: 0 },
-  time: { type: Date, default: 0 }
+  upvotes: { type: Number, default: 0 }
 });
 module.exports = mongoose.model('post', schema);

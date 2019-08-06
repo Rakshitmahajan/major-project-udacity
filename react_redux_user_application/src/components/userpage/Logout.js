@@ -5,28 +5,28 @@ import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom'
 
 class Logout extends Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
-        redirect:false
+      redirect: false
     }
-}
-onClick = () => {
+  }
+  onClick = () => {
     localStorage.removeItem('jwtToken');
     localStorage.removeItem('user');
+    localStorage.removeItem('email');
     this.setState({
-        redirect:true
+      redirect: true
     })
-}
+  }
   render() {
-    if(this.state.redirect === true)
-        {
-            return <Redirect to="/" />
-        }
+    if (this.state.redirect === true) {
+      return <Redirect to="/" />
+    }
     return (
       <div>
         <li className="nav-item">
-        <button onClick={this.onClick}> Logout </button>
+          <button onClick={this.onClick}> Logout </button>
         </li>
       </div>
     );

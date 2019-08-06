@@ -73,11 +73,11 @@ class PostCard extends Component {
                       </div>
                     </div>
                     <span className="displayName_author__1nF9i" data-ref="author">
-                      {this.props.post.user !== undefined ? (this.props.post.user.firstName + " " + this.props.post.user.lastName) : null}
+                      {this.props.post.user !== undefined ? (this.props.user.firstName + " " + this.props.user.lastName) : null}
                     </span>
                   </div>
                 </div>
-                <span className="postMetadata_created-at__2i5iD" data-ref="created-at">4 days ago</span>
+                <span className="postMetadata_created-at__2i5iD" data-ref="created-at"></span>
               </address>
             </div>
             <div className="searchResultItem_answers-count__21fsV">
@@ -111,7 +111,6 @@ class PostCard extends Component {
   }
 }
 
-// export default PostCard;
 const mapsStateToProps = state => ({ user: state.knowledge.user });
 PostCard.propTypes = { updatePostUpvotes: PropTypes.func.isRequired };
 export default connect(mapsStateToProps, { updatePostUpvotes, updateUserUpvotesReceived, updateUserUpvotesGiven })(PostCard);

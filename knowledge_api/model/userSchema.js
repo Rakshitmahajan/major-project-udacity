@@ -7,6 +7,6 @@ const schema = mongoose.Schema({
   upvotesReceived: { type: Number, default: 0 },
   upvotesGiven: { type: Number, default: 0 },
   answerPost: { type: Number, default: 0 },
-  answerAccepted: { type: Number, }
+  answerAccecpted: { type: Number, default: 0 },
 });
 module.exports = mongoose.model('user', schema);

@@ -11,7 +11,7 @@ class HomePage extends Component {
   componentDidMount() {
     this.props.clearLesson();
     this.props.clearCourse();
-    this.props.readCourse(this.props.user.email);
+    this.props.readCourse(localStorage.getItem('email'));
   }
   render() {
     return (

@@ -62,3 +62,6 @@
 {"message":"::ffff:10.10.4.101 - - [05/Aug/2019:10:34:01 +0000] \"POST /insertProject HTTP/1.1\" 200 63 \"http://10.10.5.192:3000/submit-zip\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36\"\n","level":"info"}
 {"message":"::ffff:10.10.4.101 - - [05/Aug/2019:10:34:09 +0000] \"GET /readProject HTTP/1.1\" 200 338 \"http://10.10.5.192:3000/submissionview\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36\"\n","level":"info"}
 {"message":"::ffff:10.10.4.101 - - [05/Aug/2019:10:34:17 +0000] \"POST /insertProject HTTP/1.1\" 200 61 \"http://10.10.5.192:3000/submit-zip\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36\"\n","level":"info"}
+{"level":"info","message":"Magic happens on port 5500"}
+{"level":"info","message":"Magic happens on port 5500"}
+{"level":"info","message":"Magic happens on port 5500"}
