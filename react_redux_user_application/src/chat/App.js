@@ -50,7 +50,7 @@ class App extends Component {
   }
 
   setUser = (user) => {
-    if (user == localStorage.getItem('user')) {
+    if (user === localStorage.getItem('user')) {
       const socket = this.state.socket;
       socket.emit('new user', user)
       this.setState({

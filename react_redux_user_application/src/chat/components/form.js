@@ -15,8 +15,8 @@ class Form extends Component {
 
         return (
             <div className="col-md-12">
-                <form onSubmit ={this.onSubmit}> 
-                        <input type="submit" className="btn btn-primary" value="enter"/>
+                <form onSubmit={this.onSubmit}>
+                    <input type="submit" className="btn btn-primary" value="enter" />
                 </form>
             </div>
         )

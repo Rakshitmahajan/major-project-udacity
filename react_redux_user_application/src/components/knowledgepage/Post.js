@@ -39,7 +39,7 @@ class Post extends Component {
                         <fieldset>
                           <h5 className="vds-heading--h5 vds-spacing--stack-half">Question</h5>
                           <div className="textInputWrapper_text-input-wrapper__1201C">
-                            <input className="input-field" data-ref="text-input" required className="textInput_text-input__21bd5" type="text" name="question" placeholder="What are the differences between apples and oranges?" onChange={this.onChange} /></div>
+                            <input className="input-field textInput_text-input__21bd5" data-ref="text-input" required type="text" name="question" placeholder="What are the differences between apples and oranges?" onChange={this.onChange} /></div>
                           <div data-ref="hint" className="formInputHint_hint__1f_uw">Character limit: {this.state.question.length}/150</div>
                         </fieldset>
                         <fieldset>

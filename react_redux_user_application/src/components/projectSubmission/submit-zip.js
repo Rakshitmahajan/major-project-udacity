@@ -1,7 +1,4 @@
-import React, { Component } from 'react';
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import React from 'react';
 import Logout from '../userpage/Logout';
 import './submit-zip.css';
 

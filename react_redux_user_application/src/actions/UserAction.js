@@ -1,4 +1,3 @@
-import generateToken from '../jwt';
 
 export const loginUser = data => dispatch => {
   dispatch({ type: "LOGIN_USER", user: data })
