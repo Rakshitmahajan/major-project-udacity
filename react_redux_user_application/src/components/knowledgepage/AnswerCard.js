@@ -92,8 +92,6 @@ class AnswerCard extends Component {
     );
   }
 }
-
-// export default AnswerCard;
 const mapsStateToProps = state => ({ answers: state.knowledge.postAnswer });
 AnswerCard.propTypes = { answerDetail: PropTypes.func.isRequired };
 export default connect(mapsStateToProps, { answerDetail })(AnswerCard);

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import Sidebar from '../knowledgepagecomponent/Sidebar';
-// import Topbar from './Topbar';
-// import Filter from './Filter';
-// import PostCard from './PostCard';
+import Sidebar from './Side';
+import Topbar from './Topbar';
 import Activity from './Activity';
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
@@ -14,31 +12,26 @@ class ActivityPage extends Component {
   }
   render() {
     return (
-      <div className="row col-sm-11">
+      <div className="_layout_container__1W97h">
         <Sidebar />
-        <div className='row col-sm-10 content'>
-          <div className='col col-sm-1'></div>
-          <div className='col pt-5'>
-            <div className='pb-3'>
-              <p>top bar</p>
-              {/* <Topbar /> */}
-              {/* <Filter /> */}
-            </div>
-
-            <div className='pb-3 pt-2'>
-              <div className="col-sm-12 p3">
-                <Activity />
+        <main className="_layout_main__1LhDA">
+          <div className="_layout_content-area__1eAnV div2">
+            <div id="main-layout-content" aria-labelledby="header-title" className="_body_body__2AI8L">
+              <div className="fullWidthWrapper_gray__2wWDF fullWidthWrapper_base__31JHr">
+                <div className="innerPageLayout_view-wrapper__12gOJ">
+                  <div className="navHeaderSmall_nav-header-small__1OoNJ">
+                    <Topbar />
+                  </div>
+                  <Activity />
+                </div>
               </div>
             </div>
-
           </div>
-        </div>
-      </div>
+        </main>
+      </div >
     );
   }
 }
-
-// export default ActivityPage;
 const mapsStateToProps = state => ({ user: state.knowledge.user });
 ActivityPage.propTypes = { myPost: PropTypes.func.isRequired };
 export default connect(mapsStateToProps, { myPost })(ActivityPage);

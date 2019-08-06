@@ -58,14 +58,14 @@ class Side extends Component {
                         <path
                           d="M17.732 27a2 2 0 0 1-3.464 0H14a2 2 0 0 1-2-2v-3.936a9 9 0 1 1 8 0V25a2 2 0 0 1-2 2h-.268zM18 22v-1h-4v1h4zm0 2h-4v1h4v-1zm-5.61-5h7.22a7 7 0 1 0-7.218 0zM16 8a1 1 0 0 1 0 2 3 3 0 0 0-3 3 1 1 0 0 1-2 0 5 5 0 0 1 5-5z">
                         </path>
-                      </svg></i></Link><a data-ref="nav-link" href="#"
+                      </svg></i></Link><Link to='/chat'
                         className="sidebarLayout_student-hub-link__2rInI sidebarLayout_highlighted-link__rSddf"><i
                           className="vds-icon vds-icon--lg" role="img" aria-hidden="true"><svg
                             viewBox="0 0 32 32">
                           <path
                             d="M12 10.397V9a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3h-2v3.397a3 3 0 0 1-3 3H9.823l-4.325 2.471a1 1 0 0 1-1.486-1.01l.99-6.93v-5.531a3 3 0 0 1 3-3H12zM23 16h2a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1H15a1 1 0 0 0-1 1v1.397h6a3 3 0 0 1 3 3V16zM6.99 19.141l-.71 4.976 2.78-1.588a1 1 0 0 1 .496-.132h10.445a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1V19l-.01.141z">
                           </path>
-                        </svg></i></a></div>
+                        </svg></i></Link></div>
                   <li className="_nav_nav-item__3bB_i"><a href="https://classroom.udacity.com/settings"
                     title="Settings"><span className="_nav_nav-item-icon-container__3QwxU"><span
                       className="_nav_nav-item-icon__2WcW-"><i className="vds-icon vds-icon--lg"

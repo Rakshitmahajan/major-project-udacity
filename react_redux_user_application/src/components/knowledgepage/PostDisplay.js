@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import Sidebar from './Side';
-import Topbar from './Top';
+import Topbar from './Topbar';
 import AnswerCard from './AnswerCard';
 import './PostDisplay.css';
 import { addAnswer, addAnswerToPost } from '../../actions/PostAction';
@@ -152,7 +152,6 @@ class PostDisplay extends Component {
     );
   }
 }
-// export default PostDisplay;
 const mapsStateToProps = state => ({ user: state.knowledge.user });
 PostDisplay.propTypes = { addAnswer: PropTypes.func.isRequired };
 export default connect(mapsStateToProps, { addAnswer, addAnswerToPost })(PostDisplay);

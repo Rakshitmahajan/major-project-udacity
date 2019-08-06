@@ -12,6 +12,7 @@ export const allPost = () => dispatch => {
   fetch(`http://10.10.5.192:3032/post`)
     .then(res => res.json())
     .then(resp => {
+      console.log(resp)
       dispatch({
         type: "ALL_POST",
         allPost: resp.data
@@ -30,7 +31,7 @@ export const myPost = (id) => dispatch => {
 }
 export const answerDetail = (answerArray) => dispatch => {
   dispatch({ type: "CLEAR_ANSWER" })
-  answerArray.map(data => {
+  answerArray.map(data => (
     fetch(`http://10.10.5.192:3032/answer/detail/${data}`)
       .then(res => res.json())
       .then(resp => {
@@ -38,7 +39,7 @@ export const answerDetail = (answerArray) => dispatch => {
           dispatch({ type: "POST_ANSWER", answer: resp.data })
       })
     // console.log(data);
-  })
+  ))
 }
 export const addAnswer = (data, user) => dispatch => {
   console.log(user);

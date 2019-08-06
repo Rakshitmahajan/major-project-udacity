@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import QuestionCard from './PostCard';
 import './Activity.css'
 class ActivityPage extends Component {
@@ -85,7 +85,7 @@ class ActivityPage extends Component {
                 <div className="activityQuestionEmptyState_message-wrapper__2rrlO">
                   <div>
                     {this.props.myPost.map((data, key) => (
-                      <div key={key}><QuestionCard post={data} /></div>
+                      <div key={key}><QuestionCard post={data} user={this.props.user} /></div>
                     ))}
                   </div>
                   <main className="activityQuestionEmptyState_message__3vqLF">
@@ -93,11 +93,11 @@ class ActivityPage extends Component {
                     <div className="undefined fixedWidthWrapper_fixed-width-wrapper__1fJJV">
                       <p className="activityQuestionEmptyState_copy__2CBzP" data-ref="copy">Questions you ask willappear here. Feeling stuck? Post your first question!</p>
                       <div>
-                        <a className="vds-button vds-button--primary vds-button__icon" href="/questions/new" role="button" tabIndex="0"><span className="vds-button__content">
+                        <Link className="vds-button vds-button--primary vds-button__icon" to="/post" role="button" tabIndex="0"><span className="vds-button__content">
                           <i className="vds-icon" role="img" aria-hidden="true">
                             <svg viewBox="0 0 32 32"><path d="M14 16.414l-.148.148-1.057 2.643 2.643-1.057.148-.148L14 16.414zM15.414 15L17 16.586 23.586 10 22 8.414 15.414 15zm-3.121.293l9-9a1 1 0 0 1 1.414 0l3 3a1 1 0 0 1 0 1.414l-9 9a1 1 0 0 1-.336.221l-5 2c-.816.327-1.626-.483-1.3-1.3l2-5a1 1 0 0 1 .222-.335zM8 24h16v-6a1 1 0 0 1 2 0v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h7a1 1 0 0 1 0 2H8v16z"></path></svg>
                           </i>Post a Question</span>
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </main>
@@ -110,8 +110,5 @@ class ActivityPage extends Component {
     );
   }
 }
-
-// export default ActivityPage;
 const mapsStateToProps = state => ({ user: state.knowledge.user, myPost: state.knowledge.myPost, myAnswer: state.knowledge.myAnswer });
-// Knowledge.propTypes = { userKnowledge: PropTypes.func.isRequired };
 export default connect(mapsStateToProps, null)(ActivityPage);
