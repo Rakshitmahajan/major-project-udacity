@@ -4,3 +4,26 @@
     z-index: 1;
     overflow-x: hidden;
 }
+.chatarea {
+    background-color: lightslategray
+}
+.name {
+    margin-left: 20%;
+    margin-top: -12%;
+}
+.avatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    background-color: rgba(255,255,255,0.9);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+.diffName {
+    margin-top: 10px;
+}

@@ -17,10 +17,13 @@ class Online extends Component {
     render() {
         return (
                 <div className="online card card-body bg-light">
-                    <h3>Online Users</h3>
+                    <h1>Online Users</h1>
                     <ul className="list-group" id="users">
                         {this.state.user.map((item, index) => (
-                            <li>{item}</li>
+                            <div className="diffName">
+                                <div class="avatar"><img src="https://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
+                                <li className="name">{item}</li>
+                            </div>
                         ))}
                     </ul>
             </div>

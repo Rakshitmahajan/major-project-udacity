@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import io from 'socket.io-client'
 import Form from './components/form'
 import Chat from './components/chat'
-
 class App extends Component {
   constructor(props) {
     super(props);
